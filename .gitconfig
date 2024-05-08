@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = master
+[user]
+	email = b-9k@outlook.com
+	name = bytesmith-ahmad
+[core]
+	editor = micro
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[alias]
+	adog = log --all --decorate --oneline --graph
