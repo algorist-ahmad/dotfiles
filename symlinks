@@ -1,0 +1,1 @@
+ln -s ~/rc-files/micro.json ~/.config/micro/settings.json
