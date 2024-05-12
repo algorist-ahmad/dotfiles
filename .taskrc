@@ -7,7 +7,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location="$HOME"/tasks
+data.location=$HOME/tasks
 
 # Color theme (uncomment one to use)
 #include light-16.theme
@@ -49,7 +49,7 @@ urgency.uda.priority.L.coefficient=-1.0
 
 # UDA file ******************************************
 
-#uda.file.label=file
+uda.file.label=file
 uda.file.type=string
 urgency.uda.file.coefficient=1.5
 #color.uda.file=color255

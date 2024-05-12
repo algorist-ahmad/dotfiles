@@ -8,14 +8,10 @@
 #   variable=      -- By specifying no value, this means no default
 #   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
 
-# You can also refence environment variables:
-#   variable=$HOME/task
-#   variable=$VALUE
-
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=/home/ahmad/.bills
+data.location=$HOME/bills
 
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below

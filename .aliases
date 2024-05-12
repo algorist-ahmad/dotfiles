@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# ALIASES
+
+# navigation
+alias ..='cd ..'
+alias peek="tree -L 1"        # shows surface level content of dirs
+
+# file handling
+alias E="$EDITOR"
+alias bat='batcat'
+alias list='tar -tzvf'
+alias md="glow"
+alias note="notepad.exe"      # open with note
+alias open='echo NOT IMPLEMENTED YET'
+alias view='wslview'          # opens any document
+alias viewdb='sqlitebrowser'  # opens .db files
+
+# TaskWarrior
+alias ass='task +assignment'
+alias ass+='task add +assignment due:sunday'
+alias bill+='bill add'
+alias bill-='bill delete'
+alias bill~='bill modify'
+alias courses='t courses'
+alias errands='source errands'
+alias rv='task all +RV'
+alias switch='source switch_task_context.sh'
+alias t+='t add'
+alias t-='t delete'
+alias t~='t modify'
+
+# web
+alias chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
+alias chatgpt='firefox --new-tab "https://chatgpt.com/" &'
+
+# utilities
+alias c='xclip -selection clipboard' #TODO
+alias cal='bc -ql'
+alias D='date +%Y-%m-%d -d'
+alias DT='date +%Y-%m-%dT%T -d'
+alias T='date +%T -d'
+alias j='journal'
+alias sc='sc-im'
+
+# common typos
+alias gti='git'
