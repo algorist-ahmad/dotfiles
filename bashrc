@@ -100,5 +100,5 @@ fi
 
 source "$HOME/.variables"
 source "$HOME/.aliases"
-source "$HOME/rc-files/prompt_string"
+source "$HOME/.prompt" # choose which prompt string to execute from rc-files
 source "$HOME/bin/startup"

@@ -1,0 +1,15 @@
+PS0=f0
+PS1=f1
+PS2=f2
+
+f0 {
+    echo hey this PS0
+}
+
+f1 {
+    echo gimme command
+}
+
+f2 {
+    echi I need more
+}

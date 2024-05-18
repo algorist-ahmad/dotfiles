@@ -2,17 +2,19 @@
 
 #config
 path="$HOME/rc-files"
+micro='.config/micro/settings.json'
 
 # version 2
 
 symlink "$HOME/.aliases"   to "$path/aliases"
 symlink "$HOME/.bashrc"    to "$path/bashrc"
 symlink "$HOME/.billrc"    to "$path/billrc"
+symlink "$HOME/.prompt"    to "$path/string_prompt_1"
 symlink "$HOME/.scimrc"    to "$path/scimrc"
 symlink "$HOME/.sqliterc"  to "$path/sqliterc"
 symlink "$HOME/.taskrc"    to "$path/taskrc"
 symlink "$HOME/.variables" to "$path/variables"
-symlink "$HOME/.config/micro/settings.json" to "$path/micro_settings.json"
+symlink "$HOME/$micro"     to "$path/micro_settings.json"
 
 # old version
 

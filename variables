@@ -6,6 +6,7 @@ export HOSTNAME=$(hostname)                               # Name of this compute
 export DATABASE='archives/finances/finances.db:expenses'  # Currently mounted database
 export PATH="$PATH:/snap/bin"                             # Addition to path
 export LC_ALL="C"
+export LANG="C.UTF-8"                                     # Encoding, same as Xenon/WSL
 
 export EDITOR='micro'                                     # default TUI editor
 export VISUAL='gedit --new-window'                        # default GUI editor for Linux
