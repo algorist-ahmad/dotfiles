@@ -1,13 +1,26 @@
 #!/bin/bash
 
 #config
-$parentdir=$(dirname $0) # ~/rc-files
+path="$HOME/rc-files"
 
-ln -s "$parentdir/aliases"             "$HOME/.aliases"
-ln -s "$parentdir/bashrc"              "$HOME/.bashrc"
-ln -s "$parentdir/billrc"              "$HOME/.billrc"
-ln -s "$parentdir/scimrc"              "$HOME/.scimrc"
-ln -s "$parentdir/sqliterc"            "$HOME/.sqliterc"
-ln -s "$parentdir/variables"           "$HOME/.variables"
-ln -s "$parentdir/micro_settings.json" "$HOME/.config/micro/settings.json
+# version 2
 
+symlink "$HOME/.aliases"   to "$path/aliases"
+symlink "$HOME/.bashrc"    to "$path/bashrc"
+symlink "$HOME/.billrc"    to "$path/billrc"
+symlink "$HOME/.scimrc"    to "$path/scimrc"
+symlink "$HOME/.sqliterc"  to "$path/sqliterc"
+symlink "$HOME/.taskrc"    to "$path/taskrc"
+symlink "$HOME/.variables" to "$path/variables"
+symlink "$HOME/.config/micro/settings.json" to "$path/micro_settings.json"
+
+# old version
+
+# ln -s "$path/aliases"             "$HOME/.aliases"
+# ln -s "$path/bashrc"              "$HOME/.bashrc"
+# ln -s "$path/billrc"              "$HOME/.billrc"
+# ln -s "$path/scimrc"              "$HOME/.scimrc"
+# ln -s "$path/sqliterc"            "$HOME/.sqliterc"
+# ln -s "$path/taskrc"			  "$HOME/.taskrc"
+# ln -s "$path/variables"           "$HOME/.variables"
+# ln -s "$path/micro_settings.json" "$HOME/.config/micro/settings.json"
