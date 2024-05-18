@@ -1,15 +1,4 @@
-PS0=f0
-PS1=f1
-PS2=f2
+#!/bin/bash
 
-f0 {
-    echo hey this PS0
-}
-
-f1 {
-    echo gimme command
-}
-
-f2 {
-    echi I need more
-}
+PS0="$?"
+PS1="\[\e[5;92m\]\$(date +'%H:%M')\[\e[0m\] \[\033[01;34m\]\w\[\033[00m\] \[\e[5m\]⚡\[\e[0m\]"

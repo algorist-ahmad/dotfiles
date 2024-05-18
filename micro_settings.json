@@ -1,5 +1,6 @@
 {
     "colorcolumn": 100,
+    "face.font": "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf",
     "savecursor": true,
     "softwrap": true,
     "tabstospaces": true
