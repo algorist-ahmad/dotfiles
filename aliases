@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# ALIASES
-
 # navigation
 alias ..='cd ..'
+alias ...="cd $HOME"
+alias ll='ls -vhAlF'
+alias la='ls -A'
+alias l='ls -CF'
 alias peek="tree -L 1"        # shows surface level content of dirs
 
 # file handling
@@ -12,13 +14,12 @@ alias bat='batcat'
 alias list='tar -tzvf'
 alias md="glow"
 alias note="notepad.exe"      # open with note
-alias open='echo NOT IMPLEMENTED YET'
-alias view='wslview'          # opens any document
-alias viewdb='sqlitebrowser'  # opens .db files
+alias view='wslview'          # TODO mv to bin/open
+alias viewdb='sqlitebrowser'  # TODO mv to bin/open
 
 # TaskWarrior
 alias ass='task +assignment'
-alias ass+='task add +assignment due:sunday'
+alias ass+='task add +assignment'
 alias bill+='bill add'
 alias bill-='bill delete'
 alias bill~='bill modify'
@@ -31,6 +32,7 @@ alias t-='t delete'
 alias t~='t modify'
 
 # web
+alias bs='firefox brightspace.algonquincollege.com/'
 alias chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
 alias chatgpt='firefox --new-tab "https://chatgpt.com/" &'
 

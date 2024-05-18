@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# MY ENVIRONMENT VARIABLES (display with printenv)
+
+export HOSTNAME=$(hostname)                               # Name of this computer to sign commits
+export DATABASE='archives/finances/finances.db:expenses'  # Currently mounted database
+export PATH="$PATH:/snap/bin"                             # Addition to path
+export LC_ALL="C"
+
+export EDITOR='micro'                                     # default TUI editor
+export VISUAL='gedit --new-window'                        # default GUI editor for Linux
+
+export github='https://github.com/bytesmith-ahmad'        # my GitHub URL
+export archives="$HOME/archives"                          # my small file storage repository
+export bills="$HOME/bills"                                # my bills and expenses repository
+export bin="$HOME/bin"                                    # my bash scripts repository
+export journal="$HOME/journal"                            # my journal entries repository
+export pass="$HOME/.password-store"                       # my secrets repository
+export rcfiles="$HOME/rc-files"                           # my custom configurations repository
+
+# export PATH=/home/bin:$PATH                               # in case ~/profile missing
+# export VISUAL="code --wait"                               # default GUI editor for Windows
