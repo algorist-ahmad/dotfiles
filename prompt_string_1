@@ -14,11 +14,11 @@ function __prompt_command() {
     local warning_color="\[\e[33m\]" # Yellow color
     local error_color="\[\e[31m\]"   # Red color
     local default_symbol=''          # 
-    local up_to_date_symbol="♡"      #
-    local not_added_symbol="🔶"      # Symbol for case 
-    local not_committed_symbol="🔷"  # Symbol for case 
-    local ahead_symbol="🔺"          # Symbol for case 
-    local behind_symbol="🔻"         # Symbol for case 
+    local up_to_date_symbol="\[♡\]"      #
+    local not_added_symbol="\[🔶\]"      # Symbol for case 
+    local not_committed_symbol="\[🔷\]"  # Symbol for case 
+    local ahead_symbol="\[🔺\]"          # Symbol for case 
+    local behind_symbol="\[🔻\]"         # Symbol for case 
 
     # Default values
     local SYMBOL=""
