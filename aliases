@@ -16,7 +16,8 @@ alias mu="$EDITOR"
 alias bat='batcat'
 alias list='tar -tzvf'
 alias md="glow"
-alias note="notepad.exe"      # open with note
+alias np="notepad.exe"      # open with note
+# alias np+='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
 alias view='wslview'          # TODO mv to bin/open
 alias viewdb='sqlitebrowser'  # TODO mv to bin/open
 
@@ -42,6 +43,7 @@ alias chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
 alias chatgpt='firefox --new-tab "https://chatgpt.com/" &'
 
 # utilities
+alias arch="$HOME/bin/arch"
 alias c='xclip -selection clipboard' #TODO
 alias cal='bc -ql'
 alias D='date +%Y-%m-%d -d'
