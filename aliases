@@ -36,6 +36,7 @@ alias tk~='tk modify'
 
 # web
 alias firefox='/mnt/c/"Program Files"/Moz*/firefox.exe' # FOR WSL
+alias outlook='firefox https://www.microsoft.com/en-ca/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook'
 alias bs='firefox brightspace.algonquincollege.com/'
 alias chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
 alias chatgpt='firefox --new-tab "https://chatgpt.com/" &'
