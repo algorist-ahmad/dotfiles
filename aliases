@@ -35,6 +35,7 @@ alias tk-='t delete'
 alias tk~='t modify'
 
 # web
+alias firefox='/mnt/c/"Program Files"/Moz*/firefox.exe' # FOR WSL
 alias bs='firefox brightspace.algonquincollege.com/'
 alias chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
 alias chatgpt='firefox --new-tab "https://chatgpt.com/" &'

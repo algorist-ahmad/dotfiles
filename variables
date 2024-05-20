@@ -22,4 +22,4 @@ export rcfiles="$HOME/rc-files"                           # my custom configurat
 export PATH=/home/bin:$PATH                               # in case ~/profile missing
 # export VISUAL="code --wait"                               # default GUI editor for Windows
 
-export firefox="/mnt/c/'Program Files'/Moz*/firefox.exe"
+export firefox='"/mnt/c/"Program Files"/Moz*/firefox.exe"'
