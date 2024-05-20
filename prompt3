@@ -4,6 +4,8 @@ reset="\[\e[0m\]"
 white="\[\e[97m\]"
 red="\[\e[31m\]"
 
+echo -e "rc-files/prompt3 buggy"
+
 # Function to set the color of the dollar sign based on the exit code
 set_dollar_color() {
     if [ $? -ne 0 ]; then
@@ -17,7 +19,7 @@ set_dollar_color() {
 PROMPT_COMMAND='set_dollar_color'
 
 # Set PS0 prompt
-PS0="\e[33m$?\e[0m\n"
+# PS0="\e[33m$?\e[0m\n" # TODO doesn't work
 
 # Set PS1 prompt
 PS1="\[\e[92m\]\$(date +'%H:%M')\[\e[0m\] \[\033[01;34m\]\w\[\033[00m\] $dollar_color\$ $reset"

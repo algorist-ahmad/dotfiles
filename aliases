@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# computer functions
+alias shutdown='shutdown.exe /s'
+
 # navigation
 alias ..='cd ..'
 alias ...="cd $HOME"

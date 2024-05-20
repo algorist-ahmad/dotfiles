@@ -19,5 +19,5 @@ export journal="$HOME/journal"                            # my journal entries r
 export pass="$HOME/.password-store"                       # my secrets repository
 export rcfiles="$HOME/rc-files"                           # my custom configurations repository
 
-# export PATH=/home/bin:$PATH                               # in case ~/profile missing
+export PATH=/home/bin:$PATH                               # in case ~/profile missing
 # export VISUAL="code --wait"                               # default GUI editor for Windows
