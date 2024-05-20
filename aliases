@@ -12,7 +12,7 @@ alias l='ls -CF'
 alias peek="tree -L 1"        # shows surface level content of dirs
 
 # file handling
-alias E="$EDITOR"
+alias mu="$EDITOR"
 alias bat='batcat'
 alias list='tar -tzvf'
 alias md="glow"
@@ -30,9 +30,9 @@ alias courses='t courses'
 alias errands='source errands'
 alias rv='task all +RV'
 alias switch='source switch_task_context.sh'
-alias tk+='t add'
-alias tk-='t delete'
-alias tk~='t modify'
+alias tk+='tk add'
+alias tk-='tk delete'
+alias tk~='tk modify'
 
 # web
 alias firefox='/mnt/c/"Program Files"/Moz*/firefox.exe' # FOR WSL
