@@ -10,6 +10,7 @@ export LANG="C.UTF-8"                                     # Encoding, same as Xe
 
 export EDITOR='micro'                                     # default TUI editor
 export VISUAL='gedit --new-window'                        # default GUI editor for Linux
+export GIT_EDITOR="$EDITOR"
 
 export github='https://github.com/bytesmith-ahmad'        # my GitHub URL
 export archives="$HOME/archives"                          # my small file storage repository
