@@ -24,6 +24,7 @@ alias viewdb='sqlitebrowser'  # TODO mv to bin/open
 # TaskWarrior
 alias ass='task +assignment'
 alias ass+='task add +assignment'
+alias bills='bill'
 alias bill+='bill add'
 alias bill-='bill delete'
 alias bill~='bill modify'
