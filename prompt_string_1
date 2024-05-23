@@ -56,10 +56,10 @@ function __prompt_command() {
         COLOR=$error_color
     fi
 
-    if [[ -f "$HOME/.sql/connection"  ]]; then database=$(basename $(cat "$HOME/.sql/connection"));  fi
-    if [[ -f "$HOME/.sql/focal_table" ]]; then    table=$(cat "$HOME/.sql/focal_table"); fi
-
-    echo -e "\e[90mDB: $database:$table\e[90m"
+    # if [[ -f "$HOME/.sql/connection"  ]]; then database=$(basename $(cat "$HOME/.sql/connection"));  fi
+    # if [[ -f "$HOME/.sql/focal_table" ]]; then    table=$(cat "$HOME/.sql/focal_table"); fi
+# 
+    # echo -e "\e[90mDB: $database:$table\e[90m"
     PS1="${SYMBOL} \[\e[5;92m\]\$(date +'%H:%M')\[\e[0m\] \[\033[01;34m\]\w\[\033[00m\] ${COLOR}\[\e[5m\]⚡\[\e[0m\]"
 
     # single integral ∫
