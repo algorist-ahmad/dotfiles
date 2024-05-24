@@ -9,11 +9,13 @@ sudo apt install gh
 sudo apt install git
 sudo apt install glow
 sudo apt install libreoffice
-sudo apt install microbinb
+sudo apt install micro
 sudo apt install pass
+sudo apt install pipx
 sudo apt install sqlite3
 sudo apt install taskwarrior
 sudo apt install tldr
+pipx install jrnl
 
 echo "DO: [gh auth login -w] to login in to github"
 gh auth login -w
@@ -25,3 +27,4 @@ git clone https://github.com/bytesmith-ahmad/journal
 git clone https://github.com/bytesmith-ahmad/pass
 git clone https://github.com/bytesmith-ahmad/rc-files
 git clone https://github.com/bytesmith-ahmad/tasks
+
