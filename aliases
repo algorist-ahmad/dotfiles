@@ -51,7 +51,7 @@ alias cal='bc -ql'
 alias D='date +%Y-%m-%d -d'
 alias DT='date +%Y-%m-%dT%T -d'
 alias T='date +%T -d'
-alias j='journal'
+alias jrnl='journal'
 alias sc='sc-im'
 
 # common typos
