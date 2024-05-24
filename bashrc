@@ -102,3 +102,6 @@ source "$HOME/.variables"
 source "$HOME/.aliases"
 source "$HOME/.prompt" # choose which prompt string to execute from rc-files
 source "$HOME/bin/startup"
+
+# Created by `pipx` on 2024-05-24 20:11:54
+export PATH="$PATH:/home/ahmad/.local/bin"
