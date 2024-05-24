@@ -5,8 +5,8 @@ colors:
   title: cyan
 default_hour: 9
 default_minute: 0
-editor: gedit --new-window
-encrypt: true
+editor: cat
+encrypt: false
 highlight: true
 indent_character: '|'
 journals:
