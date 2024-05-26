@@ -6,6 +6,11 @@ backup_path="$path/backup"
 micro='.config/micro/settings.json'
 jrnl='.config/jrnl/jrnl.yaml'
 
+echo "Choose system:
+  Linux
+> Windows Subsystem for Linux
+(concept only, not working)"
+
 mkdir "$HOME/backup"
 echo "Created by $github/rc-files/create_symlinks" > "$HOME/backup/this_be_the_backup_location_for_default_config_files"
 echo "Created backup in $backup_path"
