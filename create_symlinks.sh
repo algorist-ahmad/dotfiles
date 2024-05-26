@@ -25,4 +25,5 @@ symlink "$HOME/$micro"     to "$path/micro_settings.json"
 mv "$HOME/$jrnl" "$backup_path"
 symlink "$HOME/$jrnl"      to "$path/rc-files/jrnl.yaml"
 
+echo "if using WSL, replace symlinks destination to 'WSL' counterpart"
 echo -e "\nsaved default settings in $backup_path"
