@@ -35,5 +35,5 @@ echo -e "\nsaved default settings in $backup_path"
 
 # if on WSL, use these configs instead:
 
-mv -vi   "$HOME/.config/jrnl/jrnl.yaml" "$HOME/rc-files/backup"
-symlink "$HOME/.config/jrnl/jrnl.yaml" "$path/rc-files/jrnl-WSL.yaml"
+# mv -vi  "$HOME/.config/jrnl/jrnl.yaml" "$HOME/rc-files/backup"
+# symlink "$HOME/.config/jrnl/jrnl.yaml" "$HOME/rc-files/jrnl-WSL.yaml"
