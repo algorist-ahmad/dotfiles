@@ -12,6 +12,7 @@ alias l='ls -CF'
 alias peek="tree -L 1"        # shows surface level content of dirs
 
 # file handling
+alias mv='mv -vi'
 alias mu="$EDITOR"
 alias bat='batcat'
 alias list='tar -tzvf'
