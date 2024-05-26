@@ -1,5 +1,3 @@
-# this be the WSL version of settings
-
 colors:
   body: none
   date: black
@@ -7,15 +5,16 @@ colors:
   title: cyan
 default_hour: 9
 default_minute: 0
-editor: notepad.exe
+editor: #notepad.exe
 encrypt: false
 highlight: true
 indent_character: '|'
 journals:
+  college: /home/ahmad/journal/secondary
   default:
-    journal: /home/ahmad/journal
-linewrap: 79
+    journal: /home/ahmad/journal/primary
+linewrap: auto
 tagsymbols: '#@'
-template: false
-timeformat: '%F %r'
+template: /home/ahmad/journal/.template
+timeformat: '%F %H:%M'
 version: v4.1

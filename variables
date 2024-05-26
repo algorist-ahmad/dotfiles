@@ -3,13 +3,16 @@
 # MY ENVIRONMENT VARIABLES (display with printenv)
 
 export HOSTNAME=$(hostname)                               # Name of this computer to sign commits
-export DATABASE='archives/finances/finances.db:expenses'  # Currently mounted database
+export SYSTEM=$("$HOME/bin/get" os)                       # Current OS, is it Linux or is it Windows?
+export CONTEXT='none'                                     # Current context: home, work, school, none, etc.
+export DATABASE='archives/finances/finances.db'           # Currently connected database
 export PATH="$PATH:/snap/bin"                             # Addition to path
 export LC_ALL="C"
 export LANG="C.UTF-8"                                     # Encoding, same as Xenon/WSL
 
 export EDITOR='micro'                                     # default TUI editor
 export VISUAL='gedit --new-window'                        # default GUI editor for Linux
+export VISUAL_WSL='notepad.exe'                           # default GUI editor for Windows
 export GIT_EDITOR="$EDITOR"
 
 export github='https://github.com/bytesmith-ahmad'        # my GitHub URL
@@ -21,6 +24,5 @@ export pass="$HOME/.password-store"                       # my secrets repositor
 export rcfiles="$HOME/rc-files"                           # my custom configurations repository
 
 export PATH=/home/bin:$PATH                               # in case ~/profile missing
-# export VISUAL="code --wait"                               # default GUI editor for Windows
 
 export firefox='"/mnt/c/"Program Files"/Moz*/firefox.exe"'

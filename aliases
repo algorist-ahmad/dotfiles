@@ -3,6 +3,9 @@
 # computer functions
 alias shutdown='shutdown.exe /s'
 
+# GNU utilities
+# cp, mv, ls
+
 # navigation
 alias ..='cd ..'
 alias ...="cd $HOME"
@@ -25,6 +28,11 @@ alias view='wslview'          # TODO mv to bin/open
 alias viewdb='sqlitebrowser'  # TODO mv to bin/open
 alias sqlite3='sqlite3 -batch'
 
+# jrnl
+alias jrnl="$HOME/bin/jrnl"
+alias log='jrnl log'
+alias jrnlc='jrnl college'
+
 # TaskWarrior
 alias ass='task +assignment'
 alias ass+='task add +assignment'
@@ -32,7 +40,7 @@ alias bills='bill'
 alias bill+='bill add'
 alias bill-='bill delete'
 alias bill~='bill modify'
-alias courses='t courses'
+alias courses='tk courses'
 alias errands='source errands'
 alias rv='task all +RV'
 alias switch='source switch_task_context.sh'
@@ -54,7 +62,6 @@ alias cal='bc -ql'
 alias D='date +%Y-%m-%d -d'
 alias DT='date +%Y-%m-%dT%T -d'
 alias T='date +%T -d'
-alias jrnl='journal'
 alias sc='sc-im'
 
 # common typos
