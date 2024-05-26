@@ -22,12 +22,12 @@ symlink "$HOME/.billrc"    to "$path/billrc"
 symlink "$HOME/.prompt"    to "$path/string_prompt_1"
 symlink "$HOME/.scimrc"    to "$path/scimrc"
 symlink "$HOME/.sqliterc"  to "$path/sqliterc"
-mv -v "$HOME/.taskrc" "$backup_path"
+mv -vi "$HOME/.taskrc" "$backup_path"
 symlink "$HOME/.taskrc"    to "$path/taskrc"
 symlink "$HOME/.variables" to "$path/variables"
-mv -v "$HOME/$micro" "$backup_path"
+mv -vi "$HOME/$micro" "$backup_path"
 symlink "$HOME/$micro"     to "$path/micro_settings.json"
-mv -v "$HOME/$jrnl" "$backup_path"
+mv -vi "$HOME/$jrnl" "$backup_path"
 symlink "$HOME/$jrnl"      to "$path/rc-files/jrnl.yaml"
 
 echo "if using WSL, replace symlinks destination to 'WSL' counterpart"
@@ -35,5 +35,5 @@ echo -e "\nsaved default settings in $backup_path"
 
 # if on WSL, use these configs instead:
 
-# mv -v   "$HOME/.config/jrnl/jrnl.yaml" "$HOME/rc-files/backup"
-# symlink "$HOME/.config/jrnl/jrnl.yaml" "$path/rc-files/jrnl-WSL.yaml"
+mv -vi   "$HOME/.config/jrnl/jrnl.yaml" "$HOME/rc-files/backup"
+symlink "$HOME/.config/jrnl/jrnl.yaml" "$path/rc-files/jrnl-WSL.yaml"
