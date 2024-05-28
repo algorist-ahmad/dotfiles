@@ -2,48 +2,44 @@
 
 # computer functions
 alias shutdown='shutdown.exe /s'
+alias hibernate='shutdown.exe /h'
 
 # GNU utilities
-# cp, mv, ls
-
-# navigation
 alias ..='cd ..'
-alias ...="cd $HOME"
-alias ll='ls -vhAlF'
-alias la='ls -A'
-alias l='ls -CF'
-alias peek="tree -L 1"        # shows surface level content of dirs
-
-# file handling
+alias .~="cd $HOME"
 alias cp='cp -vi'
 alias mv='mv -vi'
 alias rm='rm -vi'
+alias mkdir='mkdir -v'
+alias rmdir='rmdir -v'
+alias ll='ls -vhAlF'
+alias la='ls -A'
+alias l='ls -CF'
+alias peek="tree -L 1"
+
+# file handling
 alias mu="$EDITOR"
-alias bat='batcat'
-alias list='tar -tzvf'
 alias md="glow"
-alias np="notepad.exe"      # open with note
-# alias np+='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
-alias view='wslview'          # TODO mv to bin/open
-alias viewdb='sqlitebrowser'  # TODO mv to bin/open
-alias sqlite3='sqlite3 -batch'
+alias np="notepad.exe"
+alias npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
+alias bat='batcat'
+alias tarlist='tar -tzvf'
+alias view='wslview'
+alias viewdb='sqlitebrowser'
+alias sqlite3='sqlite3 -batch' # removes unnecessary message
 
 # jrnl
 alias jrnl="$HOME/bin/jrnl"
-alias log='jrnl log'
 alias jrnlc='jrnl college'
 
 # TaskWarrior
-alias ass='task +assignment'
-alias ass+='task add +assignment'
 alias bills='bill'
 alias bill+='bill add'
 alias bill-='bill delete'
 alias bill~='bill modify'
 alias courses='tk courses'
 alias errands='source errands'
-alias rv='task all +RV'
-alias switch='source switch_task_context.sh'
+alias rv='task next +RV'
 alias tk+='tk add'
 alias tk-='tk delete'
 alias tk~='tk modify'
