@@ -29,6 +29,7 @@ alias viewdb='sqlitebrowser'
 alias sqlite3='sqlite3 -batch' # removes unnecessary message
 
 # jrnl
+alias jl="$HOME/bin/jrnl"
 alias jrnl="$HOME/bin/jrnl"
 alias jrnl.="jrnl ."
 alias jrnl..="jrnl.."
