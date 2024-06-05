@@ -29,6 +29,9 @@ alias view='wslview'
 alias viewdb='sqlitebrowser'
 alias sqlite3='sqlite3 -batch' # removes unnecessary message
 
+# web
+alias mail="firefox https://outlook.office.com/mail/"
+
 # jrnl
 alias jl="$HOME/bin/jrnl"
 alias jrnl="$HOME/bin/jrnl"
