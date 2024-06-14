@@ -30,7 +30,8 @@ alias viewdb='sqlitebrowser'
 alias sqlite3='sqlite3 -batch' # removes unnecessary message
 
 # web
-alias mail="firefox https://outlook.office.com/mail/"
+alias mail='firefox https://outlook.office.com/mail/'
+alias syncthing='firefox 127.0.0.1:8384'
 
 # jrnl
 alias jl="$HOME/bin/jrnl"
