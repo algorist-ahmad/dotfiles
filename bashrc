@@ -100,6 +100,7 @@ fi
 
 source "$HOME/.variables"
 source "$HOME/.aliases"
+source "$HOME/.functions"
 source "$HOME/.prompt" # choose which prompt string to execute from rc-files
 source "$HOME/bin/startup"
 
