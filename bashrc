@@ -107,3 +107,6 @@ source "$HOME/bin/startup"
 # Created by `pipx` on 2024-05-24 20:11:54
 export PATH="$PATH:/home/ahmad/.local/bin"
 . "$HOME/.cargo/env"
+
+# Created by `pipx` on 2024-08-15 17:55:47
+export PATH="$PATH:/home/cybersamurai/.local/bin"
