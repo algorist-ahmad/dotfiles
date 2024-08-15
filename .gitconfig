@@ -1,12 +1,15 @@
-[init]
-	defaultBranch = master
-[user]
-	email = b-9k@outlook.com
-	name = bytesmith-ahmad
-[core]
-	editor = micro
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = ahmad
+	email = b-9k@outlook.com
 [alias]
-	adog = log --all --decorate --oneline --graph
+    st = status --short
+    ci = commit -v
+    br = branch
+	send = "!f() { git commit -v && git push; }; f"
+    
