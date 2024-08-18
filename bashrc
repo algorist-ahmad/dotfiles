@@ -1,112 +1,131 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+#####################
+# MY MODIFIED BASHRC
+#####################
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+# Resolve the absolute path of the script pointed to by BASH_SOURCE
+script_path=$(readlink -f "${BASH_SOURCE[0]}")
+# Get the directory of the resolved script path
+export CFG_DIR=$(dirname "$script_path")
+export CFG_VARIABLES="$CFG_DIR/variables"
+export CFG_ALIASES="$CFG_DIR/aliases"
+export CFG_FUNCTIONS="$CFG_DIR/functions"
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+main() {
+  echo -n '' > .output
+  run_default
+  load_variables 2>>.output
+  load_aliases 2>>.output
+  load_functions 2>>.output
+  update_PATH 2>>.output
+  run_startup 2>>.output
+  terminate
+}
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# default bashrc on debian
+run_default() {
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+  # If not running interactively, don't do anything
+  [[ $- != *i* ]] && return
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+  # don't put duplicate lines or lines starting with space in the history.
+  # See bash(1) for more options
+  HISTCONTROL=ignoreboth
 
-# make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+  # append to the history file, don't overwrite it
+  shopt -s histappend
+  
+  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+  HISTSIZE=1000
+  HISTFILESIZE=2000
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+  # check the window size after each command and, if necessary,
+  # update the values of LINES and COLUMNS.
+  shopt -s checkwinsize
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
+  # set a fancy prompt (non-color, unless we know we "want" color)
+  case "$TERM" in
+      xterm-color|*-256color) color_prompt=yes;;
+  esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+  # uncomment for a colored prompt, if the terminal has the capability
+  force_color_prompt=yes
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
-fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+  if [ -n "$force_color_prompt" ]; then
+      if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
+      else
+    color_prompt=
+      fi
   fi
-fi
+  unset color_prompt force_color_prompt
 
-source "$HOME/.variables"
-source "$HOME/.aliases"
-source "$HOME/.functions"
-source "$HOME/.prompt" # choose which prompt string to execute from rc-files
-source "$HOME/bin/startup"
+  # enable color support of ls and also add handy aliases
+  if [ -x /usr/bin/dircolors ]; then
+      test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+      alias ls='ls --color=auto'
+      #alias dir='dir --color=auto'
+      #alias vdir='vdir --color=auto'
 
-# Created by `pipx` on 2024-05-24 20:11:54
-export PATH="$PATH:/home/ahmad/.local/bin"
-. "$HOME/.cargo/env"
+      #alias grep='grep --color=auto'
+      #alias fgrep='fgrep --color=auto'
+      #alias egrep='egrep --color=auto'
+  fi
 
-# Created by `pipx` on 2024-08-15 17:55:47
-export PATH="$PATH:/home/cybersamurai/.local/bin"
+  # enable programmable completion features (you don't need to enable
+  # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+  # sources /etc/bash.bashrc).
+  if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+      . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+      . /etc/bash_completion
+    fi
+  fi
+}
+
+load_variables() {
+    if [ -f "$CFG_VARIABLES" ]; then
+        source "$CFG_VARIABLES"
+        >&2 printf $?
+    else
+        echo "$0: $CFG_VARIABLES not found."
+        >&2 printf 1 # Failure
+    fi
+}
+
+load_aliases() {
+  [ -f "$CFG_ALIASES" ] && source "$CFG_ALIASES" || echo "$0: $CFG_ALIASES not found."
+  >&2 printf $?
+}
+
+load_functions() {
+  [ -f "$CFG_FUNCTIONS" ] && source "$CFG_FUNCTIONS" || echo "$0: $CFG_FUNCTIONS not found."
+  >&2 printf $?
+}
+
+update_PATH() {
+  bin="$HOME/bin" # symlinks to exectuables
+  my_scripts="$HOME/scripts"
+  local_bin="$HOME/.local/bin"
+  snap_bin="/snap/bin"
+  export PATH="$bin:$my_scripts:$local_bin:$snap_bin:$PATH"
+  >&2 printf $?
+}
+
+run_startup() {
+  if [ -n "$STARTUP_SCRIPT" ]; then source "$STARTUP_SCRIPT"; fi
+  >&2 printf $?
+}
+
+# outputs and delete ./.output
+terminate() {
+  x=$(cat '.output')
+  rm -f '.output' >/dev/null
+  echo "$x"
+}
+
+main

@@ -1,29 +1,18 @@
 #!/bin/bash
 
-# MY ENVIRONMENT VARIABLES (display with printenv)
+# MY ENVIRONMENT VARIABLES (display with env)
 
-export HOSTNAME=$(hostname)                               # Name of this computer to sign commits
-export SYSTEM=$("$HOME/bin/get" os)                       # Current OS, is it Linux or is it Windows?
-export CONTEXT='none'                                     # Current context: home, work, school, none, etc.
-export DATABASE='archives/finances/finances.db'           # Currently connected database
-export PATH="$PATH:/snap/bin"                             # Addition to path
-export LC_ALL="C"
-export LANG="C.UTF-8"                                     # Encoding, same as Xenon/WSL
+## dependencies: parent = bashrc
 
-export EDITOR='micro'                                     # default TUI editor
-export VISUAL_L='gedit --new-window'                      # default GUI editor for Linux
-export VISUAL_WSL='notepad.exe'                           # default GUI editor for Windows
-export VISUAL=$VISUAL_WSL
-export GIT_EDITOR="$EDITOR"
+export GITHUB='https://github.com/bytesmith-ahmad'   # my GitHub URL
+export PROMPT_SCRIPT="$CFG_DIR/smiley-ps1"           # script containing prompt logic
+export PROMPT_COMMAND="source $PROMPT_SCRIPT"        # prompt script to be run
+export LC_ALL="C"									 # idk what this is
+export LANG="C.UTF-8"                                # Encoding, same as Xenon/WSL
+export EDITOR='micro'                                # default TUI editor
+export VISUAL='code --new-window'                    # default GUI editor for Linux
+export VISUAL_WSL='notepad.exe'                      # default GUI editor for WSL
+export VISUAL=$VISUAL								 # selected visual editor
+export GIT_EDITOR='code --new-window --wait'
 
-export github='https://github.com/bytesmith-ahmad'        # my GitHub URL
-export archives="$HOME/archives"                          # my small file storage repository
-export bills="$HOME/bills"                                # my bills and expenses repository
-export bin="$HOME/bin"                                    # my bash scripts repository
-export journal="$HOME/journal"                            # my journal entries repository
-export pass="$HOME/.password-store"                       # my secrets repository
-export rcfiles="$HOME/rc-files"                           # my custom configurations repository
-
-export PATH=/home/bin:$PATH                               # in case ~/profile missing
-
-export firefox='"/mnt/c/"Program Files"/Moz*/firefox.exe"'
+echo 'env variables loaded'

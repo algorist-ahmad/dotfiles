@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: Needs to be updated
+
 # computer functions
 alias shutdown='shutdown.exe /s'
 alias hibernate='shutdown.exe /h'
@@ -13,14 +15,17 @@ alias rm='rm -vi'
 alias mkdir='mkdir -v'
 alias rmdir='rmdir -v'
 alias chmod='chmod -v'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias ll='ls -vhAlF'
 alias la='ls -A'
 alias l='ls -CF'
 alias peek="tree -L 1"
 
 # file handling
-alias mu="$EDITOR"
-alias md="glow"
+alias mu='micro'
+alias mouse='mousepad'
+alias md='glow'
 alias np="notepad.exe"
 alias npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
 alias bat='batcat'
@@ -55,7 +60,6 @@ alias todo='tk todo'
 # web
 alias firefox='/mnt/c/"Program Files"/Moz*/firefox.exe' # FOR WSL
 alias outlook='firefox https://www.microsoft.com/en-ca/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook'
-alias bs='firefox brightspace.algonquincollege.com/'
 alias chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
 alias chatgpt='firefox --new-tab "https://chatgpt.com/" &'
 
@@ -70,3 +74,5 @@ alias sc='sc-im'
 
 # common typos
 alias gti='git'
+
+echo 'aliases loaded'
