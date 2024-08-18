@@ -61,7 +61,7 @@ git_status_report() {
 
         # Check for different types of changes
         untracked=$(echo "$git_status_output" | grep '^??' | wc -l)
-        modified=$(echo "$git_status_output" | grep '^\s*[AM]\s' | wc -l)
+        modified=$(echo "$git_status_output" | grep '^\s*[AMD]\s' | wc -l)
 
         # Get the number of commits ahead and behind the upstream branch
         ahead=$(git rev-list --count HEAD ^@{upstream} 2>/dev/null || echo 0)
