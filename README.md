@@ -9,18 +9,18 @@ This repo includes all my personal configurations, shortcuts, functions, aliases
 These instructions are aimed at myself, ignore.
 
 Remaining instructions:
-- [ ] import keys
+- [x] import gpg keys
 - [x] install *gh*
 - [x] run ```gh auth login```, follow prompts
 - [x] clone *pass*
 - [x] clone *linux-config*
-- [ ] clone *scripts*
-- [ ] clone *tasks*
-- [ ] clone *bills*
-- [ ] clone *journal*
-- [ ] clone *archives*
-- [ ] clone *data*
-- [ ] clone *resume*
+- [x] clone *scripts*
+- [x] clone *tasks*
+- [x] clone *bills*
+- [x] clone *journal*
+- [x] clone *archives*
+- [x] clone *data*
+- [x] clone *resume*
 - [x] mv *pass* to *.password-store*
 - [x] mv *linux-config* to *config* 
 - [x] Symlink <u>.bashrc</u> to */config/bashrc

@@ -29,7 +29,6 @@ alias mouse='_() { mousepad -o "mixed" "$@" & }; _'
 alias md='glow'
 alias np="notepad.exe"
 alias npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
-alias bat='batcat'
 alias tarlist='tar -tzvf'
 alias view='wslview'
 alias viewdb='sqlitebrowser'
@@ -65,7 +64,6 @@ alias chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
 alias chatgpt='firefox --new-tab "https://chatgpt.com/" &'
 
 # utilities
-alias arch="$HOME/bin/arch"
 alias c='xclip -selection clipboard' #TODO
 alias cal='bc -ql'
 alias D='date +%Y-%m-%d -d'
