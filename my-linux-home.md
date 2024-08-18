@@ -12,7 +12,7 @@ My home contains the following directories:
 |[journal](https://github.com/bytesmith-ahmad/journal)|repo|Contains my journal entries. Must be used with ```jrnl```
 |[resume](https://github.com/bytesmith-ahmad/resume)|repo|Contains my version-controlled resume.
 |[scripts](https://github.com/bytesmith-ahmad/scripts)|repo|Contains all my executable scripts
-|[tasks](https://github.com/bytesmith-ahmad/tasks)|repo|Contains my todo list
+|[tasks](https://github.com/bytesmith-ahmad/tasks)|repo|Contains my todo list. Must be used with ```taskwarrior```
 |trash|regular|```rm``` has been replaced with ```del``` which moves files here to avoid accidental deletion.
 
 in /home:
