@@ -4,9 +4,8 @@
 
 ## dependencies: parent = bashrc
 
+export PROMPT_COMMAND="source $CFG_DIR/exit-git-ps1"   # command to be run after each command
 export GITHUB='https://github.com/bytesmith-ahmad'   # my GitHub URL
-export PROMPT_SCRIPT="$CFG_DIR/smiley-ps1"           # script containing prompt logic
-export PROMPT_COMMAND="source $PROMPT_SCRIPT"        # prompt script to be run
 export LC_ALL="C"									 # idk what this is
 export LANG="C.UTF-8"                                # Encoding, same as Xenon/WSL
 export EDITOR='micro'                                # default TUI editor
