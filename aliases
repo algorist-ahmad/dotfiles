@@ -40,9 +40,6 @@ alias syncthing='firefox 127.0.0.1:8384'
 
 # jrnl
 alias jl="$HOME/bin/jrnl"
-alias jrnl="$HOME/bin/jrnl"
-alias jrnl.="jrnl ."
-alias jrnl..="jrnl.."
 
 # TaskWarrior
 alias bills='bill'
