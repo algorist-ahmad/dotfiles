@@ -1,0 +1,75 @@
+############################
+# Modify PS1 dynamically
+############################
+
+# Capture last exit status
+LAST_EXIT=$?
+
+# Define colors
+GREEN='\[\033[0;32m\]'   # Green color
+RED='\[\033[0;31m\]'     # Red color
+RESET='\[\033[0m\]'      # Reset color to default
+
+# Other
+PROMPT_SYMBOL='$'
+
+build_prompt() {
+    # in the future, have unique symbol for general context
+    symbol="\[$LAST_EXIT\]"
+    # build time in HH:MM
+    time="\[\e[92m\]$(date +'%H:%M')\[\e[0m\]"
+    # build current path
+    path="\[\033[01;34m\]\w\[\033[00m\]"
+    # color the '$' symbol
+    exit_indicator=$(build_exit_indicator)
+    # get a report of the current repo, if there is one
+    git_status_report=$(git_status_report)
+    # Done! PS1 is ready
+    PS1="$symbol $time $path $git_status_report $exit_indicator "
+}
+
+build_exit_indicator() {
+    if [ $LAST_EXIT -eq 0 ]; then
+        status="\[\[\e[1m\]$PROMPT_SYMBOL${RESET}\]"
+    else
+        status="\[${RED}\[\e[1m\]$PROMPT_SYMBOL${RESET}\]"
+    fi
+
+    echo $status
+}
+
+# Function to build Git status report
+git_status_report() {
+    if git rev-parse --is-inside-work-tree &>/dev/null; then
+        local branch
+        local status
+        local ahead
+        local behind
+        local changes
+
+        # Get current branch name
+        branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+
+        # Check for uncommitted changes
+        changes=$(git status --porcelain | wc -l)
+
+        # Get the number of commits ahead/behind
+        ahead=$(git rev-list --count HEAD ^@{upstream} 2>/dev/null)
+        behind=$(git rev-list --count @{upstream} ^HEAD 2>/dev/null)
+
+        # Format Git status report
+        if [ "$changes" -gt 0 ]; then
+            status="\[$RED\]●\[$RESET\] $branch"
+        else
+            status="\[$GREEN\]✓\[$RESET\] $branch"
+        fi
+
+        if [ "$ahead" -gt 0 ] || [ "$behind" -gt 0 ]; then
+            status+="\[$YELLOW\] (${ahead}↑${behind}↓)\[$RESET\]"
+        fi
+
+        echo "$status"
+    fi
+}
+
+build_prompt $EXIT

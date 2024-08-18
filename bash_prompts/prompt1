@@ -1,9 +1,7 @@
 #!/bin/bash
 
-PS="\[\e[5;92m\]\$(date +'%H:%M')\[\e[0m\] \[\033[01;34m\]\w\[\033[00m\] \[\e[5m\]⚡\[\e[0m\]"
+PS="\[\e[5;92m\]\$(date +'%H:%M')\[\e[0m\] \[\033[01;34m\]\w\[\033[00m\] $\[\e[0m\]"
 
-# new version, move to file *****************************************
-export PROMPT_COMMAND=__prompt_command
 # Function to check if the current branch is ahead of the remote branch
 function __prompt_command() {
     # This needs to be first
@@ -56,11 +54,8 @@ function __prompt_command() {
         COLOR=$error_color
     fi
 
-    # if [[ -f "$HOME/.sql/connection"  ]]; then database=$(basename $(cat "$HOME/.sql/connection"));  fi
-    # if [[ -f "$HOME/.sql/focal_table" ]]; then    table=$(cat "$HOME/.sql/focal_table"); fi
-# 
     # echo -e "\e[90mDB: $database:$table\e[90m"
-    PS1="${SYMBOL} \[\e[5;92m\]\$(date +'%H:%M')\[\e[0m\] \[\033[01;34m\]\w\[\033[00m\] ${COLOR}\[\e[5m\]⚡\[\e[0m\]"
+    PS1="${SYMBOL} \[\e[5;92m\]\$(date +'%H:%M')\[\e[0m\] \[\033[01;34m\]\w\[\033[00m\] ${COLOR}$\[\e[0m\]"
 
     # single integral ∫
     # Check if git status output is not empty
@@ -85,10 +80,4 @@ function __prompt_command() {
     fi
 }
 
-# keeping this simpler version in case the other breaks
-# if [[ -n $(git status -s) ]]; then
-    # echo ⌠
-    # echo -n ⌡
-    # git status -s
-    # echo "---"
-# fi
+__prompt_command
