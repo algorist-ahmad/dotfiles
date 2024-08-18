@@ -23,8 +23,9 @@ alias l='ls -CF'
 alias peek="tree -L 1"
 
 # file handling
+alias del='move-to-trash'
 alias mu='micro'
-alias mouse='mousepad'
+alias mouse='_() { mousepad -o "mixed" "$@" & }; _'
 alias md='glow'
 alias np="notepad.exe"
 alias npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
