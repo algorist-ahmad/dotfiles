@@ -42,8 +42,7 @@ build_exit_indicator() {
     echo $status
 }
 
-
-# Function to build Git status report
+### Function to build Git status report
 git_status_report() {
     if git rev-parse --is-inside-work-tree &>/dev/null; then
         local branch
@@ -51,16 +50,18 @@ git_status_report() {
         local behind
         local untracked
         local modified
-        local staged
         local status=""
 
         # Get current branch name
         branch=$(git symbolic-ref --short HEAD 2>/dev/null || echo "unknown-branch")
 
+        # Get the status output once and reuse it
+        local git_status_output
+        git_status_output=$(git status --porcelain)
+
         # Check for different types of changes
-        untracked=$(git status --porcelain | grep '^??' | wc -l)
-        modified=$(git status --porcelain | grep '^[ MAD]' | grep -v '^\s*M' | wc -l)
-        staged=$(git status --porcelain | grep '^[ AM]' | grep -v '^\s*M' | wc -l)
+        untracked=$(echo "$git_status_output" | grep '^??' | wc -l)
+        modified=$(echo "$git_status_output" | grep '^\s*[AM]\s' | wc -l)
 
         # Get the number of commits ahead and behind the upstream branch
         ahead=$(git rev-list --count HEAD ^@{upstream} 2>/dev/null || echo 0)
@@ -75,11 +76,8 @@ git_status_report() {
             status+="\[$CYAN\]✎${modified}\[$RESET\] "
         fi
 
-        if [ "$staged" -gt 0 ]; then
-            status+="\[$BLUE\]✏${staged}\[$RESET\] "
-        fi
-
-        if [ "$untracked" -gt 0 ] || [ "$modified" -gt 0 ] || [ "$staged" -gt 0 ]; then
+        # Show red circle if there are modified files, otherwise show green checkmark
+        if [ "$modified" -gt 0 ]; then
             status+="\[$RED\]●\[$RESET\] $branch"
         else
             status+="\[$GREEN\]✓\[$RESET\] $branch"
