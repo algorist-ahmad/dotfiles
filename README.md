@@ -14,7 +14,7 @@ Remaining instructions:
 - [x] run ```gh auth login```, follow prompts
 - [x] clone *pass*
 - [x] clone *linux-config*
-- [ ] clone *scripts*
+- [x] clone *scripts*
 - [ ] clone *tasks*
 - [ ] clone *bills*
 - [ ] clone *journal*
