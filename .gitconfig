@@ -9,6 +9,7 @@
 	aa = add .
 	ac = ! git add . && git commit -v
 	br = branch
+	co = checkout
 	cf = cat-file
 	cm = commit -v
 	cmm = commit -vm
