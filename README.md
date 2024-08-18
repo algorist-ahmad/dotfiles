@@ -21,7 +21,7 @@ Remaining instructions:
 - [ ] clone *archives*
 - [ ] clone *data*
 - [ ] clone *resume*
-- [ ] mv *pass* to *.password-store*
+- [x] mv *pass* to *.password-store*
 - [ ] mv *linux-config* to *config* 
 - [ ] Symlink <u>.bashrc</u> to */config/bashrc
 
