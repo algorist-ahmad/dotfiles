@@ -22,7 +22,7 @@ Remaining instructions:
 - [ ] clone *data*
 - [ ] clone *resume*
 - [x] mv *pass* to *.password-store*
-- [ ] mv *linux-config* to *config* 
+- [x] mv *linux-config* to *config* 
 - [ ] Symlink <u>.bashrc</u> to */config/bashrc
 
 My personal bashrc will, in this order:
