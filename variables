@@ -4,6 +4,7 @@
 
 ## dependencies: parent = bashrc
 
+export LOGS="$HOME/logs"
 export PROMPT_COMMAND="source $CFG_DIR/exit-git-ps1"   # command to be run after each command
 export GITHUB='https://github.com/bytesmith-ahmad'   # my GitHub URL
 export LC_ALL="C"									 # idk what this is

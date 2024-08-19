@@ -1,32 +1,145 @@
-
 ###########################
 # MY MODIFIED BASHRC      #
 ###########################
+
+# Logs destination
+LOG="$HOME/logs/bashrc.log"
+# .env source file
+ENV="$HOME/.env"
+# .aliases source file
+ALS="$HOME/.aliases"
+# .PATH source file
+PATH_SOURCE="$HOME/.PATH"
 
 # Resolve the absolute path of the script pointed to by BASH_SOURCE: /home/ahmad/config/bashrc
 script_path=$(readlink -f "${BASH_SOURCE[0]}")
 # Get the directory of the resolved script path: /home/ahmad/config
 export CFG_DIR=$(dirname "$script_path")
-# The file containing PATH strings
-export PATH_SOURCE="$CFG_DIR/.PATH"
-# The file containing variables
-export CFG_VARIABLES="$CFG_DIR/variables" #FIXME: need consistent name
-# The file containing aliases
-export CFG_ALIASES="$CFG_DIR/aliases" #FIXME: need consistent name
 # The file containing complex functions
-export CFG_FUNCTIONS="$CFG_DIR/functions" #FIXME: need consistent name
+CFG_FUNCTIONS="$CFG_DIR/functions"
 
 # The entire bashrc script summarized below in main()
 main() {
-  #echo -n '' > .output
-  run_default
-  # move PATH here
-  load_variables 2>.output # remove 1 x '>'
-  load_aliases 2>>.output
-  load_functions 2>>.output
-  load_PATH 2>>.output
-  run_startup 2>>.output
-  terminate # removes .output
+    run_default
+    check_logs_dir_exists  2>"$LOG"
+    read_env              2>>"$LOG"
+    read_aliases          2>>"$LOG"
+    load_functions        2>>"$LOG"
+    read_PATH             2>>"$LOG"
+    run_startup_script    2>>"$LOG"
+    update_repos          2>>"$LOG" # TODO:
+    echo -e "\033[1;32mSuccess:\033[0m \033[1mScript\033[0m \033[33m${script_path}\033[0m \033[1mcompleted.\033[0m \033[3mSee results in:\033[0m \033[33m${LOG}\033[0m\n"
+}
+
+check_logs_dir_exists() {
+    # Extract the directory name from $LOG
+    local LOGS_DIR
+    LOGS_DIR=$(dirname "$LOG")
+
+    # Check if the directory exists
+    if [ ! -d "$LOGS_DIR" ]; then
+        # Directory does not exist, so create it
+        mkdir -p "$LOGS_DIR"
+        >&2 echo "Created directory: $LOGS_DIR"
+    else
+        # Directory exists
+        >&2 echo "Directory already exists: $LOGS_DIR"
+    fi
+}
+
+read_env() {
+    # Check if the .env file exists
+    if [ ! -f "$ENV" ]; then
+        echo "Warning: $ENV does not exist. Create one." | tee -a /dev/stderr
+        return 1
+    fi
+    
+    # Read the .env file line by line
+    while IFS= read -r line; do
+        # Ignore empty lines
+        if [[ -n "$line" ]]; then
+            # Remove comments (everything after a #)
+            line=$(echo "$line" | sed 's/#.*//')
+
+            # Trim leading and trailing whitespace
+            line=$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+            # Skip empty lines after trimming
+            if [[ -n "$line" ]]; then
+                # Export environment variables
+                # Use `eval` to ensure correct handling of quotes and special characters
+                eval export "$line"
+                >&2 echo "$line"
+            fi
+        fi
+    done < "$ENV"
+}
+
+read_aliases() {
+    # Check if the file exists
+    if [ ! -f "$ALS" ]; then
+        echo "Warning: $ALS does not exist. Create one." | tee -a /dev/stderr
+        return 1
+    fi
+
+    # Create a temporary file to store alias commands
+    local temp_file=$(mktemp)
+
+    # Read the file line by line
+    while IFS= read -r line; do
+        # Ignore empty lines and comments
+        if [[ -n "$line" && ! "$line" =~ ^# ]]; then
+            # Remove comments (everything after a #)
+            line=$(echo "$line" | sed 's/#.*//')
+
+            # Trim leading and trailing whitespace
+            line=$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+            # Skip empty lines after trimming
+            if [[ -n "$line" ]]; then
+                # Prepend 'alias ' to each line and write to the temp file
+                echo "alias $line" >> "$temp_file"
+            fi
+        fi
+    done < "$ALS"
+
+    # Source the temp file to set aliases in the current shell
+    # Note: This will only work if the function is run in the current shell session
+    >&2 cat "$temp_file"
+    source "$temp_file"
+
+    # Clean up
+    rm "$temp_file"
+}
+
+read_PATH() {
+    # Check if the file exists
+    if [ -f "$PATH_SOURCE" ]; then
+        # Read the file, concatenate paths with ':' separator, and store in a variable
+        NEW_PATH=$(tr '\n' ':' < "$PATH_SOURCE" | sed 's/:$//')
+
+        # Update the $PATH environment variable
+        export PATH="$NEW_PATH:$PATH"
+        >&2 echo "Updated PATH: $PATH"
+    else
+        # Print an error message if the file does not exist
+        echo "Warning: File $PATH_SOURCE does not exist. Create one." | tee -a /dev/stderr
+        exit 1
+    fi
+}
+
+load_functions() {
+  [ -f "$CFG_FUNCTIONS" ] && source "$CFG_FUNCTIONS" || echo "$0: $CFG_FUNCTIONS not found."
+  >&2 echo "loaded functions"
+}
+
+run_startup_script() {
+    if [ -n "$STARTUP_SCRIPT" ]; then
+        source "$STARTUP_SCRIPT"
+        >&2 echo $?
+    else
+        >&2 echo "No startup script detected."
+    fi
 }
 
 # default bashrc on debian
@@ -94,64 +207,4 @@ run_default() {
   fi
 }
 
-load_variables() {
-    if [ -f "$CFG_VARIABLES" ]; then
-        source "$CFG_VARIABLES"
-        >&2 printf $?
-    else
-        echo "$0: $CFG_VARIABLES not found."
-        >&2 printf 1 # Failure
-    fi
-}
-
-load_aliases() {
-  [ -f "$CFG_ALIASES" ] && source "$CFG_ALIASES" || echo "$0: $CFG_ALIASES not found."
-  >&2 printf $?
-}
-
-load_functions() {
-  [ -f "$CFG_FUNCTIONS" ] && source "$CFG_FUNCTIONS" || echo "$0: $CFG_FUNCTIONS not found."
-  >&2 printf $?
-}
-
-load_PATH() {
-  bin="$HOME/bin" # symlinks to exectuables
-  my_scripts="$HOME/scripts"
-  local_bin="$HOME/.local/bin"
-  snap_bin="/snap/bin"
-  export PATH="$bin:$my_scripts:$local_bin:$snap_bin:$PATH"
-  >&2 printf $?
-
-  # Check if the file exists
-  if [ -f "$PATH_SOURCE" ]; then
-      # Read the file, concatenate paths with ':' separator, and store in a variable
-      NEW_PATH=$(tr '\n' ':' < "$FILE_PATH" | sed 's/:$//')
-
-      # Update the $PATH environment variable
-      export PATH="$NEW_PATH:$PATH"
-
-      # Output the updated PATH for verification
-      echo "Updated PATH: $PATH"
-  else
-      # Print an error message if the file does not exist
-      echo "Error: File $FILE_PATH does not exist."
-      exit 1
-  fi
-
-}
-
-run_startup() {
-  if [ -n "$STARTUP_SCRIPT" ]; then source "$STARTUP_SCRIPT"; fi
-  >&2 printf $?
-}
-
-# outputs and delete ./.output
-terminate() {
-  x=$(cat '.output')
-  rm -f '.output' >/dev/null
-  echo "$x"
-}
-
 main
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

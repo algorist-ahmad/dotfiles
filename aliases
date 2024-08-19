@@ -1,74 +1,73 @@
 #!/bin/bash
 
-# TODO: Needs to be updated
+# recently added
+TODO='mousepad -o "window" "$HOME/TODO" &'
 
 # computer functions
-alias shutdown='shutdown.exe /s'
-alias hibernate='shutdown.exe /h'
+shutdown='shutdown.exe /s'
+hibernate='shutdown.exe /h'
 
 # GNU utilities
-alias ..='cd ..'
-alias .~="cd $HOME"
-alias cp='cp -vi'
-alias mv='mv -vi'
-alias rm='rm -vi'
-alias mkdir='mkdir -v'
-alias rmdir='rmdir -v'
-alias chmod='chmod -v'
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias ll='ls -vhAlF'
-alias la='ls -A'
-alias l='ls -CF'
-alias peek="tree -L 1"
+..='cd ..'
+ .~="cd $HOME"
+cp='cp -vi'
+mv='mv -vi'
+rm='rm -vi'
+mkdir='mkdir -v'
+rmdir='rmdir -v'
+chmod='chmod -v'
+ls='ls --color=auto'
+grep='grep --color=auto'
+ll='ls -vhAlF'
+la='ls -A'
+l='ls -CF'
+peek="tree -L 1"
 
 # file handling
-alias del='move-to-trash'
-alias mu='micro'
-alias mouse='_() { mousepad -o "mixed" "$@" & }; _'
-alias md='glow'
-alias np="notepad.exe"
-alias npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
-alias tarlist='tar -tzvf'
-alias view='wslview'
-alias viewdb='sqlitebrowser'
-alias sqlite3='sqlite3 -batch' # removes unnecessary message
+del='move-to-trash'
+mu='micro'
+mouse='_() { mousepad -o "mixed" "$@" & }; _'
+md='glow'
+np="notepad.exe"
+npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
+tarlist='tar -tzvf'
+view='wslview'
+viewdb='sqlitebrowser'
+sqlite3='sqlite3 -batch' # removes unnecessary message
 
 # web
-alias mail='firefox https://outlook.office.com/mail/'
-alias syncthing='firefox 127.0.0.1:8384'
+mail='firefox https://outlook.office.com/mail/'
+syncthing='firefox 127.0.0.1:8384'
 
 # jrnl
-alias jl="$HOME/bin/jrnl"
+jl="$HOME/bin/jrnl"
 
 # TaskWarrior
-alias bills='bill'
-alias bill+='bill add'
-alias bill-='bill delete'
-alias bill~='bill modify'
-alias courses='tk courses'
-alias errands='source errands'
-alias rv='task next +RV'
-alias tk+='tk add'
-alias tk-='tk delete'
-alias tk~='tk modify'
-alias todo='tk todo'
+bills='bill'
+bill+='bill add'
+bill-='bill delete'
+bill~='bill modify'
+courses='tk courses'
+errands='source errands'
+rv='task next +RV'
+tk+='tk add'
+tk-='tk delete'
+tk~='tk modify'
+todo='tk todo'
 
 # web
-alias firefox='/mnt/c/"Program Files"/Moz*/firefox.exe' # FOR WSL
-alias outlook='firefox https://www.microsoft.com/en-ca/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook'
-alias chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
-alias chatgpt='firefox --new-tab "https://chatgpt.com/" &'
+firefox='/mnt/c/"Program Files"/Moz*/firefox.exe' # FOR WSL
+outlook='firefox https://www.microsoft.com/en-ca/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook'
+chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
+chatgpt='firefox --new-tab "https://chatgpt.com/" &'
 
 # utilities
-alias c='xclip -selection clipboard' #TODO
-alias cal='bc -ql'
-alias D='date +%Y-%m-%d -d'
-alias DT='date +%Y-%m-%dT%T -d'
-alias T='date +%T -d'
-alias sc='sc-im'
+c='xclip -selection clipboard' # TODO:
+cal='bc -ql'
+D='date +%Y-%m-%d -d'
+DT='date +%Y-%m-%dT%T -d'
+T='date +%T -d'
+sc='sc-im'
 
 # common typos
-alias gti='git'
-
-echo 'aliases loaded'
+gti='git'
