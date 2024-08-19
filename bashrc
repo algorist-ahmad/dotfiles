@@ -1,25 +1,32 @@
 
-#####################
-# MY MODIFIED BASHRC
-#####################
+###########################
+# MY MODIFIED BASHRC      #
+###########################
 
-# Resolve the absolute path of the script pointed to by BASH_SOURCE
+# Resolve the absolute path of the script pointed to by BASH_SOURCE: /home/ahmad/config/bashrc
 script_path=$(readlink -f "${BASH_SOURCE[0]}")
-# Get the directory of the resolved script path
+# Get the directory of the resolved script path: /home/ahmad/config
 export CFG_DIR=$(dirname "$script_path")
-export CFG_VARIABLES="$CFG_DIR/variables"
-export CFG_ALIASES="$CFG_DIR/aliases"
-export CFG_FUNCTIONS="$CFG_DIR/functions"
+# The file containing PATH strings
+export PATH_SOURCE="$CFG_DIR/.PATH"
+# The file containing variables
+export CFG_VARIABLES="$CFG_DIR/variables" #FIXME: need consistent name
+# The file containing aliases
+export CFG_ALIASES="$CFG_DIR/aliases" #FIXME: need consistent name
+# The file containing complex functions
+export CFG_FUNCTIONS="$CFG_DIR/functions" #FIXME: need consistent name
 
+# The entire bashrc script summarized below in main()
 main() {
-  echo -n '' > .output
+  #echo -n '' > .output
   run_default
-  load_variables 2>>.output
+  # move PATH here
+  load_variables 2>.output # remove 1 x '>'
   load_aliases 2>>.output
   load_functions 2>>.output
-  update_PATH 2>>.output
+  load_PATH 2>>.output
   run_startup 2>>.output
-  terminate
+  terminate # removes .output
 }
 
 # default bashrc on debian
@@ -107,13 +114,30 @@ load_functions() {
   >&2 printf $?
 }
 
-update_PATH() {
+load_PATH() {
   bin="$HOME/bin" # symlinks to exectuables
   my_scripts="$HOME/scripts"
   local_bin="$HOME/.local/bin"
   snap_bin="/snap/bin"
   export PATH="$bin:$my_scripts:$local_bin:$snap_bin:$PATH"
   >&2 printf $?
+
+  # Check if the file exists
+  if [ -f "$PATH_SOURCE" ]; then
+      # Read the file, concatenate paths with ':' separator, and store in a variable
+      NEW_PATH=$(tr '\n' ':' < "$FILE_PATH" | sed 's/:$//')
+
+      # Update the $PATH environment variable
+      export PATH="$NEW_PATH:$PATH"
+
+      # Output the updated PATH for verification
+      echo "Updated PATH: $PATH"
+  else
+      # Print an error message if the file does not exist
+      echo "Error: File $FILE_PATH does not exist."
+      exit 1
+  fi
+
 }
 
 run_startup() {
@@ -129,3 +153,5 @@ terminate() {
 }
 
 main
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
