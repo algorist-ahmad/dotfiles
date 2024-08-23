@@ -26,7 +26,7 @@ peek="tree -L 1"
 # file handling
 del='move-to-trash'
 mu='micro'
-mouse='_() { mousepad -o "mixed" "$@" & }; _'
+mouse='_() { nohup mousepad -o "mixed" "$@" & }; _'
 md='glow'
 np="notepad.exe"
 npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
