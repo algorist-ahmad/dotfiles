@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # recently added
+jrnlw='jrnl -w'
 TODO='mousepad -o "window" "$HOME/TODO" &'
 
 # computer functions
