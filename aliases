@@ -3,6 +3,7 @@
 # recently added
 jrnlw='jrnl -w'
 TODO='mousepad -o "window" "$HOME/TODO" &'
+sqlite-gui='_() { nohup sqlitebrowser "$@" & }; _'
 
 # computer functions
 shutdown='shutdown.exe /s'
