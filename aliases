@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # recently added
+coinmaster="nohup sqlitebrowser $DATA_SOURCE/finances/coinmaster.sqlite 2> $LOGS/nohup.out &"
+clipboard='xclip -selection clipboard'
 jrnlw='jrnl -w'
-TODO='mousepad -o "window" "$HOME/TODO" &'
-sqlite-gui='_() { nohup sqlitebrowser "$@" & }; _'
+sqlite-gui='_() { nohup sqlitebrowser "$@" > /home/ahmad/logs/nohup.out & }; _'
 
 # computer functions
 shutdown='shutdown.exe /s'
@@ -11,7 +12,7 @@ hibernate='shutdown.exe /h'
 
 # GNU utilities
 ..='cd ..'
- .~="cd $HOME"
+.~="cd $HOME"
 cp='cp -vi'
 mv='mv -vi'
 rm='rm -vi'
@@ -35,7 +36,6 @@ npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
 tarlist='tar -tzvf'
 view='wslview'
 viewdb='sqlitebrowser'
-sqlite3='sqlite3 -batch' # removes unnecessary message
 
 # web
 mail='firefox https://outlook.office.com/mail/'
@@ -64,7 +64,6 @@ chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
 chatgpt='firefox --new-tab "https://chatgpt.com/" &'
 
 # utilities
-c='xclip -selection clipboard' # TODO:
 cal='bc -ql'
 D='date +%Y-%m-%d -d'
 DT='date +%Y-%m-%dT%T -d'
