@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # recently added
-coinmaster="nohup sqlitebrowser $DATA_SOURCE/finances/coinmaster.sqlite 2> $LOGS/nohup.out &"
+open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
+coinmaster="nohup sqlitebrowser $DATA_SOURCE/finances/coinmaster.sqlite 2> /tmp/coinmaster.log &"
 clipboard='xclip -selection clipboard'
 jrnlw='jrnl -w'
-sqlite-gui='_() { nohup sqlitebrowser "$@" > /home/ahmad/logs/nohup.out & }; _'
+sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
 
 # computer functions
 shutdown='shutdown.exe /s'
@@ -35,40 +36,22 @@ np="notepad.exe"
 npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
 tarlist='tar -tzvf'
 view='wslview'
-viewdb='sqlitebrowser'
 
 # web
 mail='firefox https://outlook.office.com/mail/'
 syncthing='firefox 127.0.0.1:8384'
 
-# jrnl
-jl="$HOME/bin/jrnl"
-
 # TaskWarrior
-bills='bill'
-bill+='bill add'
-bill-='bill delete'
-bill~='bill modify'
-courses='tk courses'
-errands='source errands'
 rv='task next +RV'
 tk+='tk add'
 tk-='tk delete'
 tk~='tk modify'
-todo='tk todo'
-
-# web
-firefox='/mnt/c/"Program Files"/Moz*/firefox.exe' # FOR WSL
-outlook='firefox https://www.microsoft.com/en-ca/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook'
-chrome="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
-chatgpt='firefox --new-tab "https://chatgpt.com/" &'
 
 # utilities
 cal='bc -ql'
 D='date +%Y-%m-%d -d'
 DT='date +%Y-%m-%dT%T -d'
 T='date +%T -d'
-sc='sc-im'
 
 # common typos
 gti='git'
