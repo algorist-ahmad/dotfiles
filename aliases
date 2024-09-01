@@ -2,7 +2,6 @@
 
 # recently added
 open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
-coinmaster="nohup sqlitebrowser $DATA_SOURCE/finances/coinmaster.sqlite 2> /tmp/coinmaster.log &"
 clipboard='xclip -selection clipboard'
 jrnlw='jrnl -w'
 sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
