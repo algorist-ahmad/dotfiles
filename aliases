@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # recently added
+coin='coinmaster'
 open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
 clipboard='xclip -selection clipboard'
 jrnlw='jrnl -w'
