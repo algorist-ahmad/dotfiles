@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # recently added
+mount='sudo mount'
+umount='sudo umount'
 coin='coinmaster'
 open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
 clipboard='xclip -selection clipboard'
