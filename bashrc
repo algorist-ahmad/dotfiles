@@ -2,14 +2,16 @@
 # MY MODIFIED BASHRC      #
 ###########################
 
+# Logs directory
+export LOGS="$HOME/logs"
 # Logs destination
-LOG="$HOME/logs/bashrc.log"
+export LOGFILE="$HOME/logs/bashrc.log"
 # .env source file
-ENV="$HOME/.env"
+export ENV="$HOME/.env"
 # .aliases source file
-ALS="$HOME/.aliases"
+export ALS="$HOME/.aliases"
 # .PATH source file
-PATH_SOURCE="$HOME/.PATH"
+export PATH_SOURCE="$HOME/.PATH"
 
 # Resolve the absolute path of the script pointed to by BASH_SOURCE: /home/ahmad/config/bashrc
 script_path=$(readlink -f "${BASH_SOURCE[0]}")
@@ -21,37 +23,33 @@ CFG_FUNCTIONS="$CFG_DIR/functions"
 # The entire bashrc script summarized below in main()
 main() {
     run_default
-    check_logs_dir_exists  2>"$LOG"
-    read_env              2>>"$LOG"
-    read_aliases          2>>"$LOG"
-    load_functions        2>>"$LOG"
-    read_PATH             2>>"$LOG"
-    run_startup_script    2>>"$LOG"
-    update_repos          2>>"$LOG" # TODO:
-    echo -e "\033[1;32mSuccess:\033[0m \033[1mScript\033[0m \033[33m${script_path}\033[0m \033[1mcompleted.\033[0m \033[3mSee results in:\033[0m \033[33m${LOG}\033[0m\n"
+    check_logs_dir_exists
+    read_env              2>>"$LOGFILE"
+    read_aliases          2>>"$LOGFILE"
+    load_functions        2>>"$LOGFILE"
+    read_PATH             2>>"$LOGFILE"
+    run_startup_script    2>>"$LOGFILE"
+    update_repos          2>>"$LOGFILE" # TODO:
+    echo -e "\033[1;32mSuccess:\033[0m \033[1mScript\033[0m \033[33m${script_path}\033[0m \033[1mcompleted.\033[0m \033[3mSee results in:\033[0m \033[33m${LOGFILE}\033[0m\n"
 }
 
 check_logs_dir_exists() {
-    # Extract the directory name from $LOG
-    local LOGS_DIR
-    LOGS_DIR=$(dirname "$LOG")
-
     # Check if the directory exists
-    if [ ! -d "$LOGS_DIR" ]; then
+    if [ ! -d "$LOGS" ]; then
         # Directory does not exist, so create it
-        mkdir -p "$LOGS_DIR"
-        >&2 echo "Created directory: $LOGS_DIR"
+        mkdir -p "$LOGS"
+        echo "Created directory: $LOGS" > "$LOGFILE"
     else
         # Directory exists
-        >&2 echo "Directory already exists: $LOGS_DIR"
+        echo "Directory already exists: $LOGS" > "$LOGFILE"
     fi
 }
 
 read_env() {
     # Check if the .env file exists
     if [ ! -f "$ENV" ]; then
-        echo "Warning: $ENV does not exist. Create one." | tee -a /dev/stderr
-        return 1
+        echo "Warning: $ENV does not exist. Create one." # | tee -a /dev/stderr
+	sleep 99
     fi
     
     # Read the .env file line by line
@@ -79,7 +77,7 @@ read_aliases() {
     # Check if the file exists
     if [ ! -f "$ALS" ]; then
         echo "Warning: $ALS does not exist. Create one." | tee -a /dev/stderr
-        return 1
+	sexit 1
     fi
 
     # Create a temporary file to store alias commands
@@ -124,7 +122,7 @@ read_PATH() {
     else
         # Print an error message if the file does not exist
         echo "Warning: File $PATH_SOURCE does not exist. Create one." | tee -a /dev/stderr
-        exit 1
+	sexit 1
     fi
 }
 
@@ -205,6 +203,12 @@ run_default() {
       . /etc/bash_completion
     fi
   fi
+}
+
+sexit() {
+	echo "Terminating..."
+	sleep 99
+	return "$1"
 }
 
 main
