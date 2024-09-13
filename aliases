@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # recently added
+pacman='sudo pacman'
 mount='sudo mount'
 umount='sudo umount'
 coin='coinmaster'
