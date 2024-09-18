@@ -1,6 +1,6 @@
 # A blueprint for my ```/home```
 
-This repo includes all my personal configurations, shortcuts, functions, aliases, and environment variables I wish to keep and reuse forever. This repo's **purpose** is to make it convenient to relocate my settings on any computer/OS I may use in the future. It's like the blueprint to reconstruct my home when I will eventually forget.
+This repo includes all my personal configurations, shortcuts, functions, aliases, and environment variables I wish to keep and reuse forever.
 
 ## File structure
 
