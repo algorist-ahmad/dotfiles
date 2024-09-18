@@ -1,6 +1,7 @@
 # Dotfile symlink mappings
+~/.gitconfig    = .gitconfig
 ~/.PATH         = PATH
 ~/.bashrc       = bashrc
 ~/.aliases      = aliases
 ~/.env          = env
-~/.gitconfig    = .gitconfig
+~/.taskrc       = taskrc

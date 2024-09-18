@@ -22,7 +22,7 @@ while IFS=' =' read -r target source; do
 
     # Create the symlink and capture output
     ln -svf "$home/$source" "$target"
-    sleep 1
+    sleep 0.5
 done < "$mapping_file"
 
 echo "Symlink creation completed."
