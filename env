@@ -12,9 +12,9 @@ COINMASTER="$DATA_SOURCE/finances/coinmaster.sqlite"
 LC_ALL='C'                                    # idk what this is
 LANG='C.UTF-8'                                # Encoding, same as Xenon/WSL
 
-CONFIG="$HOME/config"                         # the SOURCE of my personal settings
+CONFIG="$HOME/dotfiles"                       # the SOURCE of my personal settings
 LOGS="$HOME/logs"							  # the DESTINATION of debugging output
-PROMPT_COMMAND="source $CONFIG/exit-git-ps1"  # command to be run after each command
+PROMPT_COMMAND="source $CONFIG/bash_prompts/exit-git-ps1"  # command to be run after each command
 
 GITHUB='https://github.com/bytesmith-ahmad'   # my GitHub URL
 
