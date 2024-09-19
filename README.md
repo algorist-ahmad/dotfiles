@@ -1,62 +1,44 @@
 # A blueprint for my ```/home```
 
-This repo includes all my personal configurations, shortcuts, functions, aliases, and environment variables I wish to keep and reuse forever.
+This repo includes all my personal configurations, shortcuts, functions, aliases, and environment
+variables I wish to keep and reuse forever.
+
+## [NEW] Instructions
+
+Prepare mappings in dotfiles/link.map and then run dotfiles/link
 
 ## File structure
 
-Without preparation nor documentation, replicating my /home/ will consume too much time, and will be prone to errors, because dependencies will be incorrectly established.\
+Without preparation nor documentation, replicating my /home/ will consume too much time, and will
+be prone to errors, because dependencies will be incorrectly established.\
 This is why everything will be documented here.
-
 
 Tree:
 ```
 .
-|-- .bashrc -> config/bashrc
-|-- .gitconfig -> config/.gitconfig
+|-- .bashrc -> dotfiles/bashrc
+|-- .gitconfig -> dotfiles/.gitconfig
 |-- .password-store
-|-- TODO
-|-- archives
-|-- backup
-|-- bills
-|   |-- billrc
-|   |-- *.data
 |-- bin
-|-- config
-|   |-- .gitconfig
-|   |-- .PATH
-|   |-- bashrc
-|   |-- exit-git-ps1
+|-- dotfiles
 |-- data
-|   `-- ahmad.sql
-|-- journal
-|-- lab
 |-- logs
 |-- repositories.txt
-|-- resume
 |-- scripts
-|-- tasks
-|   |-- .taskrc
-|   |-- *.data
-`-- trash
 ```
+
+**Mappings will be stored in link.map**
 
 ### Explanation
 
 |directory|type|description
 |-|-|-|
-|[config](https://github.com/bytesmith-ahmad/linux-config)|repo|Contains all my configurations for bashrc and various apps.
+|[dotfiles](https://github.com/bytesmith-ahmad/dotfiles)|repo|Contains all my configurations for bashrc and various apps.
 |[.password-store](https://github.com/bytesmith-ahmad/pass)|repo|Contains all my secrets. To be used with ```pass``` to work. Requires to import gpg keys|
 |[archives](https://github.com/bytesmith-ahmad/archives)|repo|Contains research, instructions, records, and more unused documents. Works with my ```arch``` script.|
-|[bills](https://github.com/bytesmith-ahmad/bills)|repo|Where my expenses are managed|
 |bin|regular|Contains all executables such as the ones acquired with ```wget``` and ending with ```*.amd64```. Formerly used to hold my personal scripts, but those go in their own directory now.|
-|[data](https://github.com/bytesmith-ahmad/data)|repo|Backup for my Postgres data dump.
-|[journal](https://github.com/bytesmith-ahmad/journal)|repo|Contains my journal entries. Must be used with ```jrnl```
-|lab|regular|Contains active experiments and projects
-|log|regular|Contains stderr output for debugging
-|[resume](https://github.com/bytesmith-ahmad/resume)|repo|Contains my version-controlled resume.
+|logs|regular|Contains stderr output for debugging
 |[scripts](https://github.com/bytesmith-ahmad/scripts)|repo|Contains all my executable scripts
-|[tasks](https://github.com/bytesmith-ahmad/tasks)|repo|Contains my todo list. Must be used with ```taskwarrior```
-|trash|regular|```rm``` has been replaced with ```del``` which moves files here to avoid accidental deletion.
 
 ## instructions 📜
 
@@ -89,5 +71,5 @@ My personal bashrc will, in this order:
 
 in /home:
 
-Replace .bashrc -> config/bashrc\
-Replace .gitconfig -> config/.gitconfig\
+Replace .bashrc -> dotfiles/bashrc\
+Replace .gitconfig -> dotfiles/.gitconfig\
