@@ -1,8 +1,8 @@
 data=/data
+dotfiles=/dotfiles
 archives=/archives
 scripts=/scripts
 pass=/.password-store
-config=/dotfiles
 resume=/resume
 coin=/src/coinmaster
 jrnl=/src/jrnl-wrapper
