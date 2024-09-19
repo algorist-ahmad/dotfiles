@@ -5,6 +5,10 @@
 ~/.aliases      = aliases
 ~/.env          = env
 ~/.taskrc       = taskrc
-~/.config/kitty/kitty.conf = kitty.conf
 ~/.config/sqlitebrowser/sqlitebrowser.conf = sqlitebrowser.conf
 ~/repositories.txt = repositories.txt
+
+# kitty terminal
+~/.config/kitty/kitty.conf = kitty/kitty.conf
+/usr/lib/kitty/logo/kitty.png = kitty/kitty.png
+/usr/lib/kitty/logo/kitty-128.png = kitty/kitty-128.png

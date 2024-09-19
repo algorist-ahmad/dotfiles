@@ -21,8 +21,8 @@ while IFS=' =' read -r target source; do
     target="${target/#\~/$HOME}"
 
     # Create the symlink and capture output
-    ln -svf "$home/$source" "$target"
-    sleep 0.5
+    sudo ln -svf "$home/$source" "$target"
+    sleep 0.1
 done < "$mapping_file"
 
 echo "Symlink creation completed."
