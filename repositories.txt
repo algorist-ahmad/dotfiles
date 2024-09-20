@@ -1,6 +1,6 @@
 data=/data
 dotfiles=/dotfiles
-archives=/archives
+
 scripts=/scripts
 pass=/.password-store
 resume=/resume
