@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # recently added
+uuid='u=$(uuidgen) ; echo $u | clipboard ; echo -e "New UUID:\n$u"'
 pacman='sudo pacman'
 mount='sudo mount'
 umount='sudo umount'
