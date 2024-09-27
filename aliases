@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # recently added
+icat='kitty +kitten icat'
 zip='tar -cvzf'
 unzip='tar -xvzf'
 bc='echo "CALCULATOR:" ; bc --quiet'
