@@ -1,6 +1,12 @@
 #!/bin/bash
 
 # recently added
+
+##pass
+contacts='PASSWORD_STORE_DIR="$ARCHIVES/contacts" pass'
+qnote='PASSWORD_STORE_DIR="$ARCHIVES/quicknotes" pass'
+##
+
 icat='kitty +kitten icat --align left --use-window-size 450,450,450,450'
 #jcat='icat --align left --use-window-size 400,400,400,400'
 zip='tar -cvzf'

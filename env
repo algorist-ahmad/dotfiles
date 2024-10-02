@@ -6,6 +6,12 @@
 
 ## Instructions: wrap values with double quotes (") !
 
+## recently added
+
+PASSWORD_STORE_DIR="$HOME/pass"
+
+##
+
 DATA_SOURCE="$HOME/data"
 COINMASTER="$DATA_SOURCE/finances/coinmaster.sqlite"
 
