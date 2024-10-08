@@ -2,6 +2,13 @@
 
 # recently added
 
+## git shortcuts
+data="git -C $HOME/data"
+archgit="git -C $HOME/archives"
+dot="git -C $HOME/dotfiles"
+scripts="git -C $HOME/scripts"
+##
+
 ##pass
 contacts='PASSWORD_STORE_DIR="$ARCHIVES/contacts" pass'
 qnote='PASSWORD_STORE_DIR="$ARCHIVES/quicknotes" pass'
