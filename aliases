@@ -2,11 +2,11 @@
 
 # recently added
 
-## git shortcuts
-data="git -C $HOME/data"
-archgit="git -C $HOME/archives"
-dot="git -C $HOME/dotfiles"
-scripts="git -C $HOME/scripts"
+## folder shortcuts to use git in them (aliases not available)
+subecho='_() { ( echo "subshell received $@" ) ; }; _' #example
+data='   _() { ( cd $HOME/data     && "$@" ) ; }; _'
+dot='    _() { ( cd $HOME/dotfiles && "$@" ) ; }; _'
+scripts='_() { ( cd $HOME/scripts  && "$@" ) ; }; _'
 ##
 
 ##pass
@@ -30,10 +30,6 @@ open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
 clipboard='xclip -selection clipboard'
 jrnlw='jrnl -w'
 sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
-
-# computer functions
-shutdown='shutdown.exe /s'
-hibernate='shutdown.exe /h'
 
 # GNU utilities
 ..='cd ..'
