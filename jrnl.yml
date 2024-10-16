@@ -1,0 +1,23 @@
+colors:
+  body: none
+  date: green
+  tags: yellow
+  title: cyan
+default_hour: 9
+default_minute: 0
+editor: /bin/mousepad -o window
+encrypt: false
+highlight: true
+indent_character: '|'
+journals:
+  default: /home/ahmad/data/journals/main
+  main:  /home/ahmad/data/journals/main
+  work:  /home/ahmad/data/journals/work
+  secret:
+    journal: ~/data/journals/secret.journal
+    encrypt: true
+linewrap: auto
+tagsymbols: '#@'
+template: false
+timeformat: '%F %H:%M'
+version: v4.1
