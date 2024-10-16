@@ -9,6 +9,7 @@
 ## recently added
 
 PASSWORD_STORE_DIR="$HOME/pass"
+PASSWORD_STORE_CLIP_TIME=100
 
 ##
 
