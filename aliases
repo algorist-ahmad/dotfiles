@@ -1,6 +1,11 @@
 #!/bin/bash
 
-# recently added
+## git
+gti='git'           # common typo
+add='git add'
+commit='git commit'
+send='git send'
+## git
 
 ## folder shortcuts to use git in them (aliases not available)
 subecho='_() { ( echo "subshell received $@" ) ; }; _' #example
@@ -9,17 +14,16 @@ dot='    _() { ( cd $HOME/dotfiles && "$@" ) ; }; _'
 scripts='_() { ( cd $HOME/scripts  && "$@" ) ; }; _'
 ##
 
-##pass
+## pass
 contacts='PASSWORD_STORE_DIR="$ARCHIVES/contacts" pass'
 qnote='PASSWORD_STORE_DIR="$ARCHIVES/quicknotes" pass'
-##
+## pass
 
+##
 icat='kitty +kitten icat --align left --use-window-size 450,450,450,450'
 #jcat='icat --align left --use-window-size 400,400,400,400'
 zip='tar -cvzf'
 unzip='tar -xvzf'
-bc='echo "CALCULATOR:" ; bc --quiet'
-calc='bc'
 uuid='u=$(uuidgen) ; echo $u | clipboard ; echo -e "New UUID:\n$u (copied)"'
 timestamp='d=$(date +"%Y-%m-%d %H:%M:%S") ; echo $d | clipboard ; echo -e "Current timestamp:\n$d (copied)"'
 pacman='sudo pacman'
@@ -30,8 +34,11 @@ open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
 clipboard='xclip -selection clipboard'
 jrnlw='jrnl -w'
 sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
+##
 
 # GNU utilities
+bc='bc --quiet --mathlib'
+cal='echo "CALCULATOR:" ; bc'
 ..='cd ..'
 .~="cd $HOME"
 cp='cp -vi'
@@ -46,6 +53,9 @@ ll='ls -vhAlF'
 la='ls -A'
 l='ls -CF'
 peek="tree -L 1"
+D='date +%Y-%m-%d -d'
+DT='date +%Y-%m-%dT%T -d'
+T='date +%T -d'
 
 # file handling
 del='move-to-trash'
@@ -57,21 +67,15 @@ npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
 tarlist='tar -tzvf'
 view='wslview'
 
-# web
-mail='firefox https://outlook.office.com/mail/'
+## web
+web='firefox'
+mail='web https://outlook.live.com/mail/0/AQMkADAwATY0MDABLTJjOWQtZTNiYy0wMAItMDAKAC4AAAPjXhqMwf09TbNw6oo2ZfKfAQCTxSozP4SHRKrzlqtDD6thAAAA6hkQlQAAAA%3D%3D'
+outlook='web https://outlook.live.com/mail'
 syncthing='firefox 127.0.0.1:8384'
+## web
 
-# TaskWarrior
-rv='task next +RV'
+## TaskWarrior
 tk+='tk add'
 tk-='tk delete'
 tk~='tk modify'
-
-# utilities
-cal='bc -ql'
-D='date +%Y-%m-%d -d'
-DT='date +%Y-%m-%dT%T -d'
-T='date +%T -d'
-
-# common typos
-gti='git'
+##
