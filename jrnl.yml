@@ -17,7 +17,7 @@ journals:
     journal: ~/data/journals/secret.journal
     encrypt: true
 linewrap: auto
-tagsymbols: '#@'
+tagsymbols: '@+'
 template: false
 timeformat: '%F %H:%M'
 version: v4.1
