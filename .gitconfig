@@ -22,6 +22,7 @@
 	lg = ! git lg2
 	last = log -1 HEAD
 	pu = push
+	pul = "! f() { git pull -v && git lg -$1 ; }; f"
 	unstage = reset HEAD --
 	st = status -s
 	sta = status
