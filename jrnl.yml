@@ -10,11 +10,11 @@ encrypt: false
 highlight: true
 indent_character: '|'
 journals:
-  default: /home/ahmad/data/journals/main
-  main:  /home/ahmad/data/journals/main
-  work:  /home/ahmad/data/journals/work
+  default:  $JRNL_DIR/main
+  main:  $JRNL_DIR/main
+  work:  $JRNL_DIR/work
   secret:
-    journal: ~/data/journals/secret.journal
+    journal: $JRNL_DIR/secret.journal
     encrypt: true
 linewrap: auto
 tagsymbols: '@+'
