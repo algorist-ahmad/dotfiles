@@ -1,0 +1,10 @@
+data=/data
+dotfiles=/dotfiles
+archives=/archives
+scripts=/scripts
+pass=/pass
+resume=/resume
+coin=/src/coinmaster
+jrnl=/src/jrnl-wrapper
+utils=/src/bash-utils
+repo-manager=/src/repo-manager
