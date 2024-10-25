@@ -6,9 +6,10 @@
 
 # Use the command 'task show' to see all defaults and overrides
 
-# Files
-data.location=$DATA_SOURCE/tasks
+# task show KEY-VALUE PAIRS ************************************************************************
+
 editor=$EDITOR
+verbose=affected,blank,context,edit,footnote,label,new-id,news,project,special,sync,override,recur
 
 # CONTEXTS *****************************************************************************************
 
