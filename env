@@ -4,36 +4,89 @@
 # MY ENVIRONMENT VARIABLES       *
 # ********************************
 
-## Instructions: wrap values with double quotes (") !
+# WARNING: wrap values with double quotes (") !
 
-## recently added
+#============================================ SHELL SETTINGS
 
-PASSWORD_STORE_DIR="$HOME/pass"
-PASSWORD_STORE_CLIP_TIME=100
+# locale
+LC_ALL='C'
+LANG='C.UTF-8'	
 
-##
+# special directories
+CONFIG="$HOME/dotfiles"                       # my shell settings
+NEXUS="$HOME/data"                            # the source of my data
+CACHE="$XDG_CACHE_HOME"                       # cache data
+LOGS="$HOME/logs"							  # log output
+TRASH="$HOME/trash"                           # discrarded files
 
-DATA_SOURCE="$HOME/data"
-COINMASTER="$DATA_SOURCE/finances/coinmaster.sqlite"
-
-LC_ALL='C'                                    # idk what this is
-LANG='C.UTF-8'                                # Encoding, same as Xenon/WSL
-
-CONFIG="$HOME/dotfiles"                       # the SOURCE of my personal settings
-LOGS="$HOME/logs"							  # the DESTINATION of debugging output
-PROMPT_COMMAND="source $CONFIG/bash_prompts/exit-git-ps1"  # command to be run after each command
-
+# special values
 GITHUB='https://github.com/bytesmith-ahmad'   # my GitHub URL
 
+# general
+PROMPT_COMMAND="source $CONFIG/bash_prompts/
+exit-git-ps1"                                 # command to be run after each command
 EDITOR='micro'                                # default TUI editor
-VISUAL='code --new-window'                    # default GUI editor for Linux								 # selected visual editor
-GIT_EDITOR='code --new-window --wait'		  # default editor for git
+VISUAL='code --new-window'                    # default GUI editor for Linux
 
-DB_NAME='postgresql'
-DB_HOST='localhost'
-DB_PORT='yo ass'
-DB_USER='yo mama'
-DB_PASS='nice try'
+# deprecated
+DATA_SOURCE="$HOME/data"
+CONFIG_DIR="$CONFIG"
 
-ARCHIVES="$HOME/archives"
-TRASH="$HOME/trash"
+#=========================================== SHELL SETTINGS
+
+# alphabetical order
+
+#======================================= auto
+AUTOKNIGHT_CONFIG=""
+AUTOKNGIHT_DIR="$NEXUS/auto"
+#======================================= auto
+
+#======================================= coin
+COINMASTER_CONFIG="$CONFIG_DIR/coin.yml"
+COINMASTER_DIR="$NEXUS/coin"
+COINMASTER_DATA="$COINMASTER_DIR/coinmaster.sqlite"
+COINMASTER="$COINMASTER_DATA" # deprecated
+#======================================= coin
+
+#======================================= docs
+DOCSWARDEN_CONFIG=""
+DOCSWARDEN_DIR="$NEXUS/docs"
+#======================================= docs
+
+#======================================= file
+FILEKEEPER_CONFIG=""
+FILEKEEPER_DIR="$HOME/archives"
+ARCHIVES="$FILEKEEPER_DIR" # deprecated
+#======================================= file
+
+#======================================= git
+GIT_CONFIG_GLOBAL="$CONFIG/gitconfig"
+GIT_EDITOR='code --new-window --wait'
+#======================================= git
+
+#======================================= jrnl
+JRNL_CONFIG="$CONFIG/jrnl.yml"
+JRNL_DIR="$NEXUS/jrnl"
+JRNL_JOURNAL='main'
+#======================================= jrnl
+
+#======================================= pass
+PASSWORD_STORE_DIR="$NEXUS/pass"
+PASSWORD_STORE_CLIP_TIME=300
+#======================================= pass
+
+#======================================= task
+TASKRC="$CONFIG/taskrc"
+TASKDATA="$NEXUS/task"
+#======================================= task
+
+#======================================= status
+STATUS_REPO_LIST="$CONFIG/repositories.list"
+#======================================= status
+
+#======================================= vita
+VITAMAGE_CONFIG="$CONFIG/vitarc"
+VITAMAGE_DIR="$NEXUS/vita"
+#======================================= vita 
+
+#======================================= 
