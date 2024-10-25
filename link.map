@@ -1,12 +1,9 @@
 # Dotfile symlink mappings
-~/.gitconfig    = .gitconfig
 ~/.PATH         = PATH
 ~/.bashrc       = bashrc
 ~/.aliases      = aliases
 ~/.env          = env
-~/.taskrc       = taskrc
 ~/.config/sqlitebrowser/sqlitebrowser.conf = sqlitebrowser.conf
-~/repositories.txt = repositories.txt
 
 # kitty terminal
 ~/.config/kitty/kitty.conf = kitty/kitty.conf
