@@ -4,6 +4,11 @@
 envar="env -0 | sort -z | tr '\0' '\n'"
 ##
 
+## arch
+# The only solution!
+alias arch='source arch'
+## arch
+
 ## jrnl (original)
 journal='/bin/jrnl'
 ## jrnl (original)
