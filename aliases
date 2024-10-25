@@ -1,5 +1,13 @@
 #!/bin/bash
 
+## recent
+envar="env -0 | sort -z | tr '\0' '\n'"
+##
+
+##
+keys='gpg'
+##
+
 ## git
 gti='git'           # common typo
 add='git add -v'
