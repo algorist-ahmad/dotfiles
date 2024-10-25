@@ -78,6 +78,8 @@ PASSWORD_STORE_CLIP_TIME=300
 #======================================= task
 TASKRC="$CONFIG/taskrc"
 TASKDATA="$NEXUS/task"
+TASK_LIMIT=7 # 7 fits Aran's screen
+TASK_WAIT_DURATION="2hours"
 #======================================= task
 
 #======================================= status
