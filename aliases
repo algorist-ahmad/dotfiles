@@ -4,6 +4,10 @@
 envar="env -0 | sort -z | tr '\0' '\n'"
 ##
 
+## jrnl (original)
+journal='/bin/jrnl'
+## jrnl (original)
+
 ##
 keys='gpg'
 ##
@@ -22,11 +26,6 @@ dot='    _() { ( cd $HOME/dotfiles && "$@" ) ; }; _'
 scripts='_() { ( cd $HOME/scripts  && "$@" ) ; }; _'
 ##
 
-## pass
-contacts='PASSWORD_STORE_DIR="$ARCHIVES/contacts" pass'
-qnote='PASSWORD_STORE_DIR="$ARCHIVES/quicknotes" pass'
-## pass
-
 ##
 icat='kitty +kitten icat --align left --use-window-size 450,450,450,450'
 #jcat='icat --align left --use-window-size 400,400,400,400'
@@ -40,7 +39,6 @@ umount='sudo umount'
 #coin='coinmaster'
 open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
 clipboard='xclip -selection clipboard'
-jrnlw='jrnl -w'
 sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
 ##
 
