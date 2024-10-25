@@ -24,7 +24,7 @@ GITHUB='https://github.com/bytesmith-ahmad'   # my GitHub URL
 
 # general
 PROMPT_SCRIPT="$CONFIG/prompt.sh"
-PROMPT_COMMAND="source $PROMPT_SCRIPT"        # command to be run after each command
+PROMPT_COMMAND=". $PROMPT_SCRIPT"             # command to be run after each command
 EDITOR='micro'                                # default TUI editor
 VISUAL='code --new-window'                    # default GUI editor for Linux
 
