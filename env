@@ -14,7 +14,7 @@ LANG='C.UTF-8'
 
 # special directories
 CONFIG="$HOME/dotfiles"                       # my shell settings
-NEXUS="$HOME/data"                            # the source of my data
+NEXUS="$HOME/nexus"                           # the source of all  my data
 CACHE="$XDG_CACHE_HOME"                       # cache data
 LOGS="$HOME/logs"							  # log output
 TRASH="$HOME/trash"                           # discrarded files
@@ -29,7 +29,7 @@ EDITOR='micro'                                # default TUI editor
 VISUAL='code --new-window'                    # default GUI editor for Linux
 
 # deprecated
-DATA_SOURCE="$HOME/data"
+DATA_SOURCE="$HOME/nexus"
 CONFIG_DIR="$CONFIG"
 
 #=========================================== SHELL SETTINGS
