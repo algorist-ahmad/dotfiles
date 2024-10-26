@@ -3,7 +3,6 @@ dotfiles=/dotfiles
 archives=/archives
 scripts=/scripts
 pass=/nexus/pass
-resume=/resume
 coin=/src/coinmaster
 jrnl=/src/jrnl-wrapper
 utils=/src/bash-utils

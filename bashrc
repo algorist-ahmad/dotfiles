@@ -1,26 +1,17 @@
-###########################
-# MY MODIFIED BASHRC      #
-###########################
 
-# Logs directory
-export LOGS="$HOME/logs"
-# Logs destination
-export LOGFILE="$HOME/logs/bashrc.log"
-# .env source file
-export ENV="$HOME/.env"
-# .aliases source file
-export ALS="$HOME/.aliases"
-# .PATH source file
-export PATH_SOURCE="$HOME/.PATH"
+############################
+#    MY MODIFIED BASHRC    #
+############################
 
-# Resolve the absolute path of the script pointed to by BASH_SOURCE: /home/ahmad/config/bashrc
-script_path=$(readlink -f "${BASH_SOURCE[0]}")
-# Get the directory of the resolved script path: /home/ahmad/config
-export CFG_DIR=$(dirname "$script_path")
-# The file containing complex functions
-CFG_FUNCTIONS="$CFG_DIR/functions"
+# default values
+#----------------------------------------------
+THIS_SCRIPT=$(readlink -f "${BASH_SOURCE[0]}")
+LOGS="${LOGS:-$HOME/logs}"
+LOGFILE="$LOGS/bashrc.log"
+ENV="$HOME/.env"
+#----------------------------------------------
 
-# The entire bashrc script summarized below in main()
+# The entire bashrc script is summarized here in main()
 main() {
     run_default
     check_logs_dir_exists
@@ -30,7 +21,7 @@ main() {
     read_PATH             2>>"$LOGFILE"
     run_startup_script    2>>"$LOGFILE"
     update_repos          2>>"$LOGFILE" # TODO:
-    echo -e "\033[1;32mSuccess:\033[0m \033[1mScript\033[0m \033[33m${script_path}\033[0m \033[1mcompleted.\033[0m \033[3mSee results in:\033[0m \033[33m${LOGFILE}\033[0m\n"
+    echo -e "\033[1;32mSuccess:\033[0m \033[1mScript\033[0m \033[33m${THIS_SCRIPT}\033[0m \033[1mcompleted.\033[0m \033[3mSee results in:\033[0m \033[33m${LOGFILE}\033[0m\n"
 }
 
 check_logs_dir_exists() {
@@ -41,15 +32,18 @@ check_logs_dir_exists() {
         echo "Created directory: $LOGS" > "$LOGFILE"
     else
         # Directory exists
-        echo "Directory already exists: $LOGS" > "$LOGFILE"
+        echo "LOGS ARE STORED IN: $LOGS" > "$LOGFILE"
     fi
+    
+    return "$?"
 }
 
 read_env() {
+
     # Check if the .env file exists
     if [ ! -f "$ENV" ]; then
-        echo "Warning: $ENV does not exist. Create one." # | tee -a /dev/stderr
-	sleep 99
+        echo "Warning: file $ENV does not exist. Create or link one in $HOME." # | tee -a /dev/stderr
+		exit 99
     fi
     
     # Read the .env file line by line
@@ -71,14 +65,24 @@ read_env() {
             fi
         fi
     done < "$ENV"
+    
+    return "$?"
 }
 
 read_aliases() {
-    # Check if the file exists
-    if [ ! -f "$ALS" ]; then
-        echo "Warning: $ALS does not exist. Create one." | tee -a /dev/stderr
-	sexit 1
+	# check if env variable is defined
+	if [ -z "$SHELL_ALIASES" ]; then
+		echo -e "Warning: variable SHELL_ALIASES is not defined." | tee -a /dev/stderr
+		return 1
+	fi
+
+    # Check if the file defined exists
+    if [ ! -f "$SHELL_ALIASES" ]; then
+        echo "Error: file $SHELL_ALIASES (\$SHELL_ALIASES) does not exist. Edit $ENV" | tee -a /dev/stderr
+		return 2
     fi
+
+    # past this line, SHELL_ALIASES is defined and real
 
     # Create a temporary file to store alias commands
     local temp_file=$(mktemp)
@@ -99,7 +103,7 @@ read_aliases() {
                 echo "alias $line" >> "$temp_file"
             fi
         fi
-    done < "$ALS"
+    done < "$SHELL_ALIASES"
 
     # Source the temp file to set aliases in the current shell
     # Note: This will only work if the function is run in the current shell session
@@ -108,27 +112,50 @@ read_aliases() {
 
     # Clean up
     rm "$temp_file"
+    
+    return "$?"
 }
 
 read_PATH() {
-    # Check if the file exists
-    if [ -f "$PATH_SOURCE" ]; then
-        # Read the file, concatenate paths with ':' separator, and store in a variable
-        NEW_PATH=$(tr '\n' ':' < "$PATH_SOURCE" | sed 's/:$//')
+	# check if env variable is defined
+	if [ -z "$SHELL_XPATH" ]; then
+		echo -e "Warning: variable SHELL_XPATH is not defined." | tee -a /dev/stderr
+		return 1
+	fi
 
-        # Update the $PATH environment variable
-        export PATH="$NEW_PATH:$PATH"
-        >&2 echo "Updated PATH: $PATH"
-    else
-        # Print an error message if the file does not exist
-        echo "Warning: File $PATH_SOURCE does not exist. Create one." | tee -a /dev/stderr
-	sexit 1
+    # Check if the file defined exists
+    if [ ! -f "$SHELL_XPATH" ]; then
+        echo "Error: file $SHELL_XPATH (\$SHELL_XPATH) does not exist. Edit $ENV" | tee -a /dev/stderr
+		return 2
     fi
+
+    # past this line, SHELL_XPATH is defined and real
+    
+    # Read the file, concatenate paths with ':' separator, and store in a variable
+    EXTENDED_PATH=$(tr '\n' ':' < "$SHELL_XPATH" | sed 's/:$//')
+
+    # Update the $PATH environment variable
+    export PATH="$EXTENDED_PATH:$PATH"
+    >&2 echo "Updated PATH: $PATH"
+    
+    return "$?"
 }
 
 load_functions() {
-  [ -f "$CFG_FUNCTIONS" ] && source "$CFG_FUNCTIONS" || echo "$0: $CFG_FUNCTIONS not found."
-  >&2 echo "loaded functions"
+	# check if env variable is defined
+	if [ -z "$SHELL_FUNCTIONS" ]; then
+		echo -e "Warning: variable SHELL_FUNCTIONS is not defined." | tee -a /dev/stderr
+		return 1
+	fi
+
+    # Check if the file defined exists
+    if [ ! -f "$SHELL_FUNCTIONS" ]; then
+        echo "Error: file $SHELL_FUNCTIONS (\$SHELL_FUNCTIONS) does not exist. Edit $ENV" | tee -a /dev/stderr
+		return 2
+    fi
+
+ 	source "$SHELL_FUNCTIONS" >&2 echo "loaded functions"
+ 	return "$?"
 }
 
 run_startup_script() {
@@ -206,12 +233,6 @@ run_default() {
       . /etc/bash_completion
     fi
   fi
-}
-
-sexit() {
-	echo "Terminating..."
-	sleep 99
-	return "$1"
 }
 
 main
