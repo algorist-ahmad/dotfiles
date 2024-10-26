@@ -4,9 +4,14 @@
 envar="env -0 | sort -z | tr '\0' '\n'"
 ##
 
+## eza
+ls='eza --icons'
+ll='eza --header --all --long --icons --git --no-user --time-style=relative --total-size'
+## eza
+
 ## arch
 # The only solution!
-alias arch='source arch'
+arch='source arch'
 ## arch
 
 ## jrnl (original)
@@ -58,9 +63,7 @@ rm='rm -vi'
 mkdir='mkdir -v'
 rmdir='rmdir -v'
 chmod='chmod -v'
-ls='ls --color=auto'
 grep='grep --color=auto'
-ll='ls -vhAlF'
 la='ls -A'
 l='ls -CF'
 peek="tree -L 1"
