@@ -1,9 +1,9 @@
-# Dotfile symlink mappings
-~/.PATH         = PATH
-~/.bashrc       = bashrc
-~/.aliases      = aliases
+# shell
+~/.bashrc       = shell/rc
 ~/.env          = env
-~/.config/sqlitebrowser/sqlitebrowser.conf = sqlitebrowser.conf
+
+# sqlitebrowser
+~/.config/sqlitebrowser/sqlitebrowser.conf = sqlitebrowser/conf
 
 # kitty terminal
 ~/.config/kitty/kitty.conf = kitty/kitty.conf
