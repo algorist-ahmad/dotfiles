@@ -2,9 +2,13 @@
 
 ## recent
 envar="env -0 | sort -z | tr '\0' '\n'"
-edit-aliases='$EDITOR $SHELL_ALIASES'
+edit-alias='$EDITOR $SHELL_ALIASES'
 edit-env='$EDITOR $ENV'
 ##
+
+## sqlite3
+sqlite='sqlite3 -init "$SQLITE_CONFIG"'
+## sqlite3
 
 ## eza
 ls='eza --icons'

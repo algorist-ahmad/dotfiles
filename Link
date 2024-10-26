@@ -4,7 +4,7 @@
 home="$(dirname "$(realpath "$0")")"
 
 # File containing the symlink mappings
-mapping_file="$home/link.map"
+mapping_file="$home/Link.map"
 
 if [[ ! -f "$mapping_file" ]]; then
     echo "$mapping_file DOES NOT EXIST. ABORT."
