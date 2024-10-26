@@ -38,7 +38,7 @@ verbose=affected,blank,context,edit,footnote,label,new-id,news,project,special,s
 
 	uda.priority.values=C,H,M,L,,T
 	
-	urgency.uda.priority.C.coefficient=8.0   # CRITICAL
+	urgency.uda.priority.C.coefficient=9.0   # CRITICAL
     urgency.uda.priority.H.coefficient=6.0   # HIGH
     urgency.uda.priority.M.coefficient=3.9   # MEDIUM
     urgency.uda.priority.L.coefficient=1.8   # LOW
