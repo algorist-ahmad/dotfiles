@@ -27,42 +27,38 @@ verbose=affected,blank,context,edit,footnote,label,new-id,news,project,special,s
 
     # special tags
 
-    urgency.user.tag.acad.coefficient=1.5       # assignments are more urgent
-    urgency.user.tag.rv.coefficient=4.0         # represents `rendez-vous`, important
+    urgency.user.tag.auto.coefficient=1.5       # relating to my vehicles
+    urgency.user.tag.coin.coefficient=1.0       # relating to my vehicles
+    urgency.user.tag.rv.coefficient=4.0         # for appointments
     urgency.user.tag.sidequest.coefficient=-2.0 # sidequests should be at the bottom
-    urgency.user.tag.todo.coefficient=3.0       # big boost to encourage commitment to task
+    urgency.user.tag.vita.coefficient=0.5		# relating to my portfolio
     urgency.user.tag.work.coefficient=1.5       # small boost to work related tasks
 
     # UDAs
 
-    urgency.uda.priority.H.coefficient=6.0   # default
-    urgency.uda.priority.M.coefficient=3.9   # default
-    urgency.uda.priority.L.coefficient=-0.5
+	uda.priority.values=C,H,M,L,,T
+	
+	urgency.uda.priority.C.coefficient=8.0   # CRITICAL
+    urgency.uda.priority.H.coefficient=6.0   # HIGH
+    urgency.uda.priority.M.coefficient=3.9   # MEDIUM
+    urgency.uda.priority.L.coefficient=1.8   # LOW
+    urgency.uda.priority.T.coefficient=-0.5  # TRIVIAL
 
 # USER DEFINED ATTRIBUTES **************************************************************************
 
-    # date ******************************************
-
-    uda.date.label=date
-    uda.date.type=date
-    urgency.uda.date.coefficient=2.0
-
     # location **************************************
-    #TODO
+    
+    uda.location.label=location
+    uda.location.type=string
+    urgency.uda.location.coefficient=1.2
+    color.uda.location=color255
 
-    # file ******************************************
-
-    uda.file.label=file
-    uda.file.type=string
-    urgency.uda.file.coefficient=1.10
-    #color.uda.file=color255
-
-    # directory ******************************************
-
-    uda.dir.label=DIR
-    uda.dir.type=string
-    urgency.uda.dir.coefficient=1.20
-    color.uda.dir=color255
+    # jrnl **************************************
+        
+    uda.jrnl.label=journal-entry
+    uda.jrnl.type=string
+    urgency.uda.jrnl.coefficient=1.0
+    color.uda.jrnl=color255
 
 # REPORTS ******************************************************************************************
 
