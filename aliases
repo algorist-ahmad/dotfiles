@@ -6,7 +6,7 @@ envar="env -0 | sort -z | tr '\0' '\n'"
 
 ## eza
 ls='eza --icons'
-ll='eza --header --all --long --icons --git --no-user --time-style=relative --total-size'
+ll='eza --header --all --long --icons --no-permissions --no-user --git --total-size --time-style=relative'
 ## eza
 
 ## arch
