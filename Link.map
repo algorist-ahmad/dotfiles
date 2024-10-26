@@ -1,6 +1,6 @@
 # shell
 ~/.bashrc       = shell/rc
-~/.env          = env
+~/.env          = shell/.env
 
 # sqlitebrowser
 ~/.config/sqlitebrowser/sqlitebrowser.conf = sqlitebrowser/conf
