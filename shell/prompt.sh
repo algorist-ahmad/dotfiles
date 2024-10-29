@@ -2,6 +2,16 @@
 # Modify PS1 dynamically
 ############################
 
+main() {
+	# TODO: put all the things to do between commands, for example:
+	# read env variables for changes
+	# execute database queries
+	# execute programs like TaskWarrior
+	# reminders
+	build_prompt
+	# task active limit:1 2> /dev/null
+}
+
 # Capture last exit status
 LAST_EXIT=$?
 
@@ -91,4 +101,4 @@ git_status_report() {
     fi
 }
 
-build_prompt
+main

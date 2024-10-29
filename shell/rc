@@ -21,7 +21,15 @@ main() {
     read_PATH             2>>"$LOGFILE"
     run_startup_script    2>>"$LOGFILE"
     update_repos          2>>"$LOGFILE" # TODO:
+    disable_linewrap
     echo -e "\033[1;32mSuccess:\033[0m \033[1mScript\033[0m \033[33m${THIS_SCRIPT}\033[0m \033[1mcompleted.\033[0m \033[3mSee results in:\033[0m \033[33m${LOGFILE}\033[0m\n"
+}
+
+disable_linewrap() {
+	case $LINEWRAP in
+		OFF | off | 0) tput rmam ; echo "LINEWRAP OFF" ;;
+		ON | on | 1) tput smam ; echo "LINEWRAP ON" ;;
+	esac
 }
 
 check_logs_dir_exists() {
