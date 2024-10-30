@@ -6,6 +6,10 @@ edit-alias='$EDITOR $SHELL_ALIASES'
 edit-env='$EDITOR $ENV'
 ##
 
+## walk
+walk='walk --icons --preview'
+## walk
+
 ## sqlite3
 sqlite='sqlite3 -init "$SQLITE_CONFIG"'
 ## sqlite3
