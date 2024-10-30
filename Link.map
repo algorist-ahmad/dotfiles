@@ -1,11 +1,29 @@
-# shell
-~/.bashrc       = shell/rc
-~/.env          = shell/.env
 
-# sqlitebrowser
+# Symlinks description file
+
+## 
+## Automatically create symlinks spread throughout the OS.
+##
+## To use set ORIGIN FILE = DESTINATION FILE
+## Use absolute path for ORIGIN files
+## Use paths relative to this folder (dotfiles) for DESTINATION files.
+##
+
+### shell
+
+~/.bashrc = shell/rc
+~/.env    = shell/.env
+
+### sqlitebrowser
+
 ~/.config/sqlitebrowser/sqlitebrowser.conf = sqlitebrowser/conf
 
-# kitty terminal
+### kitty terminal
+
 ~/.config/kitty/kitty.conf = kitty/kitty.conf
 /usr/lib/kitty/logo/kitty.png = kitty/kitty.png
 /usr/lib/kitty/logo/kitty-128.png = kitty/kitty-128.png
+
+### xfce4
+
+~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml = xfce4/keyboard.shortcuts.xml
