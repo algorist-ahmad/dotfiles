@@ -26,6 +26,7 @@
 	unstage = reset HEAD --
 	st = status -s
 	sta = status
+	stash = "stash -m"
 	sw = switch
 	lo = "! f() { git log --no-color --no-decorate | bat -n -l 'Git log' ; }; f"
 	up = "! git remote update -p; git merge --ff-only @{u}"
