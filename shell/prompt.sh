@@ -2,6 +2,9 @@
 # Modify PS1 dynamically
 ############################
 
+# Capture last exit status, MUST BE AT THE TOP
+LAST_EXIT="$?"
+
 main() {
 	# TODO: put all the things to do between commands, for example:
 	# read env variables for changes
@@ -11,9 +14,6 @@ main() {
 	build_prompt
 	# task active limit:1 2> /dev/null
 }
-
-# Capture last exit status
-LAST_EXIT=$?
 
 # Define colors
 GREEN='\[\033[0;32m\]'
