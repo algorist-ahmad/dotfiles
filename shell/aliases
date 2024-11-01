@@ -37,6 +37,7 @@ gti='git'           # common typo
 add='git add -v'
 commit='git commit'
 send='git send'
+co='git checkout'
 ## git
 
 ## folder shortcuts to use git in them (aliases not available)
