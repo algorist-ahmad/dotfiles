@@ -4,6 +4,7 @@
 envar="env -0 | sort -z | tr '\0' '\n'"
 edit-alias='$EDITOR $SHELL_ALIASES'
 edit-env='$EDITOR $ENV'
+scim='sc-im'
 ##
 
 ## walk
