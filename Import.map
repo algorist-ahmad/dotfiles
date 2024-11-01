@@ -14,6 +14,10 @@
 ~/.bashrc = shell/rc
 ~/.env    = shell/.env
 
+### sc-im
+
+~/.config/sc-im/scimrc = scim/rc
+
 ### sqlitebrowser
 
 ~/.config/sqlitebrowser/sqlitebrowser.conf = sqlitebrowser/conf

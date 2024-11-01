@@ -1,0 +1,36 @@
+
+# *********************
+# | sc-im CONFIG FILE |
+# *********************
+
+# For complete documentation: /bin/bash sc-im ---> :h<enter>
+
+## COMMANDS MAPPING
+
+### exit scim
+nmap "Q" ":q<cr>"
+
+### save scim
+nmap "W" ":w<cr>"
+
+### In command mode, typing ":cc" will instantly conjure "[c]ell[c]olor "
+cmap "cc" "cellcolor "
+
+### apply [c]olor to [t]ext
+cmap "tc" "cellcolor \"bg=DEFAULT_COLOR fg="
+
+### adds emphasis by reverting colors 
+cmap "em" "cellcolor \"reverse=1\"<cr>"
+
+### underline text
+cmap "ul" "cellcolor \"underline=1\"<cr>"
+
+## COLORS
+
+### NOTE: BOTH fg AND bg MUST BE DEFINED UNLESS ONE IS ALREADY SET
+ 
+DEFINE_COLOR "skyblue" 75 50 200
+
+#color "type=HEADINGS fg=skyblue bg=BLACK"
+#color "type=HEADINGS_ODD fg=skyblue bg=BLACK"
+#color "type=STRG fg=DEFAULT_COLOR bg=DEFAULT_COLOR"
