@@ -13,6 +13,12 @@ nmap "Q" ":q<cr>"
 ### save scim
 nmap "W" ":w<cr>"
 
+### [e]dit [s]tring
+nmap "es" "Ei"
+
+### [e]dit [n]umber
+nmap "en" "ei"
+
 ### In command mode, typing ":cc" will instantly conjure "[c]ell[c]olor "
 cmap "cc" "cellcolor "
 
