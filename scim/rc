@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # *********************
 # | sc-im CONFIG FILE |
@@ -11,6 +12,7 @@
 nmap "Q" ":q<cr>"
 
 ### save scim
+nmap "<C-w>" ":w<cr>"
 nmap "W" ":w<cr>"
 
 ### edit string
@@ -33,28 +35,40 @@ cmap "tc" "cellcolor \"bg=DEFAULT_COLOR fg="
 cmap "em" "cellcolor \"bold=1\"<cr>"
 
 ### reverse
-cmap "rev" "cellcolor \"reverse=1\"<cr>"
+cnoremap "rev" "cellcolor \"reverse=1\"<cr>"
 
 ### underline text
 cmap "ul" "cellcolor \"underline=1\"<cr>"
 
 ## GENERAL
 
+### [EXPLAIN]
 set autocalc
 
+### [STRING]
 set autowrap
 #set truncate
 #set overlap
 
-#set numeric_decimal=0
-#set xlsx_readformulas
-#set numeric=0
-#set xlsx_readformulas=1
-#set tm_gmtoff=0
+### this will make numbers initiate numeric value
+set numeric=1
+set numeric_zero
+set numeric_decimal
+
+###
+#set input_bar_bottom
+
+###
+set ignorecase
+
+###
+set external_functions
+
+#======================
+
 #set copy_to_clipboard_delimited_tab=1
 #set default_copy_to_clipboard_cmd="pbcopy <"
 #set default_paste_from_clipboard_cmd="pbpaste"
-#set ignorecase
 
 ## Vim scroll (has to be capital C)
 #set half_page_scroll=1
