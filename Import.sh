@@ -21,7 +21,7 @@ while IFS=' =' read -r target source; do
     target="${target/#\~/$HOME}"
 
     # Create the symlink and capture output
-    sudo ln -bsv "$home/$source" "$target"
+    sudo ln -svf "$home/$source" "$target" #FIXME: how to make it interactive??
     sleep 0.1
 done < "$mapping_file"
 
