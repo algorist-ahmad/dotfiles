@@ -100,17 +100,17 @@ set external_functions
 ### NOTE: BOTH fg AND bg MUST BE DEFINED UNLESS ONE IS ALREADY SET
  
 DEFINE_COLOR "skyblue" 75 50 200
+# A bright yellow, good for visibility
+DEFINE_COLOR "yellow" 255 215 0
+# A darker yellow with a golden tone
+DEFINE_COLOR "ORANGE" 255 92 0
 
-#color "type=HEADINGS fg=skyblue bg=BLACK"
-#color "type=HEADINGS_ODD fg=skyblue bg=BLACK"
-#color "type=STRG fg=DEFAULT_COLOR bg=DEFAULT_COLOR"
-
-#=========================
 #color "type=HEADINGS bold=1 fg=WHITE bg=BLUE"
 #color "type=HEADINGS_ODD bold=1 fg=WHITE bg=BLUE"
 #color "type=MODE fg=WHITE bg=DEFAULT_COLOR"
-color "type=NUMB fg=YELLOW bg=DEFAULT_COLOR"
 color "type=STRG fg=GREEN bg=DEFAULT_COLOR"
+color "type=NUMB fg=YELLOW bg=DEFAULT_COLOR"
+color "type=EXPRESSION fg=ORANGE bg=DEFAULT_COLOR"
 #color "type=DATEF fg=RED bg=DEFAULT_COLOR"
 #color "type=CELL_SELECTION fg=BLACK bg=WHITE"
 #color "type=CELL_SELECTION_SC fg=BLACK bg=WHITE"
