@@ -7,3 +7,4 @@ coin=/src/coinmaster
 jrnl=/src/jrnl-wrapper
 utils=/src/bash-utils
 repo-manager=/src/repo-manager
+zfq=/src/zfq
