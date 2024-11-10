@@ -48,13 +48,6 @@ send='git send'
 co='git checkout'
 ## git
 
-## folder shortcuts to use git in them (aliases not available)
-subecho='_() { ( echo "subshell received $@" ) ; }; _' #example
-data='   _() { ( cd $HOME/data     && "$@" ) ; }; _'
-dot='    _() { ( cd $HOME/dotfiles && "$@" ) ; }; _'
-scripts='_() { ( cd $HOME/scripts  && "$@" ) ; }; _'
-##
-
 ##
 icat='kitty +kitten icat --align left --use-window-size 450,450,450,450'
 #jcat='icat --align left --use-window-size 400,400,400,400'
@@ -89,9 +82,9 @@ peek="tree -L 1"
 D='date +%Y-%m-%d -d'
 DT='date +%Y-%m-%dT%T -d'
 T='date +%T -d'
+# GNU
 
 # file handling
-del='move-to-trash'
 mu='micro'
 mouse='_() { nohup mousepad -o "mixed" "$@" & }; _'
 md='glow'
@@ -99,16 +92,21 @@ np="notepad.exe"
 npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
 tarlist='tar -tzvf'
 view='wslview'
+# file handling
 
-## web
-web='firefox'
-mail='web https://outlook.live.com/mail/0/AQMkADAwATY0MDABLTJjOWQtZTNiYy0wMAItMDAKAC4AAAPjXhqMwf09TbNw6oo2ZfKfAQCTxSozP4SHRKrzlqtDD6thAAAA6hkQlQAAAA%3D%3D'
-outlook='web https://outlook.live.com/mail'
-syncthing='firefox 127.0.0.1:8384'
-## web
+## neomutt
+mutt='EMAIL_TOKEN=$(pass "$EMAIL_TOKEN") neomutt'
+## neomutt
 
 ## TaskWarrior
 tk+='tk add'
 tk-='tk delete'
 tk~='tk modify'
-##
+## TaskWarrior
+
+## web
+web='firefox'
+webmail='web https://outlook.live.com/mail/0/AQMkADAwATY0MDABLTJjOWQtZTNiYy0wMAItMDAKAC4AAAPjXhqMwf09TbNw6oo2ZfKfAQCTxSozP4SHRKrzlqtDD6thAAAA6hkQlQAAAA%3D%3D'
+outlook='web https://outlook.live.com/mail'
+syncthing='firefox 127.0.0.1:8384'
+## web
