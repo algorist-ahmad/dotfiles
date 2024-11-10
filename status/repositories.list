@@ -1,7 +1,7 @@
 nexus=/nexus
+bin=/bin
 dotfiles=/dotfiles
 archives=/archives
-scripts=/scripts
 pass=/nexus/pass
 coin=/src/coinmaster
 jrnl=/src/jrnl-wrapper
