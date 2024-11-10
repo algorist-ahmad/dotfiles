@@ -12,12 +12,16 @@
 
 ### shell
 
-~/.bashrc = shell/rc
+~/.bashrc = shell/config
 ~/.env    = shell/.env
+
+### mutt
+
+~/.muttrc = mutt/config
 
 ### sc-im
 
-~/.config/sc-im/scimrc = scim/rc
+~/.config/sc-im/scimrc = scim/config
 
 ### sqlitebrowser
 
