@@ -1,0 +1,260 @@
+#!/bin/bash
+
+# this config file needs dotfile/.env
+# source: https://www.youtube.com/watch?v=2jMInHnpNfQ
+
+set imap_pass = "$EMAIL_TOKEN"
+set smtp_pass = "$EMAIL_TOKEN"
+
+set from = "$EMAIL"
+set realname = "ahmad"
+
+# Gmail IMAP server configuration
+#set folder = "imaps://imap.gmail.com/"
+set smtp_url = "smtp://${EMAIL}@${EMAIL_SMTP_SERVER}:${EMAIL_SMTP_PORT}"
+set folder   ="imaps://${EMAIL}@${EMAIL_IMAP_SERVER}:${EMAIL_IMAP_PORT}"
+set spoolfile = "+INBOX"
+set record = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+set trash = "+[Gmail]/Trash"
+# Configure additional Gmail system folders for IMAP
+mailboxes = "+INBOX" "+[Gmail]/Sent Mail" "+[Gmail]/Drafts" "+[Gmail]/Trash" \
+            "+[Gmail]/Important" "+[Gmail]/Spam" "+[Gmail]/Starred" "+[Gmail]/All Mail"
+
+# SSL settings for security
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+# Mail directory
+#set maildir = "$XDG_DATA_HOME/local/share"
+
+#unset mbox
+
+# Caches
+set header_cache='~/.mutt/.cache/headercache'
+set message_cachedir='~/.mutt/.cache/messagecache'
+set certificate_file='~/.mutt/.cache/certificates'
+
+# Automatic viewing html
+auto_view text/html
+
+# Sync and check intervals
+set read_inc = 100
+set mail_check = 90
+set timeout = 15
+
+# Futher config
+set tmpdir=~/.mutt/tmp
+set mailcap_path=~/.mutt/mailcap
+set abort_nosubject = ask-yes
+set abort_unmodified = yes
+set delete = ask-yes
+set editor = "$EDITOR"
+set content_type = 'text/plain'
+set mark_old = no
+set sort = threads
+set sort_aux = reverse-last-date-received
+set pager_index_lines = 1
+set markers=no # don't put '+' at the beginning of wrapped lines
+
+#============================================================= ALIAS SECTION
+
+alias me <$EMAIL>
+alias nabi <nabilasheikh117@gmail.com>
+alias wife <nabilasheikh117@gmail.com>
+# alias zahra <>
+
+#============================================================= SIDEBAR SECTION
+
+# ------------------------------------------------------------
+# FUNCTIONS
+# ------------------------------------------------------------
+
+# Toggle the visibility of the Sidebar.
+bind index,pager B sidebar-toggle-visible
+# Move the highlight to the previous mailbox
+bind index,pager <S-Up> sidebar-prev
+# Move the highlight to the next mailbox
+bind index,pager <S-Down> sidebar-next
+# Open the highlighted mailbox
+bind index,pager | sidebar-open
+# Move the highlight to the previous mailbox containing new, or flagged, mail.
+bind index,pager \Cj sidebar-prev-new
+# Move the highlight to the next mailbox containing new, or flagged, mail.
+bind index,pager \Ck sidebar-next-new
+# Move the highlight to the previous page
+bind index,pager <F3> sidebar-page-up
+# Move the highlight to the next page
+bind index,pager <F4> sidebar-page-down
+
+# ------------------------------------------------------------
+# ?
+# ------------------------------------------------------------
+
+# Should the Sidebar be shown?
+set sidebar_visible = yes
+# How wide should the Sidebar be in screen columns?
+set sidebar_width = 18
+# Should the mailbox paths be abbreviated?
+set sidebar_short_path = yes
+# When searching for mailboxes containing new mail, should the search wrap
+# around when it reaches the end of the list?
+set sidebar_next_new_wrap = yes
+# Enable extended mailbox mode to calculate total, new, and flagged
+# message counts for each mailbox.
+set mail_check_stats
+# Display the Sidebar mailboxes using this format string.
+set sidebar_format = '%D%?F? [%F]?%* %?N?%N/? %?S?%S?'
+# Number of top-level mailbox path subdirectories to truncate for display
+set sidebar_component_depth = 0
+# When abbreviating mailbox path names, use any of these characters as path
+# separators. Only the part after the last separators will be shown.
+# For file folders '/' is good. For IMAP folders, often '.' is useful.
+set sidebar_delim_chars = '/.'
+# If the mailbox path is abbreviated, should it be indented?
+set sidebar_folder_indent = no
+# Indent mailbox paths with this string.
+set sidebar_indent_string = '  '
+# Make the Sidebar only display mailboxes that contain new, or flagged,
+# mail.
+set sidebar_new_mail_only = no
+# Any mailboxes that are pinned will always be visible, even if the
+# sidebar_new_mail_only option is enabled.
+set sidebar_non_empty_mailbox_only = no
+# Only show mailboxes that contain some mail
+sidebar_pin '/home/user/mailbox1'
+sidebar_pin '/home/user/mailbox2'
+# Show the Sidebar on the right-hand side of the screen
+set sidebar_on_right = no
+# The character to use as the divider between the Sidebar and the other NeoMutt
+# panels.
+set sidebar_divider_char = '|'
+
+# Sort the mailboxes in the Sidebar using this method:
+#       count    – total number of messages
+#       flagged  – number of flagged messages
+#       unread   – number of unread messages
+#       path     – mailbox path
+#       unsorted – do not sort the mailboxes
+set sidebar_sort_method = 'unsorted'
+
+# --------------------------------------------------------------------------
+# COLORS – some unpleasant examples are given
+# --------------------------------------------------------------------------
+# Note: All color operations are of the form:
+#       color OBJECT FOREGROUND BACKGROUND
+# Color of the current, open, mailbox
+# Note: This is a general NeoMutt option which colors all selected items.
+#color indicator cyan black
+# Sidebar-specific color of the selected item
+#color sidebar_indicator cyan black
+# Color of the highlighted, but not open, mailbox.
+#color sidebar_highlight black color8
+# Color of the entire Sidebar panel
+#color sidebar_background default black
+# Color of the divider separating the Sidebar from NeoMutt panels
+#color sidebar_divider color8 black
+# Color to give mailboxes containing flagged mail
+#color sidebar_flagged red black
+# Color to give mailboxes containing new mail
+#color sidebar_new green black
+# Color to give mailboxes containing no new/flagged mail, etc.
+#color sidebar_ordinary color245 default
+# Color to give the spool_file mailbox
+#color sidebar_spool_file color207 default
+# Color to give mailboxes containing no unread mail
+#color sidebar_unread color136 default
+# --------------------------------------------------------------------------
+
+# vim: syntax=neomuttrc
+
+#==============
+# The 'forgotten-attachment' feature provides a new setting for NeoMutt that
+# alerts the user if the message body contains a certain regular expression but there are
+# no attachments added. This is meant to ensure that the user does not forget
+# to attach a file after promising to do so in the mail.
+
+# Ask if the user wishes to abort sending if $abort_noattach_regex is found in the
+# body, but no attachments have been added
+# It can be set to:
+#    "yes"     : always abort
+#    "ask-yes" : ask whether to abort
+#    "no"      : send the mail
+set abort_noattach = ask-yes
+# Search for the following regular expression in the body of the email
+# English: attach, attached, attachment, attachments
+set abort_noattach_regex = "\\<attach(|ed|ments?)\\>"
+# Français:
+set abort_noattach_regex = "\\<(attaché|attachés|attache|attachons|joint|jointe|joints|jointes|joins|joignons)\\>"
+
+#==============
+
+#============================================================= COLOR SECTION
+
+# vim: filetype=neomuttrc
+# Default index colors:
+color index yellow default '.*'
+color index_author red default '.*'
+color index_number blue default
+color index_subject cyan default '.*'
+
+# For new mail:
+color index brightyellow black "~N"
+color index_author brightred black "~N"
+color index_subject brightcyan black "~N"
+
+# Header colors:
+color header blue default ".*"
+color header brightmagenta default "^(From)"
+color header brightcyan default "^(Subject)"
+color header brightwhite default "^(CC|BCC)"
+
+mono bold bold
+mono underline underline
+mono indicator reverse
+mono error bold
+color normal default default
+color indicator brightblack white
+color sidebar_highlight red default
+color sidebar_divider brightblack black
+color sidebar_flagged red black
+color sidebar_new green black
+color normal brightyellow default
+color error red default
+color tilde black default
+color message cyan default
+color markers red white
+color attachment white default
+color search brightmagenta default
+color status brightyellow black
+color hdrdefault brightgreen default
+color quoted green default
+color quoted1 blue default
+color quoted2 cyan default
+color quoted3 yellow default
+color quoted4 red default
+color quoted5 brightred default
+color signature brightgreen default
+color bold black default
+color underline black default
+color normal default default
+
+color body brightred default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # Email addresses
+color body brightblue default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # URL
+color body green default "\`[^\`]*\`" # Green text between ` and `
+color body brightblue default "^# \.*" # Headings as bold blue
+color body brightcyan default "^## \.*" # Subheadings as bold cyan
+color body brightgreen default "^### \.*" # Subsubheadings as bold green
+color body yellow default "^(\t| )*(-|\\*) \.*" # List items as yellow
+color body brightcyan default "[;:][-o][)/(|]" # emoticons
+color body brightcyan default "[;:][)(|]" # emoticons
+color body brightcyan default "[ ][*][^*]*[*][ ]?" # more emoticon?
+color body brightcyan default "[ ]?[*][^*]*[*][ ]" # more emoticon?
+color body red default "(BAD signature)"
+color body cyan default "(Good signature)"
+color body brightblack default "^gpg: Good signature .*"
+color body brightyellow default "^gpg: "
+color body brightyellow red "^gpg: BAD signature from.*"
+mono body bold "^gpg: Good signature"
+mono body bold "^gpg: BAD signature from.*"
+color body red default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
