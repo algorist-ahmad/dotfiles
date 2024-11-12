@@ -12,6 +12,7 @@ edit-alias='$EDITOR $SHELL_ALIASES'
 edit-env='$EDITOR $ENV'
 scim='sc-im'
 auto='cd $HOME/nexus/auto'
+fox='browser'
 ##
 
 ## walk
