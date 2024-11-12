@@ -97,7 +97,7 @@ view='wslview'
 # file handling
 
 ## neomutt
-mutt='EMAIL_TOKEN=$(pass "$EMAIL_TOKEN") neomutt'
+mutt='EMAIL_PASSWORD=$(pass "$EMAIL_PASSWORD") neomutt'
 ## neomutt
 
 ## TaskWarrior
