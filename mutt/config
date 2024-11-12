@@ -38,6 +38,11 @@ set certificate_file='~/.mutt/.cache/certificates'
 # Automatic viewing html
 auto_view text/html
 
+# Controls whether NeoMutt will ask you to press a key after an external command has been invoked by these functions: <shell-escape> , <pipe-message> , <pipe-entry> , <print-message> , and <print-entry> commands.
+# It is also used when viewing attachments with "auto_view", provided that the corresponding mailcap entry has a needsterminal flag, and the external program is interactive.
+# When set , NeoMutt will always ask for a key. When unset , NeoMutt will wait for a key only if the external command returned a non-zero status.
+set wait_key = no
+
 # Sync and check intervals
 set read_inc = 100
 set mail_check = 90
