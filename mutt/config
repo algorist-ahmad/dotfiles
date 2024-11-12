@@ -21,12 +21,8 @@ set smtp_pass = "$EMAIL_PASSWORD"
 set ssl_starttls = yes   # for security
 set ssl_force_tls = yes  # for security
 
-# Gmail IMAP server configuration
+# Gmail server configuration
 set smtp_url = "$SMTP_SERVER_URL"
-<<<<<<< Updated upstream
-set folder   = "$IMAP_SERVER_URL"
-=======
->>>>>>> Stashed changes
 
 # MAILBOXES *************************************************************** Do not fuck with the order
 # Below are the 6 MAILBOXES defined by neomuttrc
