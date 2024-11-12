@@ -3,22 +3,19 @@
 # this config file needs dotfile/.env
 # source: https://www.youtube.com/watch?v=2jMInHnpNfQ
 
+# Gmail IMAP server configuration
+set smtp_url = "$SMTP_SERVER_URL"
+set folder   ="$IMAP_SERVER_URL"
+
+# SSL settings for security
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+# Gmail app password
 set imap_pass = "$EMAIL_TOKEN"
 set smtp_pass = "$EMAIL_TOKEN"
 
-set from = "$EMAIL"
-set realname = "ahmad"
-
-# Gmail IMAP server configuration
-#set folder = "imaps://imap.gmail.com/"
-set smtp_url = "smtp://${EMAIL}@${EMAIL_SMTP_SERVER}:${EMAIL_SMTP_PORT}"
-set folder   ="imaps://${EMAIL}@${EMAIL_IMAP_SERVER}:${EMAIL_IMAP_PORT}"
-set spoolfile = "+INBOX"
-set record = "+[Gmail]/Sent Mail"
-set postponed = "+[Gmail]/Drafts"
-set trash = "+[Gmail]/Trash"
-
-# TO VIEW A LIST OF MAILBOXES, DO `neomutt` --> `s` --> `?`
+# TO VIEW A LIST OF IMAP MAILBOXES, DO `neomutt` --> `s` --> `?`
 # Configure additional Gmail system folders for IMAP
 # in order of priority
 mailboxes =\
@@ -30,9 +27,12 @@ mailboxes =\
 	"+[Gmail]/Sent Mail"\
 	"+[Gmail]/All Mail"
 
-# SSL settings for security
-set ssl_starttls = yes
-set ssl_force_tls = yes
+set from = "$EMAIL"
+set realname = "ahmad"
+set spoolfile = "+INBOX"
+set record = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+set trash = "+[Gmail]/Trash"
 
 # Mail directory
 #set maildir = "$XDG_DATA_HOME/local/share"
@@ -196,10 +196,7 @@ set sidebar_sort_method = 'unsorted'
 #    "no"      : send the mail
 set abort_noattach = ask-yes
 # Search for the following regular expression in the body of the email
-# English: attach, attached, attachment, attachments
-set abort_noattach_regex = "\\<attach(|ed|ments?)\\>"
-# Français:
-set abort_noattach_regex = "\\<(attaché|attachés|attache|attachons|joint|jointe|joints|jointes|joins|joignons)\\>"
+set abort_noattach_regex = "\\<attach(|ed|ments?)\\>|\\<(attaché|attachés|attache|attachons|joint|jointe|joints|jointes|joins|joignons)\\>"
 
 #==============
 
