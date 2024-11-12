@@ -5,7 +5,7 @@
 
 # Gmail IMAP server configuration
 set smtp_url = "$SMTP_SERVER_URL"
-set folder   ="$IMAP_SERVER_URL"
+set folder   = "$IMAP_SERVER_URL"
 
 # SSL settings for security
 set ssl_starttls = yes
