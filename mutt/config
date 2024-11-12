@@ -3,41 +3,60 @@
 # this config file needs dotfile/.env
 # source: https://www.youtube.com/watch?v=2jMInHnpNfQ
 
+# MY VARIABLES
+
+## Must absolutely begin with 'my_'
+set my_inbox   = "+INBOX"
+set my_outbox  = "+[Gmail]/Sent Mail"
+set my_archive = "+[Gmail]/All Mail"
+set my_flagged = "+[Gmail]/Starred"
+set my_drafts  = "+[Gmail]/Drafts"
+set my_junk    = "+[Gmail]/Spam"
+set my_deleted = "+[Gmail]/Trash"
+
+# CREDENTIALS
+
+set imap_pass = "$EMAIL_PASSWORD"
+set smtp_pass = "$EMAIL_PASSWORD"
+set ssl_starttls = yes   # for security
+set ssl_force_tls = yes  # for security
+
 # Gmail IMAP server configuration
 set smtp_url = "$SMTP_SERVER_URL"
+<<<<<<< Updated upstream
 set folder   = "$IMAP_SERVER_URL"
+=======
+>>>>>>> Stashed changes
 
-# SSL settings for security
-set ssl_starttls = yes
-set ssl_force_tls = yes
-
-# Gmail app password
-set imap_pass = "$EMAIL_TOKEN"
-set smtp_pass = "$EMAIL_TOKEN"
+# MAILBOXES *************************************************************** Do not fuck with the order
+# Below are the 6 MAILBOXES defined by neomuttrc
+set folder    = "$IMAP_SERVER_URL"   # default location of mailbox
+set mbox      = $my_archive
+set postponed = $my_drafts
+set record    = $my_outbox
+set spoolfile = $my_inbox
+set trash     = $my_deleted
+# mailboxes
 
 # TO VIEW A LIST OF IMAP MAILBOXES, DO `neomutt` --> `s` --> `?`
-# Configure additional Gmail system folders for IMAP
-# in order of priority
-mailboxes =\
-	"+self"\
-	"+INBOX"\
-	"+REDIRECTED" \
-	"+[Gmail]/Starred"\
-	"+[Gmail]/Spam"\
-	"+[Gmail]/Sent Mail"\
-	"+[Gmail]/All Mail"
+mailboxes $my_inbox
+mailboxes -label "important" "+[Gmail]/Important" # gmail-specific, may be removed
+mailboxes -label "flagged"   $my_flagged
+mailboxes -label "junk"      $my_junk
+mailboxes -label "sent"      $my_outbox
+mailboxes -label "archive"   $my_archive
+mailboxes -label "trash"     $my_deleted
+#**************************************************************************
 
-set from = "$EMAIL"
-set realname = "ahmad"
-set spoolfile = "+INBOX"
-set record = "+[Gmail]/Sent Mail"
-set postponed = "+[Gmail]/Drafts"
-set trash = "+[Gmail]/Trash"
+# GENERAL
+  set realname = "ahmad"
+  set abort_key = "<Esc>"
+unset confirm_append       # nobody got time for prompts
+# GENERAL
 
-# Mail directory
-#set maildir = "$XDG_DATA_HOME/local/share"
-
-#unset mbox
+# HOOKS
+save-hook . "$my_archive"
+# HOOKS
 
 # Caches
 set header_cache='~/.mutt/.cache/headercache'
@@ -74,8 +93,8 @@ set markers=no # don't put '+' at the beginning of wrapped lines
 #============================================================= ALIAS SECTION
 
 alias me <$EMAIL>
-alias nabi <nabilasheikh117@gmail.com>
-alias wife <nabilasheikh117@gmail.com>
+alias nabi <$my_wife_email>
+alias wife <$my_wife_email>
 # alias zahra <>
 
 #============================================================= SIDEBAR SECTION
@@ -226,7 +245,7 @@ mono indicator reverse
 mono error bold
 color normal default default
 color indicator brightblack white
-color sidebar_highlight red default
+color sidebar_highlight color220 color236
 color sidebar_divider brightblack black
 color sidebar_flagged red black
 color sidebar_new green black
