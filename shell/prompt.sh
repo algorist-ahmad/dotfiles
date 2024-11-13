@@ -1,19 +1,10 @@
-############################
-# Modify PS1 dynamically
-############################
+
+#################################
+# TO EXECUTE AFTER EACH COMMAND #
+#################################
 
 # Capture last exit status, MUST BE AT THE TOP
 LAST_EXIT="$?"
-
-main() {
-	# TODO: put all the things to do between commands, for example:
-	# read env variables for changes
-	# execute database queries
-	# execute programs like TaskWarrior
-	# reminders
-	build_prompt
-	# task active limit:1 2> /dev/null
-}
 
 # Define colors
 GREEN='\[\033[0;32m\]'
@@ -26,6 +17,16 @@ RESET='\[\033[0m\]'           # Reset color to default
 
 # Other
 PROMPT_SYMBOL='$'
+
+main() {
+	# TODO: put all the things to do between commands, for example:
+	# read env variables for changes
+	# execute database queries
+	# execute programs like TaskWarrior
+	# reminders
+	build_prompt
+	# task active limit:1 2> /dev/null
+}
 
 build_prompt() {
     # in the future, have unique symbol for general context

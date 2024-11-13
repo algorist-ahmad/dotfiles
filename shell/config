@@ -24,6 +24,7 @@ main() {
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
     source /usr/local/bin/fuzzycd # added recently
+    $HOME/bin/check_email.sh &
     echo -e "\033[1;32mSuccess:\033[0m \033[1mScript\033[0m \033[33m${THIS_SCRIPT}\033[0m \033[1mcompleted.\033[0m \033[3mSee results in:\033[0m \033[33m${LOGFILE}\033[0m\n"
 }
 
