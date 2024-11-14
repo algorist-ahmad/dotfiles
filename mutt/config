@@ -14,6 +14,8 @@ set my_drafts  = "+[Gmail]/Drafts"
 set my_junk    = "+[Gmail]/Spam"
 set my_deleted = "+[Gmail]/Trash"
 
+set my_wife_email = "nabilasheikh117@gmail.com"
+
 # CREDENTIALS
 
 set imap_pass = "$EMAIL_PASSWORD"
