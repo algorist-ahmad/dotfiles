@@ -8,7 +8,7 @@ default_minute: 0
 editor: micro
 encrypt: false
 highlight: true
-indent_character: '>'
+indent_character: ''
 journals:
   default:  $JRNL_DIR/main
   main:  $JRNL_DIR/main
