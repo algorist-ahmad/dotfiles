@@ -97,7 +97,7 @@ view='wslview'
 # file handling
 
 ## neomutt
-mutt='EMAIL_PASSWORD=$(pass "$EMAIL_PASSWORD") neomutt'
+mutt='EMAIL_PASSWORD=$(pass "$EMAIL_PASSWORD") neomutt -F "$MUTTRC"'
 ## neomutt
 
 ## TaskWarrior
