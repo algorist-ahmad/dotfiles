@@ -34,10 +34,6 @@ ll='eza --header --all --long --icons --no-permissions --no-user --git --git-rep
 arch='source arch'
 ## arch
 
-## jrnl (original)
-journal='/bin/jrnl'
-## jrnl (original)
-
 ##
 keys='gpg'
 ##
