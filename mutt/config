@@ -3,9 +3,21 @@
 # this config file needs dotfile/.env
 # source: https://www.youtube.com/watch?v=2jMInHnpNfQ
 
-# MY VARIABLES
+# TODO: save locally, see $MAIL (?)
+
+# CREDENTIALS ══════════════════════════════════════════════════════════════════════════════════════════╗
+
+## bare minimum needed to access and send mail
+
+set my_imap_url = "$IMAP_SERVER_URL"   # default location of mailbox "folder"
+set smtp_url    = "$SMTP_SERVER_URL"   # Gmail server configuration
+set my_password = "$EMAIL_PASSWORD"    # for Gmail, this will be the APP password, NOT the login password
+
+# VARIABLES ════════════════════════════════════════════════════════════════════════════════════════════╗
 
 ## Must absolutely begin with 'my_'
+
+### Mailboxes
 set my_inbox   = "+INBOX"
 set my_outbox  = "+[Gmail]/Sent Mail"
 set my_archive = "+[Gmail]/All Mail"
@@ -14,21 +26,26 @@ set my_drafts  = "+[Gmail]/Drafts"
 set my_junk    = "+[Gmail]/Spam"
 set my_deleted = "+[Gmail]/Trash"
 
+### Resuables
 set my_wife_email = "nabilasheikh117@gmail.com"
 
-# CREDENTIALS
+# ALIASES ══════════════════════════════════════════════════════════════════════════════════════════════╗
 
-set imap_pass = "$EMAIL_PASSWORD"
-set smtp_pass = "$EMAIL_PASSWORD"
+alias me <$EMAIL>
+alias nabi <$my_wife_email>
+alias wife <$my_wife_email>
+alias zahra <zahraalj2000@gmail.com>
+
+# Security
+
+set imap_pass = $my_password
+set smtp_pass = $my_password
 set ssl_starttls = yes   # for security
 set ssl_force_tls = yes  # for security
 
-# Gmail server configuration
-set smtp_url = "$SMTP_SERVER_URL"
-
-# MAILBOXES *************************************************************** Do not fuck with the order
+# MAILBOXES ****************************************************** Do not fuck with the order of this section
 # Below are the 6 MAILBOXES defined by neomuttrc
-set folder    = "$IMAP_SERVER_URL"   # default location of mailbox
+set folder    = $my_imap_url
 set mbox      = $my_archive
 set postponed = $my_drafts
 set record    = $my_outbox
@@ -86,14 +103,12 @@ set mark_old = no
 set sort = threads
 set sort_aux = reverse-last-date-received
 set pager_index_lines = 1
-set markers=no # don't put '+' at the beginning of wrapped lines
-
-#============================================================= ALIAS SECTION
+set markers=no # don't put '+' at the beginning of wrapped lines#============================================================= ALIAS SECTION
 
 alias me <$EMAIL>
 alias nabi <$my_wife_email>
 alias wife <$my_wife_email>
-# alias zahra <>
+alias zahra <zahraalj2000@gmail.com>
 
 #============================================================= SIDEBAR SECTION
 
