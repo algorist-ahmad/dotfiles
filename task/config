@@ -37,12 +37,18 @@ verbose=affected,blank,context,edit,footnote,label,new-id,news,project,special,s
     # UDAs
 
 	uda.priority.values=C,H,M,L,,T
-	
+
 	urgency.uda.priority.C.coefficient=9.0   # CRITICAL
     urgency.uda.priority.H.coefficient=6.0   # HIGH
     urgency.uda.priority.M.coefficient=3.9   # MEDIUM
     urgency.uda.priority.L.coefficient=1.8   # LOW
     urgency.uda.priority.T.coefficient=-0.5  # TRIVIAL
+
+    color.uda.priority.C=color255 on color9
+    color.uda.priority.H=color250
+    color.uda.priority.M=color245
+    color.uda.priority.L=color242
+    color.uda.priority.T=color240
 
 # USER DEFINED ATTRIBUTES **************************************************************************
 

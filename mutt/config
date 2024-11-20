@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # this config file needs dotfile/.env
-# source: https://www.youtube.com/watch?v=2jMInHnpNfQ
+#  https://www.youtube.com/watch?v=2jMInHnpNfQ
 
 # TODO: save locally, see $MAIL (?)
 
@@ -26,8 +26,8 @@ set my_drafts  = "+[Gmail]/Drafts"
 set my_junk    = "+[Gmail]/Spam"
 set my_deleted = "+[Gmail]/Trash"
 
-### Resuables
-set my_wife_email = "nabilasheikh117@gmail.com"
+### Contacts
+source "contacts"
 
 # ALIASES ══════════════════════════════════════════════════════════════════════════════════════════════╗
 
@@ -103,14 +103,14 @@ set mark_old = no
 set sort = threads
 set sort_aux = reverse-last-date-received
 set pager_index_lines = 1
-set markers=no # don't put '+' at the beginning of wrapped lines#============================================================= ALIAS SECTION
+set markers=no # don't put '+' at the beginning of wrapped lines#============================================================= ALIAS SECTION [moved to muttrc/../contacts]
 
-alias me <$EMAIL>
-alias nabi <$my_wife_email>
-alias wife <$my_wife_email>
-alias zahra <zahraalj2000@gmail.com>
+# alias me <$EMAIL>
+# alias nabi <$my_wife_email>
+# alias wife <$my_wife_email>
+# alias zahra <zahraalj2000@gmail.com>
 
-#============================================================= SIDEBAR SECTION
+#══════════════════════════════════════════════════════════════════════════════════════════╗ SIDEBAR SECTION
 
 # ------------------------------------------------------------
 # FUNCTIONS
