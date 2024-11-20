@@ -96,6 +96,11 @@ view='wslview'
 mutt='EMAIL_PASSWORD=$(pass "$EMAIL_PASSWORD") neomutt -F "$MUTTRC"'
 ## neomutt
 
+## network manager
+nman=nmcli
+list-network='nmcli dev wifi'
+## network manager
+
 ## TaskWarrior
 tk+='tk add'
 tk-='tk delete'
