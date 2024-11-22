@@ -7,36 +7,42 @@
 # ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═════╝
 
 ## recent
-envar="env -0 | sort -z | tr '\0' '\n'"
-edit-alias='$EDITOR $SHELL_ALIASES'
-edit-env='$EDITOR $ENV'
-scim='sc-im'
-auto='cd $HOME/nexus/auto'
-fox='browser'
+
+## recent
+
+## unsorted
 edit='$EDITOR'
-##
-
-## walk
-walk='walk --icons --preview'
-## walk
-
-## sqlite3
-sqlite='sqlite3 -init "$SQLITE_CONFIG"'
-## sqlite3
-
-## eza
-ls='eza --icons'
-ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name'
-## eza
+edit-env='$EDITOR $ENV'
+edit-alias='$EDITOR $SHELL_ALIASES'
+env="env -0 | sort -z | tr '\0' '\n'"
+fox='browser'
+icat='kitty +kitten icat --align left --use-window-size 450,450,450,450'
+uuid='u=$(uuidgen) ; echo $u | clipboard ; echo -e "New UUID:\n$u (copied)"'
+timestamp='d=$(date +"%Y-%m-%d %H:%M:%S") ; echo $d | clipboard ; echo -e "Current timestamp:\n$d (copied)"'
+pacman='sudo pacman'
+mount='sudo mount'
+umount='sudo umount'
+open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
+clipboard='xclip -selection clipboard'
+sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
+mouse='_() { nohup mousepad -o "mixed" "$@" & }; _'
+##  unsorted
 
 ## arch
 # The only solution!
 arch='source arch'
 ## arch
 
-##
-keys='gpg'
-##
+## date
+D='date +%Y-%m-%d -d'
+DT='date +%Y-%m-%dT%T -d'
+T='date +%T -d'
+## date
+
+## eza
+ls='eza --icons'
+ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name'
+## eza
 
 ## git
 gti='git'           # common typo
@@ -47,22 +53,10 @@ co='git checkout'
 ## git
 
 ##
-icat='kitty +kitten icat --align left --use-window-size 450,450,450,450'
-#jcat='icat --align left --use-window-size 400,400,400,400'
-zip='tar -cvzf'
-unzip='tar -xvzf'
-uuid='u=$(uuidgen) ; echo $u | clipboard ; echo -e "New UUID:\n$u (copied)"'
-timestamp='d=$(date +"%Y-%m-%d %H:%M:%S") ; echo $d | clipboard ; echo -e "Current timestamp:\n$d (copied)"'
-pacman='sudo pacman'
-mount='sudo mount'
-umount='sudo umount'
-#coin='coinmaster'
-open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
-clipboard='xclip -selection clipboard'
-sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
+keys='gpg'
 ##
 
-# GNU utilities
+## GNU utilities
 bc='bc --quiet --mathlib'
 cal='echo "CALCULATOR:" ; bc'
 ..='cd ..'
@@ -77,20 +71,11 @@ grep='grep --color=auto'
 la='ls -A'
 l='ls -CF'
 peek="tree -L 1"
-D='date +%Y-%m-%d -d'
-DT='date +%Y-%m-%dT%T -d'
-T='date +%T -d'
-# GNU
+## GNU
 
-# file handling
+## micro
 mu='micro'
-mouse='_() { nohup mousepad -o "mixed" "$@" & }; _'
-md='glow'
-np="notepad.exe"
-npp='/mnt/c/"Program Files"/Notepad++/notepad++.exe'
-tarlist='tar -tzvf'
-view='wslview'
-# file handling
+## micro
 
 ## neomutt
 mutt='EMAIL_PASSWORD=$(pass "$EMAIL_PASSWORD") neomutt -F "$MUTTRC"'
@@ -101,11 +86,29 @@ wifi='nmcli dev wifi'
 connect='nmcli --ask device wifi connect'
 ## network manager (nmcli)
 
+## sc-im
+sc='sc-im'
+## sc-im
+
+## sqlite3
+sqlite='sqlite3 -init "$SQLITERC"'
+## sqlite3
+
+## tar
+tarlist='tar -tzvf'
+zip='tar -cvzf'
+unzip='tar -xvzf'
+## tar
+
 ## TaskWarrior
 tk+='tk add'
 tk-='tk delete'
 tk~='tk modify'
 ## TaskWarrior
+
+## walk
+walk='walk --icons --preview'
+## walk
 
 ## web
 web='firefox'
