@@ -10,24 +10,6 @@
 
 ## recent
 
-## unsorted
-edit='$EDITOR'
-edit-env='$EDITOR $ENV'
-edit-alias='$EDITOR $SHELL_ALIASES'
-env="env -0 | sort -z | tr '\0' '\n'"
-fox='browser'
-icat='kitty +kitten icat --align left --use-window-size 450,450,450,450'
-uuid='u=$(uuidgen) ; echo $u | clipboard ; echo -e "New UUID:\n$u (copied)"'
-timestamp='d=$(date +"%Y-%m-%d %H:%M:%S") ; echo $d | clipboard ; echo -e "Current timestamp:\n$d (copied)"'
-pacman='sudo pacman'
-mount='sudo mount'
-umount='sudo umount'
-open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
-clipboard='xclip -selection clipboard'
-sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
-mouse='_() { nohup mousepad -o "mixed" "$@" & }; _'
-##  unsorted
-
 ## arch
 # The only solution!
 arch='source arch'
@@ -52,15 +34,11 @@ send='git send'
 co='git checkout'
 ## git
 
-##
-keys='gpg'
-##
-
 ## GNU utilities
-bc='bc --quiet --mathlib'
-cal='echo "CALCULATOR:" ; bc'
 ..='cd ..'
 .~="cd $HOME"
+bc='bc --quiet --mathlib'
+cal='echo "CALCULATOR:" ; bc'
 cp='cp -vi'
 mv='mv -vi'
 rm='rm -vi'
@@ -71,7 +49,11 @@ grep='grep --color=auto'
 la='ls -A'
 l='ls -CF'
 peek="tree -L 1"
-## GNU
+## GNU utilities
+
+## gpg
+keys='gpg'
+## gpg
 
 ## micro
 mu='micro'
@@ -105,6 +87,24 @@ tk+='tk add'
 tk-='tk delete'
 tk~='tk modify'
 ## TaskWarrior
+
+## various
+edit='$EDITOR'
+edit-env='$EDITOR $ENV'
+edit-alias='$EDITOR $SHELL_ALIASES'
+env="env -0 | sort -z | tr '\0' '\n'"
+fox='browser'
+icat='kitty +kitten icat --align left --use-window-size 450,450,450,450'
+uuid='u=$(uuidgen) ; echo $u | clipboard ; echo -e "New UUID:\n$u (copied)"'
+timestamp='d=$(date +"%Y-%m-%d %H:%M:%S") ; echo $d | clipboard ; echo -e "Current timestamp:\n$d (copied)"'
+pacman='sudo pacman'
+mount='sudo mount'
+umount='sudo umount'
+open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
+clipboard='xclip -selection clipboard'
+sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
+mouse='_() { nohup mousepad -o "mixed" "$@" & }; _'
+## various
 
 ## walk
 walk='walk --icons --preview'
