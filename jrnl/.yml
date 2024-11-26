@@ -10,14 +10,14 @@ encrypt: false
 highlight: true
 indent_character: ''
 journals:
-  default:  $JRNL_DIR/main
-  main:  $JRNL_DIR/main
-  work:  $JRNL_DIR/work
+  default: $JRNL_DIR/main
+  main: $JRNL_DIR/main
   secret:
-    journal: $JRNL_DIR/secret.journal
     encrypt: true
+    journal: $JRNL_DIR/secret.journal
+  work: $JRNL_DIR/work
 linewrap: auto
 tagsymbols: '@+'
 template: false
 timeformat: '%F %H:%M'
-version: v4.1
+version: v4.2
