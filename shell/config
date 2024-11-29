@@ -24,14 +24,15 @@ main() {
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
     # source /usr/local/bin/fuzzycd # added recently
-    $HOME/bin/check_email.sh &
-    echo -e "\033[1;32mSuccess:\033[0m \033[1mScript\033[0m \033[33m${THIS_SCRIPT}\033[0m \033[1mcompleted.\033[0m \033[3mSee results in:\033[0m \033[33m${LOGFILE}\033[0m\n"
+    # $HOME/bin/check_email.sh &
+    print_final_message
+    print_reminders
 }
 
 disable_linewrap() {
 	case $LINEWRAP in
-		OFF | off | 0) tput rmam ; echo "LINEWRAP OFF" ;;
-		ON | on | 1) tput smam ; echo "LINEWRAP ON" ;;
+		OFF | off | 0) tput rmam ;;
+		ON | on | 1) tput smam ;;
 	esac
 }
 
@@ -47,6 +48,16 @@ check_logs_dir_exists() {
     fi
     
     return "$?"
+}
+
+print_final_message() {
+    echo -e "\033[1mScript\033[0m \033[33m${THIS_SCRIPT}\033[0m \033[1mcompleted.\033[0m \033[3mSee results in:\033[0m \033[33m${LOGFILE}\033[0m\n"
+}
+
+print_reminders() {
+    echo -e "Reminder: update-repos"
+    echo -e "Reminder: emails"
+    printf "\n"
 }
 
 read_env() {
