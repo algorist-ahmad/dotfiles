@@ -4,5 +4,6 @@
     "face.font": "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf",
     "savecursor": true,
     "softwrap": true,
-    "tabstospaces": true
+    "tabstospaces": true,
+    "tabsize": 2
 }
