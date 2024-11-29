@@ -56,8 +56,8 @@ print_final_message() {
 
 print_reminders() {
     local reminders=(
-        'update-repos'
         'water intake'
+        'update-repos'
         'emails'
     )
 
