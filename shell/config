@@ -55,9 +55,16 @@ print_final_message() {
 }
 
 print_reminders() {
-    echo -e "Reminder: update-repos"
-    echo -e "Reminder: emails"
-    printf "\n"
+    local reminders=(
+        'update-repos'
+        'emails'
+    )
+
+    echo -e "\033[1;34m--- REMINDERS ---\033[0m"  # Blue header with bold text
+    for reminder in "${reminders[@]}"; do
+        echo -e "  \033[1;33m•\033[0m $reminder"  # Yellow bullet point
+    done
+    echo -e "\033[1;34m-----------------\033[0m"  # Blue footer with bold text
 }
 
 read_env() {
