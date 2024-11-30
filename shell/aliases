@@ -68,6 +68,10 @@ wifi='nmcli dev wifi'
 connect='nmcli --ask device wifi connect'
 ## network manager (nmcli)
 
+## rendercv
+gencv='rendercv render -o "resume" -nopng'
+## rendercv
+
 ## sc-im
 sc='sc-im'
 ## sc-im
