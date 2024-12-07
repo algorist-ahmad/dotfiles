@@ -2,6 +2,7 @@ nexus=/nexus
 bin=/bin
 dotfiles=/dotfiles
 archives=/archives
+vita=/src/vita
 pass=/nexus/pass
 coin=/src/coinmaster
 journal=/src/journal
