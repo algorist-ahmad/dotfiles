@@ -7,5 +7,3 @@ pass=/nexus/pass
 coin=/src/coinmaster
 journal=/src/journal
 utils=/src/bash-utils
-repo-manager=/src/repo-manager
-zfq=/src/zfq
