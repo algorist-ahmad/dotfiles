@@ -10,6 +10,8 @@
 
 editor=$EDITOR
 verbose=affected,blank,context,edit,footnote,label,new-id,news,project,special,sync,override,recur
+print.empty.columns=yes
+undo.style=diff
 
 # CONTEXTS *****************************************************************************************
 
@@ -51,6 +53,38 @@ verbose=affected,blank,context,edit,footnote,label,new-id,news,project,special,s
     color.uda.priority.T=color240
 
 # USER DEFINED ATTRIBUTES **************************************************************************
+
+# 
+#        color.uda.X=on green
+#               Colors any task that has the user defined attribute X.
+# 
+#        color.uda.X.VALUE=on green
+#               Colors any task that has the user defined attribute X set to VALUE.
+# 
+#        color.uda.X.none=on green
+#               Colors any task that does not have the user defined attribute X.
+       # urgency.uda.<name>.coefficient=...
+       #        Presence/absence of UDA data.
+       # urgency.uda.<name>.<value>.coefficient=...
+       #        Specific value of UDA data.
+ # uda.<name>.type=string|numeric|date|duration
+ #               Defines a UDA called '<name>', of the specified type.
+ # 
+ #        uda.<name>.label=<column heading>
+ #               Provides a default report label for the UDA called '<name>'.
+ # 
+ #        uda.<name>.values=A,B,C
+ #               For  type  'string'  UDAs  only, this provides a comma-separated list of acceptable
+ #               values. In this example, the '<name>' UDA may only contain values 'A', 'B', or 'C',
+ #               but may also contain no value.
+ # 
+ #               Note  that  the  order  of  the value is important, and denotes the sort order from
+ #               highest ('A') to lowest ('C').
+ # 
+ #               Note that a blank value is permitted.
+ # 
+ #        uda.<name>.default=...
+ #               Provides a default value for the UDA called '<name>'.
 
     # location **************************************
     
