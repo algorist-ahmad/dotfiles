@@ -68,6 +68,11 @@ wifi='nmcli dev wifi'
 connect='nmcli --ask device wifi connect'
 ## network manager (nmcli)
 
+## quest
+quests='quest'
+qst='quests'
+## quest
+
 ## rendercv
 gencv='rendercv render -o "resume" -nopng'
 ## rendercv
