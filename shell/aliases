@@ -68,11 +68,6 @@ wifi='nmcli dev wifi'
 connect='nmcli --ask device wifi connect'
 ## network manager (nmcli)
 
-## quest
-quests='vita quest'
-qst='quests'
-## quest
-
 ## rendercv
 gencv='rendercv render -o "resume" -nopng'
 ## rendercv
@@ -115,6 +110,12 @@ clipboard='xclip -selection clipboard'
 sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
 mouse='_() { nohup mousepad -o "mixed" "$@" & }; _'
 ## various
+
+## vita
+quest='vita quest'
+quests='quest'
+qst='quest'
+## vita
 
 ## walk
 walk='walk --icons --preview'
