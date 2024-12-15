@@ -69,7 +69,7 @@ connect='nmcli --ask device wifi connect'
 ## network manager (nmcli)
 
 ## quest
-quests='quest'
+quests='vita quest'
 qst='quests'
 ## quest
 
