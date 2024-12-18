@@ -6,12 +6,15 @@
 
 # Use the command 'task show' to see all defaults and overrides
 
-# task show KEY-VALUE PAIRS ************************************************************************
+# GENERAL ************************************************************************
 
-editor=$EDITOR
-verbose=affected,blank,context,edit,footnote,label,new-id,news,project,special,sync,override,recur
-print.empty.columns=yes
-undo.style=diff
+  editor=$EDITOR
+  verbose=affected,blank,context,footnote,label,new-id,news,project,special,sync,override,recur
+  print.empty.columns=yes
+  undo.style=diff
+
+  # make search case INsensitive
+  search.case.sensitive=0
 
 # CONTEXTS *****************************************************************************************
 
