@@ -112,7 +112,9 @@ mouse='_() { nohup mousepad -o "mixed" "$@" & }; _'
 ## various
 
 ## vita
+cv='vita cv'
 quest='vita quest'
+resume='cv'
 quests='quest'
 qst='quest'
 ## vita
