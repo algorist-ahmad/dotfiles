@@ -253,4 +253,11 @@ run_default() {
   fi
 }
 
+# helper functions
+is() { [[ -n "$1" ]] }  # non-empty or true
+not() { [[ -z "$1" ]] || [[ "$1" == '0' ]] || [[ "$1" == 'false' ]] } # empty or false
+tis() { is "$1" && echo 'true' || echo 'false'; }
+tisnot() { not "$1" && echo 'true' || echo 'false';  }
+# helper functions
+
 main
