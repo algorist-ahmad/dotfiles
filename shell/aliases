@@ -15,6 +15,10 @@ frenchar='echo -e "â\nê\nî\nô\nû"'
 arch='source arch'
 ## arch
 
+## column
+tab2col="column -t -s$'\t'"
+## column
+
 ## date
 D='date +%Y-%m-%d -d'
 DT='date +%Y-%m-%dT%T -d'
