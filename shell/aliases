@@ -72,6 +72,10 @@ wifi='nmcli dev wifi'
 connect='nmcli --ask device wifi connect'
 ## network manager (nmcli)
 
+## qraft
+qb='qraft' # query builder
+## qraft
+
 ## rendercv
 gencv='rendercv render -o "resume" -nopng'
 ## rendercv
