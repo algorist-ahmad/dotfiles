@@ -88,6 +88,10 @@ sc='sc-im'
 sqlite='sqlite3 -init "$SQLITERC"'
 ## sqlite3
 
+## tabcat
+tcat='tabcat2'
+## tabcat
+
 ## tar
 tarlist='tar -tzvf'
 zip='tar -cvzf'
