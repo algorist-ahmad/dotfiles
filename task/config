@@ -112,12 +112,12 @@
     report.uuid.labels=id,uuid,description,st
     report.uuid.sort=id+
 
-    # minimal report for journal
+    # minimal report for jrnl
 
-    report.jrnl.description=""
+    report.jrnl.description="minimal report for jrnl"
     report.jrnl.columns=uuid.short,description
-    report.jrnl.labels=uuid.short,description
-    report.jrnl.sort=id+
+    report.jrnl.labels=id,desc
+    report.jrnl.sort=urgency+
 
     # adding due countdown to all report ***********************************************************
 
