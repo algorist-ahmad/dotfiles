@@ -102,6 +102,8 @@ unzip='tar -xvzf'
 tk+='tk add'
 tk-='tk delete'
 tk~='tk modify'
+todo='task todo'
+start='_() { task start $@ ; task todo; }; _'
 ## TaskWarrior
 
 ## various

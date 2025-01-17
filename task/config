@@ -107,23 +107,32 @@
 
     # show ids
 
-    report.uuid.description=""
+    report.uuid.description=Reveal the UUIDs of tasks
     report.uuid.columns=id,uuid,description,status.short
     report.uuid.labels=id,uuid,description,st
     report.uuid.sort=id+
 
     # Tasks to do today
 
-    report.todo.description="Tasks to be fulfilled today"
+    report.todo.description=Tasks to be fulfilled today
     report.todo.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
     report.todo.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
     report.todo.context=1
     report.todo.filter=+PENDING -WAITING ( +ACTIVE or +DUETODAY or +TOMORROW  or +next or +todo or +TODO or scheduled:today ) limit:page
     report.todo.sort=urgency-
 
+    # Tasks to do today
+    
+    report.home.description=Tasks which can only be completed at home
+    report.home.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+    report.home.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
+    report.home.context=1
+    report.home.filter=+PENDING +home limit:page
+    report.homea.sort=urgency-
+
     # minimal report for jrnl
 
-    report.jrnl.description="minimal report for jrnl"
+    report.jrnl.description=Minimal report for my journal
     report.jrnl.columns=uuid.short,description
     report.jrnl.labels=id,desc
     report.jrnl.sort=urgency+
@@ -134,7 +143,7 @@
 
     # deleted tasks
     
-    report.birthdays.description="Friends\'s and Family\'s Birthdays"
+    report.birthdays.description=Friends\'s and Family\'s Birthdays
     report.birthdays.columns=id,description,due,due.relative,status.short,urgency
     report.birthdays.labels=id,who,date,due,st,urg
     report.birthdays.sort=due+
