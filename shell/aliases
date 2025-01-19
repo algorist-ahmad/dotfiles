@@ -58,7 +58,7 @@ peek="tree -L 1"
 ## gpg
 keys='gpg'
 encrypt='gpg --symmetric'
-decrypt='gpg --decrypt'
+# decrypt='gpg --decrypt'
 ## gpg
 
 ## micro
