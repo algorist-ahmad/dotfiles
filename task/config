@@ -6,6 +6,8 @@
 
 # Use the command 'task show' to see all defaults and overrides
 
+include dark-256.theme
+
 # GENERAL ************************************************************************
 
   editor=$EDITOR
@@ -118,7 +120,7 @@
     report.todo.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
     report.todo.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
     report.todo.context=1
-    report.todo.filter=+PENDING -WAITING ( +ACTIVE or +DUETODAY or +TOMORROW  or +next or +todo or +TODO or scheduled:today ) limit:page
+    report.todo.filter=+PENDING -WAITING ( +ACTIVE or +DUETODAY or +TOMORROW or +YESTERDAY or +next or +todo or +TODO or scheduled:today ) limit:page
     report.todo.sort=urgency-
 
     # Tasks to do today
@@ -172,24 +174,6 @@
     report.last_insert.labels=ID,UUID,Status,A,D,P,Project,Tags,R,Wait,Sch,Due,Until,Description
     report.last_insert.sort=entry-
     report.last_insert.filter=limit:1 status:pending
-
-# APPEARANCE **************************************************************************
-
-    # Color theme (uncomment one to use)
-    #include light-16.theme
-    #include light-256.theme
-    #include dark-16.theme
-    include dark-256.theme
-    #include dark-red-256.theme
-    #include dark-green-256.theme
-    #include dark-blue-256.theme
-    #include dark-violets-256.theme
-    #include dark-yellow-green.theme
-    #include dark-gray-256.theme
-    #include dark-gray-blue-256.theme
-    #include solarized-dark-256.theme
-    #include solarized-light-256.theme
-    #include no-color.theme
 
 # MISC *********************************************************************************
 news.version=3.2.0
