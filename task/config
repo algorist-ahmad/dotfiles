@@ -120,7 +120,7 @@ include dark-256.theme
     report.todo.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
     report.todo.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
     report.todo.context=1
-    report.todo.filter=+PENDING -WAITING ( +ACTIVE or +DUETODAY or +TOMORROW or +YESTERDAY or +next or +todo or +TODO or scheduled:today ) limit:page
+    report.todo.filter=+PENDING -WAITING ( +ACTIVE or +OVERDUE or +DUETODAY or +TOMORROW or +YESTERDAY or +next or +todo or +TODO or scheduled:today ) limit:page
     report.todo.sort=urgency-
 
     # Tasks to do today
