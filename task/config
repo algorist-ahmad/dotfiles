@@ -120,7 +120,7 @@ include dark-256.theme
     report.todo.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
     report.todo.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
     report.todo.context=1
-    report.todo.filter=+PENDING -WAITING ( +ACTIVE or +OVERDUE or +DUETODAY or +TOMORROW or +YESTERDAY or +next or +todo or +TODO or scheduled:today ) limit:page
+    report.todo.filter=+PENDING -WAITING ( +ACTIVE or +TOMORROW or +YESTERDAY or +next or +todo or +TODO or scheduled:today or due.before:7days) limit:page
     report.todo.sort=urgency-
 
     # Tasks to do today
@@ -176,4 +176,4 @@ include dark-256.theme
     report.last_insert.filter=limit:1 status:pending
 
 # MISC *********************************************************************************
-news.version=3.2.0
+news.version=3.3.0
