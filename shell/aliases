@@ -105,9 +105,9 @@ unzip='tar -xvzf'
 ## tar
 
 ## TaskWarrior
-tk+='tk add'
-tk-='tk delete'
-tk~='tk modify'
+tadd='taskwrapper add'
+tmod='taskwrapper modify'
+tdel='taskwrapper delete'
 todo='task todo'
 start='_() { task start $@ ; task todo; }; _'
 ## TaskWarrior
