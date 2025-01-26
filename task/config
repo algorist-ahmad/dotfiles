@@ -10,13 +10,18 @@ include dark-256.theme
 
 # GENERAL ************************************************************************
 
-  editor=$EDITOR
-  verbose=affected,blank,context,footnote,label,new-id,news,project,special,sync,override,recur
-  print.empty.columns=yes
-  undo.style=diff
-
+  # editor summoned when doing `task edit`
+    editor=$EDITOR
+  # DO NOT PROPAGATE CHANGES TO OTHER CHILDREN
+    recurrence.confirmation=no
   # make search case INsensitive
-  search.case.sensitive=0
+    search.case.sensitive=0
+  # verbosity
+    verbose=affected,blank,context,footnote,label,new-id,news,project,special,sync,override,recur
+  # empty columns shown
+    print.empty.columns=yes
+  # undo style
+    undo.style=diff
 
 # CONTEXTS *****************************************************************************************
 
@@ -91,12 +96,12 @@ include dark-256.theme
  #        uda.<name>.default=...
  #               Provides a default value for the UDA called '<name>'.
 
-    # location **************************************
+    # expire **************************************
     
-    uda.location.label=location
-    uda.location.type=string
-    urgency.uda.location.coefficient=1.2
-    color.uda.location=color255
+    uda.expires.label=expires
+    uda.expires.type=date
+    urgency.uda.expires.coefficient=2.0 # boost before expiration
+    color.uda.expires= rgb254
 
     # jrnl **************************************
         
@@ -106,6 +111,15 @@ include dark-256.theme
     color.uda.jrnl=color255
 
 # REPORTS ******************************************************************************************
+
+    # default report next enhancement
+    report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+    report.next.labels=ID,active,age,deps,P,project,tags,recur,sch,due,expires,desc,urg
+    # report.next.context     1
+    # report.next.description Most urgent tasks
+    # report.next.filter      status:pending -WAITING limit:page
+    # report.next.sort        urgency-
+    # end
 
     # show ids
 
