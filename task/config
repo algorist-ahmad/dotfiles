@@ -117,7 +117,7 @@ include dark-256.theme
     report.next.labels=ID,active,age,deps,P,project,tags,recur,sch,due,expires,desc,urg
     # report.next.context     1
     # report.next.description Most urgent tasks
-    # report.next.filter      status:pending -WAITING limit:page
+    report.next.filter=status:pending -WAITING limit:30
     # report.next.sort        urgency-
     # end
 
