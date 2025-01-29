@@ -9,4 +9,4 @@ archives=/archives
 # casa=/src/casa
 # qws=/src/qws
 qraft=/src/qraft
-parse=/src/qraft
+parse=/src/parse
