@@ -125,7 +125,7 @@ timestamp='d=$(date +"%Y-%m-%d %H:%M:%S") ; echo $d | clipboard ; echo -e "Curre
 pacman='sudo pacman'
 mount='sudo mount'
 umount='sudo umount'
-open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
+# open='_() { xdg-open "$@" 2> /tmp/xdg-open.log & }; _'
 clipboard='xclip -selection clipboard'
 sqlite-gui='_() { nohup sqlitebrowser "$@" > /tmp/sqlitebrowser.log & }; _'
 mouse='_() { nohup mousepad -o "mixed" "$@" & }; _'
