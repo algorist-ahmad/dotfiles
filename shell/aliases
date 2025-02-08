@@ -29,13 +29,16 @@ DT='date +%Y-%m-%dT%T -d'
 T='date +%T -d'
 ## date
 
+## email
+m='email'
+## email
+
 ## eza
 # ls='eza --icons'
 ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name --hyperlink'
 ## eza
 
 ## git
-gti='git'           # common typo
 add='git add -v'
 commit='git commit'
 send='git send'
@@ -111,6 +114,11 @@ tdel='taskwrapper delete'
 todo='task todo'
 start='_() { task start $@ ; task todo; }; _'
 ## TaskWarrior
+
+## common typos
+gti='git'
+sned='send'
+## common typos
 
 ## various
 edit='$EDITOR'
