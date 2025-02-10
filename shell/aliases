@@ -43,6 +43,7 @@ add='git add -v'
 commit='git commit'
 send='git send'
 co='git checkout'
+gist='gh gist'
 ## git
 
 ## GNU utilities
