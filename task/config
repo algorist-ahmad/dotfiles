@@ -37,6 +37,10 @@ include dark-256.theme
 
 # URGENCY TUNING ***********************************************************************************
 
+    # active/start
+
+    urgency.active.coefficient=16
+
     # special tags
 
     urgency.user.tag.auto.coefficient=1.5       # relating to my vehicles
@@ -48,9 +52,9 @@ include dark-256.theme
 
     # UDAs
 
-	uda.priority.values=C,H,M,L,,T
+	  uda.priority.values=C,H,M,L,,T
 
-	urgency.uda.priority.C.coefficient=9.0   # CRITICAL
+	  urgency.uda.priority.C.coefficient=9.0   # CRITICAL
     urgency.uda.priority.H.coefficient=6.0   # HIGH
     urgency.uda.priority.M.coefficient=3.9   # MEDIUM
     urgency.uda.priority.L.coefficient=1.8   # LOW
