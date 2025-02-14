@@ -60,7 +60,7 @@ include dark-256.theme
     urgency.uda.priority.L.coefficient=1.8   # LOW
     urgency.uda.priority.T.coefficient=-0.5  # TRIVIAL
 
-    color.uda.priority.C=color255 on color9
+    color.uda.priority.C=color255 on color173
     color.uda.priority.H=color250
     color.uda.priority.M=color245
     color.uda.priority.L=color242

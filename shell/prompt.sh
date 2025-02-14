@@ -4,7 +4,7 @@
 #################################
 
 # Capture last exit status, MUST BE AT THE TOP
-LAST_EXIT="$?"
+LAST_EXIT=$?
 
 # Define colors
 GREEN='\[\033[0;32m\]'
@@ -31,6 +31,8 @@ main() {
 build_prompt() {
     # in the future, have unique symbol for general context
     symbol="\[$LAST_EXIT\]"
+    # ISO date for scheduking purposes
+    date='\[W$WEEK\]'
     # build time in HH:MM
     time="\[\e[92m\]$(date +'%H:%M')\[\e[0m\]"
     # build current path
@@ -40,7 +42,7 @@ build_prompt() {
     # get a report of the current repo, if there is one
     git_status_report=$(git_status_report)
     # Done! PS1 is ready
-    PS1="$symbol $time $path $git_status_report $exit_indicator "
+    PS1="$symbol $date$time $path $git_status_report $exit_indicator "
 }
 
 build_exit_indicator() {
