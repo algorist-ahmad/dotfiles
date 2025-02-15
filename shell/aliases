@@ -29,10 +29,6 @@ DT='date +%Y-%m-%dT%T -d'
 T='date +%T -d'
 ## date
 
-## email
-m='email'
-## email
-
 ## eza
 # ls='eza --icons'
 ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name --hyperlink'
@@ -68,6 +64,10 @@ keys='gpg'
 encrypt='gpg --symmetric'
 # decrypt='gpg --decrypt'
 ## gpg
+
+## mail
+m='mail'
+## mail
 
 ## micro
 mu='micro'

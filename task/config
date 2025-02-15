@@ -40,6 +40,7 @@ include dark-256.theme
     # active/start
 
     urgency.active.coefficient=16
+    urgency.user.tag.next.coefficient=20
 
     # special tags
 
