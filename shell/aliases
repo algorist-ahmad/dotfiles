@@ -109,7 +109,7 @@ tcat='tabcat2'
 ## tar
 tarlist='tar -tzvf'
 zip='tar -cvzf'
-unzip='tar -xvzf'
+# unzip='tar -xvzf' # CONFLICTS WITH real unzip
 ## tar
 
 ## TaskWarrior
