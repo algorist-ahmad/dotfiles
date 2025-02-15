@@ -86,6 +86,10 @@ connect='nmcli --ask device wifi connect'
 qb='qraft' # query builder
 ## qraft
 
+## remind
+rem2html="perl $HOME/src/remind-05.03.02/rem2html/rem2html"
+## remind
+
 ## rendercv
 gencv='rendercv render -o "resume" -nopng'
 ## rendercv
@@ -158,3 +162,8 @@ webmail='web https://outlook.live.com/mail/0/AQMkADAwATY0MDABLTJjOWQtZTNiYy0wMAI
 outlook='web https://outlook.live.com/mail'
 syncthing='firefox 127.0.0.1:8384'
 ## web
+
+## zeit
+zeit='remind -m -b1'
+zeitgui=tkremind
+## zeit
