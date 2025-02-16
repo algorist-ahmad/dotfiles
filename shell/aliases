@@ -45,8 +45,7 @@ gist='gh gist'
 ## GNU utilities
 ..='cd ..'
 .~="cd $HOME"
-bc='bc --quiet --mathlib'
-cal='echo "CALCULATOR:" ; bc'
+# bc='bc --quiet --mathlib'
 cp='cp -vi'
 mv='mv -vi'
 rm='rm -vi'
@@ -88,6 +87,9 @@ qb='qraft' # query builder
 
 ## remind
 rem2html="perl $HOME/src/remind-05.03.02/rem2html/rem2html"
+cal='rem -m -b1 -cl+2 -@'
+edit-rem='edit $DOTREMINDERS'
+edit-schedule='edit-rem'
 ## remind
 
 ## rendercv
@@ -164,6 +166,7 @@ syncthing='firefox 127.0.0.1:8384'
 ## web
 
 ## zeit
-zeit='remind -m -b1'
+zeit='rem -m -b1'
 zeitgui=tkremind
+remgui=tkremind
 ## zeit
