@@ -101,6 +101,10 @@ include dark-256.theme
  #        uda.<name>.default=...
  #               Provides a default value for the UDA called '<name>'.
 
+    # duration ***********************************
+    uda.duration.label=duration
+    uda.duration.type=numeric
+
     # expire **************************************
     
     uda.expires.label=expires

@@ -31,10 +31,8 @@ main() {
 build_prompt() {
     # in the future, have unique symbol for general context
     symbol="\[$LAST_EXIT\]"
-    # ISO date for scheduking purposes
-    date='\[W$WEEK\]'
-    # build time in HH:MM
-    time="\[\e[92m\]$(date +'%H:%M')\[\e[0m\]"
+    # build time in WnnThh:mm
+    time="\[\e[92m\]W$(date +%V)T$(date +'%H%M')\[\e[0m\]"
     # build current path
     path="\[\033[01;34m\]\w\[\033[00m\]"
     # color the '$' symbol
