@@ -45,7 +45,7 @@ gist='gh gist'
 ## GNU utilities
 ..='cd ..'
 .~="cd $HOME"
-# bc='bc --quiet --mathlib'
+bc='echo "---CALCULATOR---"; bc'
 cp='cp -vi'
 mv='mv -vi'
 rm='rm -vi'
