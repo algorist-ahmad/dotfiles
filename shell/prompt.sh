@@ -40,7 +40,7 @@ build_prompt() {
     # get a report of the current repo, if there is one
     git_status_report=$(git_status_report)
     # Done! PS1 is ready
-    PS1="$date$time $path$git_status_report $exit_indicator "
+    PS1="$date$time $path $git_status_report $exit_indicator "
 }
 
 build_exit_indicator() {
