@@ -15,6 +15,12 @@ frenchar='echo -e "À\nà\nâ\nê\nî\nô\nû\né\nè"'
 arch='source arch'
 ## arch
 
+## cd
+cd='cd -P'
+..='cd ..'
+.~="cd $HOME"
+## cd
+
 ## clear
 cls='clear -x'
 ## clear
@@ -43,8 +49,6 @@ gist='gh gist'
 ## git
 
 ## GNU utilities
-..='cd ..'
-.~="cd $HOME"
 bc='echo "---CALCULATOR---"; bc'
 cp='cp -vi'
 mv='mv -vi'
