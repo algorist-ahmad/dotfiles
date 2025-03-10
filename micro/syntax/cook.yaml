@@ -13,7 +13,7 @@ rules:
     - type: "#[A-Za-zÀ-ÖØ-öø-ÿ\\- ]+{[^}]*}|#[A-Za-zÀ-ÖØ-öø-ÿ\\-]+"
 
     # Tags
-    - identifier.class: "^[A-Za-zÀ-ÖØ-öø-ÿ.:]+:\\s*"
+    - identifier.shit: "^[A-Za-zÀ-ÖØ-öø-ÿ.:]+:\\s*"
 
     # Timers
     - constant.number:
@@ -29,7 +29,7 @@ rules:
         start: "^>>"  # yamllint disable-line rule:indentation
         end: "$"
         rules:
-            - todo: "(TODO|XXX|FIXME)"
+            - todo: "(TODO|XXX|FIXME|NOTE)"
             - identifier: "[A-Za-zÀ-ÖØ-öø-ÿ]+: "
             - symbol.operator: "(>>|: )"
 
