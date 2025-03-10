@@ -3,7 +3,6 @@ filetype: cook
 
 detect:
     filename: "\\.cook$"
-    header: "^>>"
 
 rules:
     # Ingredients
