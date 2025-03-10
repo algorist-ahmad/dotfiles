@@ -1,9 +1,13 @@
 {
+    "*.json": {
+        "colorcolumn": 50
+    },
     "colorcolumn": 100,
-    "colorscheme": "geany",
+    "colorscheme": "ahmad",
     "face.font": "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf",
     "savecursor": true,
+    "saveundo": true,
     "softwrap": true,
-    "tabstospaces": true,
-    "tabsize": 2
+    "tabsize": 2,
+    "tabstospaces": true
 }

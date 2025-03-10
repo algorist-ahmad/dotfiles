@@ -5,11 +5,15 @@ detect:
     filename: "\\.cook$"
 
 rules:
+    
     # Ingredients
     - identifier: "@[A-Za-zÀ-ÖØ-öø-ÿ0-9\\- ]+{[^}]*}|@[A-Za-zÀ-ÖØ-öø-ÿ0-9\\-]+"
 
     # Cookware
     - type: "#[A-Za-zÀ-ÖØ-öø-ÿ\\- ]+{[^}]*}|#[A-Za-zÀ-ÖØ-öø-ÿ\\-]+"
+
+    # Tags
+    - identifier.class: "^[A-Za-zÀ-ÖØ-öø-ÿ.:]+:\\s*"
 
     # Timers
     - constant.number:
@@ -49,3 +53,7 @@ rules:
         end: "$"
         rules:
             - todo: "(TODO|XXX|FIXME):?"
+
+    # just fucking around
+    - constant.bool.true: "\\b(true)\\b"
+    - constant.bool.false: "\\b(false)\\b"
