@@ -6,6 +6,10 @@
 # ██╗██║  ██║███████╗██║██║  ██║██████╔╝███████╗██████╔╝
 # ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═════╝
 
+## SYSTEM CONTROLS
+shutdown='sudo pacman -Syu ; shutdown now'
+## SYSTEM CONTROLS
+
 ## recent
 frenchar='echo -e "À\nà\nâ\nê\nî\nô\nû\né\nè"'
 ## recent
