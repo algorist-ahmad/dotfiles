@@ -29,6 +29,7 @@ rules:
 
     - comment:
         start: "#"
+        skip: "\\\\."
         end: "$"
         rules:
             - todo: "(TODO|XXX|FIXME):?"
