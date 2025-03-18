@@ -22,7 +22,7 @@ arch='source arch'
 ## cd
 cd='cd -P'
 ..='cd ..'
-.~="cd $HOME"
+.-='cd -'
 ## cd
 
 ## clear
@@ -32,6 +32,10 @@ cls='clear -x'
 ## column
 tab2col="column -t -s$'\t'"
 ## column
+
+## cook
+kook='cook recipe read'
+## cook
 
 ## date
 D='date +%Y-%m-%d -d'
