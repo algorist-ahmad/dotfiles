@@ -122,9 +122,9 @@ tcat='tabcat2'
 ## tabcat
 
 ## tar
+compress='tar -czfv'
+extract='tar -xzfv' # IMPORTANT COMMAND: use to extract *.tar.gz files
 tarlist='tar -tzvf'
-zip='tar -cvzf'
-# unzip='tar -xvzf' # CONFLICTS WITH real unzip
 ## tar
 
 ## TaskWarrior
