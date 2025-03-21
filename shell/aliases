@@ -11,8 +11,8 @@ shutdown='sudo pacman -Syu ; shutdown now'
 ## SYSTEM CONTROLS
 
 ## file manipulations
-compress='tar -czfv'
-extract='tar -xzfv' # IMPORTANT COMMAND: use to extract *.tar.gz files
+compress='tar -czvf'
+extract='tar -xzvf' # IMPORTANT COMMAND: use to extract *.tar.gz files
 tarlist='tar -tzvf'
 zip='zip -v'
 unzip='unzip -v'
