@@ -10,6 +10,14 @@
 shutdown='sudo pacman -Syu ; shutdown now'
 ## SYSTEM CONTROLS
 
+## file manipulations
+compress='tar -czfv'
+extract='tar -xzfv' # IMPORTANT COMMAND: use to extract *.tar.gz files
+tarlist='tar -tzvf'
+zip='zip -v'
+unzip='unzip -v'
+## file manipulations
+
 ## recent
 frenchar='echo -e "À\nà\nâ\nê\nî\nô\nû\né\nè"'
 ## recent
@@ -120,12 +128,6 @@ sqlite='sqlite3 -init "$SQLITERC"'
 ## tabcat
 tcat='tabcat2'
 ## tabcat
-
-## tar
-compress='tar -czfv'
-extract='tar -xzfv' # IMPORTANT COMMAND: use to extract *.tar.gz files
-tarlist='tar -tzvf'
-## tar
 
 ## TaskWarrior
 tadd='taskwrapper add'

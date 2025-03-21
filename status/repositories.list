@@ -10,3 +10,4 @@ archives=/archives
 # qws=/src/qws
 qraft=/src/qraft
 parse=/src/parse
+springboot=/src/game-runner
