@@ -4,7 +4,7 @@
 home="$(dirname "$(realpath "$0")")"
 
 # File containing the symlink mappings
-mapping_file="$home/Import.map"
+mapping_file="$home/map"
 
 if [[ ! -f "$mapping_file" ]]; then
     echo "$mapping_file DOES NOT EXIST. ABORT."
@@ -21,12 +21,12 @@ while IFS=' =' read -r target source; do
     target="${target/#\~/$HOME}"
 
     # Create the symlink and capture output
-    sudo ln -svf "$home/$source" "$target" #FIXME: how to make it interactive??
+    sudo ln -svf "$home/../$source" "$target" #FIXME: how to make it interactive??
     sleep 0.1
 done < "$mapping_file"
 
 echo -e "Symlink creation completed.\n"
 
-cp -vi "$home/xfce4/keyboard.shortcuts.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
+cp -vi "$home/../xfce4/keyboard.shortcuts.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
 
-echo -e "\ncopied xfc4 settings to ~/.config/xfce4 cuz they can't be symlinked"
+echo -e "\ncopied xfc4 settings to ~/.config/xfce4 cuz they can't be symlinked (unless its hard linked? try when time permits)"

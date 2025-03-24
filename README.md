@@ -1,3 +1,7 @@
+last updated: 2025 march 24
+comment: INSTALLATION NOT INTUITIVE. DOCUMENT enveavouros INSTALLATION (refer to screenshot on phone)
+  THEN LIST DETAILED STEPS ON SETUP TO AVOID ERRORS AND TIME WllASTE. AUTOMATION HIGHLY RECOMMENDED
+
 # A blueprint for my ```/home```
 
 This repo includes all my personal configurations, shortcuts, functions, aliases, and environment
@@ -13,20 +17,6 @@ Without preparation nor documentation, replicating my /home/ will consume too mu
 be prone to errors, because dependencies will be incorrectly established.\
 This is why everything will be documented here.
 
-Tree:
-```
-.
-|-- .bashrc -> dotfiles/bashrc
-|-- .gitconfig -> dotfiles/.gitconfig
-|-- .password-store
-|-- bin
-|-- dotfiles
-|-- data
-|-- logs
-|-- repositories.txt
-|-- scripts
-```
-
 **Mappings will be stored in link.map**
 
 ### Explanation
@@ -34,7 +24,6 @@ Tree:
 |directory|type|description
 |-|-|-|
 |[dotfiles](https://github.com/bytesmith-ahmad/dotfiles)|repo|Contains all my configurations for bashrc and various apps.
-|[.password-store](https://github.com/bytesmith-ahmad/pass)|repo|Contains all my secrets. To be used with ```pass``` to work. Requires to import gpg keys|
 |[archives](https://github.com/bytesmith-ahmad/archives)|repo|Contains research, instructions, records, and more unused documents. Works with my ```arch``` script.|
 |bin|regular|Contains all executables such as the ones acquired with ```wget``` and ending with ```*.amd64```. Formerly used to hold my personal scripts, but those go in their own directory now.|
 |logs|regular|Contains stderr output for debugging
@@ -42,24 +31,22 @@ Tree:
 
 ## instructions 📜
 
+**TODO**: AUTOMATION REQUIRED
+
 These instructions are aimed at myself, ignore.
 
 Remaining instructions:
-- [x] import gpg keys
+- [x] Symlink <u>.bashrc</u> to */config/bashrc
+- [x] gpg --import [PRIVATE KEYS]
 - [x] install *gh*
 - [x] run ```gh auth login```, follow prompts
+- [x] clone *nexus --recursive*
 - [x] clone *pass*
-- [x] clone *linux-config*
-- [x] clone *scripts*
-- [x] clone *tasks*
-- [x] clone *bills*
-- [x] clone *journal*
+- [x] clone *dotfiles*
+- [x] clone *scripts* as ~/bin
 - [x] clone *archives*
-- [x] clone *data*
-- [x] clone *resume*
-- [x] mv *pass* to *.password-store*
-- [x] mv *linux-config* to *config* 
-- [x] Symlink <u>.bashrc</u> to */config/bashrc
+- [ ] create untracked directories such as src [AUTOMATION REQUIRED]
+- [ ] install packages [AUTOMATION REQUIRED]
 
 My personal bashrc will, in this order:
 

@@ -23,7 +23,6 @@ main() {
     run_startup_script    2>>"$LOGFILE"
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
-    # source /usr/local/bin/fuzzycd # added recently
     # $HOME/bin/check_email.sh &
     print_final_message
     print_reminders
@@ -68,11 +67,15 @@ print_reminders() {
     echo -e "\033[1;34m-----------------\033[0m"  # Blue footer with bold text
 }
 
+# TODO: read_env should not exit even if .env is not present
 read_env() {
 
     # Check if the .env file exists
     if [ ! -f "$ENV" ]; then
-        echo "Warning: file $ENV does not exist. Create or link one in $HOME." # | tee -a /dev/stderr
+    	timeout=60
+        echo -e "Warning: file $ENV does not exist. Create or link one in $HOME." # | tee -a /dev/stderr
+        echo -e "\nclosing in ${timeout}s..."
+        sleep $timeout
 		exit 99
     fi
     
@@ -262,6 +265,7 @@ tisnot() { not "$1" && echo 'true' || echo 'false';  }
 
 main
 
+# automatically inserted
 PATH="/home/ahmad/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/ahmad/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/ahmad/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;

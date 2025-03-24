@@ -3,7 +3,7 @@
 # Symlinks description file
 
 ## 
-## Automatically create symlinks spread throughout the OS.
+## Automatically create symlinks spread throughout the filesystem.
 ##
 ## To use set ORIGIN FILE = DESTINATION FILE
 ## Use absolute path for ORIGIN files
@@ -35,4 +35,4 @@
 
 ### xfce4
 
-#### xfce4 settings cannot be symlinked. Must replace all files.
+#### xfce4 settings cannot be symlinked (or can they?? Try hardlinks?). Must replace all files.
