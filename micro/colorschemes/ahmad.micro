@@ -91,7 +91,7 @@ color-link identifier "cyan"
 # my own creation, confirmed to work
 color-link identifier.shit "green"
 
-color-link statement "yellow"
+color-link statement "white"
 
 color-link type "magenta"
 color-link type.extended "default"
