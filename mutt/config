@@ -48,7 +48,7 @@ set ssl_force_tls = yes  # for security
 set folder    = $my_imap_url
 set mbox      = $my_archive
 set postponed = $my_drafts
-set record    = $my_outbox
+set record    = /dev/null
 set spoolfile = $my_inbox
 set trash     = $my_deleted
 # mailboxes
