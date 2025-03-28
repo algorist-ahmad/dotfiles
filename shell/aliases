@@ -15,7 +15,7 @@ compress='tar -czvf'
 extract='tar -xzvf' # IMPORTANT COMMAND: use to extract *.tar.gz files
 tarlist='tar -tzvf'
 zip='zip -v'
-unzip='unzip -v'
+# unzip='unzip -v'
 ## file manipulations
 
 ## recent
