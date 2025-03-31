@@ -20,8 +20,8 @@ include dark-256.theme
     verbose=affected,blank,context,footnote,label,new-id,news,project,special,sync,override,recur
   # empty columns shown
     print.empty.columns=yes
-  # undo style
-    undo.style=diff
+  # run reports in read only to avoid useless commits and merging conflicts
+    gc=0
 
 # CONTEXTS *****************************************************************************************
 
