@@ -53,7 +53,7 @@ T='date +%T -d'
 
 ## eza
 # ls='eza --icons'
-ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name --hyperlink'
+ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name --group-directories-first' # removed option --hyperlink
 ## eza
 
 ## git
