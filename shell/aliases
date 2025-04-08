@@ -57,7 +57,7 @@ start-docker='sudo systemctl start docker'
 
 ## eza
 # ls='eza --icons'
-ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name --group-directories-first' # removed option --hyperlink
+ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name' # removed option --hyperlink, --group-directories-first
 ## eza
 
 ## git
@@ -97,7 +97,7 @@ mu='micro'
 ## micro
 
 ## neomutt
-mutt='EMAIL_PASSWORD=$(pass "$EMAIL_PASSWORD") neomutt -F "$MUTTRC"'
+nutt='EMAIL_PASSWORD=$(pass "$EMAIL_PASSWORD") neomutt -F "$MUTTRC"'
 ## neomutt
 
 ## network manager (nmcli)
