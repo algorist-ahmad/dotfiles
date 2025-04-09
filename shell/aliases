@@ -133,13 +133,9 @@ sqlite='sqlite3 -init "$SQLITERC"'
 tcat='tabcat2'
 ## tabcat
 
-## TaskWarrior
-tadd='taskwrapper add'
-tmod='taskwrapper modify'
-tdel='taskwrapper delete'
-todo='task todo'
-start='_() { task start $@ ; task todo; }; _'
-## TaskWarrior
+##todo / taskwarrior
+td='todo'
+##/todo / taskwarrior  
 
 ## common typos
 gti='git'
