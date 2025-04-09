@@ -24,8 +24,8 @@ main() {
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
     # $HOME/bin/check_email.sh &
-    print_final_message
-    print_reminders
+    # print_final_message
+    # print_reminders
 }
 
 disable_linewrap() {
