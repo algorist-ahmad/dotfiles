@@ -9,4 +9,5 @@ coin=/src/coinmaster
 # qws=/src/qws
 # qraft=/src/qraft
 parse=/src/parse
+todo=/src/todo
 springboot=/src/game-runner
