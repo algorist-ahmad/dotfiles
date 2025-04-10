@@ -68,6 +68,11 @@ co='git checkout'
 gist='gh gist'
 ## git
 
+#gh
+ls-issue='gh issue list'
+ghis='gh issue list'
+#/gh
+
 ## GNU utilities
 bc='echo "---CALCULATOR---"; bc'
 cp='cp -vi'
