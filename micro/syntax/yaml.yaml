@@ -6,7 +6,14 @@ detect:
 
 rules:
     - type: "(^| )!!(binary|bool|float|int|map|null|omap|seq|set|str) "
-    - constant:  "\\b(YES|yes|ON|on|TRUE|True|true|NO|no|OFF|off|FALSE|False|false)\\b"
+    # - type: "[-.\\w]+(?=:)"  # Lookahead to exclude the colon
+    - constant.number: "\\b[-+]?([1-9][0-9]*|0[0-7]*|0x[0-9a-fA-F]+)([uU][lL]?|[lL][uU]?)?\\b" # from json.yaml
+    - constant.number: "\\b[-+]?([0-9]+\\.[0-9]*|[0-9]*\\.[0-9]+)([EePp][+-]?[0-9]+)?[fFlL]?" # from json.yaml
+    - constant.number: "\\b[-+]?([0-9]+[EePp][+-]?[0-9]+)[fFlL]?" # from json.yaml
+    - constant.bool.true: "\\b(true)\\b"
+    - constant.bool.false: "\\b(false)\\b"
+    - constant:  "\\b(YES|yes|ON|on|NO|no|OFF|off)\\b"
+
     - statement: "(:[[:space:]]|\\[|\\]|:[[:space:]]+[|>]|^[[:space:]]*- )"
     - identifier: "[[:space:]][\\*&][A-Za-z0-9]+"
     - type: "[-.\\w]+:"
@@ -33,3 +40,4 @@ rules:
         end: "$"
         rules:
             - todo: "(TODO|XXX|FIXME):?"
+
