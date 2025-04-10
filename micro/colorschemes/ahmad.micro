@@ -119,3 +119,4 @@ color-link color-column "#808080"
 color-link match-brace ",magenta"
 color-link tab-error "brightred"
 color-link trailingws "brightred"
+
