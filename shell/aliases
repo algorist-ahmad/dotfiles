@@ -69,8 +69,8 @@ gist='gh gist'
 ## git
 
 #gh
-ls-issue='gh issue list'
-ghis='gh issue list'
+# ls-issue='gh issue list all'
+# ghis='gh issue list -s all'
 #/gh
 
 ## GNU utilities
