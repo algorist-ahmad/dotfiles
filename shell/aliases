@@ -37,6 +37,12 @@ cd='cd -P'
 cls='clear -x'
 ## clear
 
+# coin
+bal='coin balance' # to check balance
+bill='coin bills'  # to check due bills
+bills='bill'
+# /coin
+
 ## column
 tab2col="column -t -s$'\t'"
 ## column
