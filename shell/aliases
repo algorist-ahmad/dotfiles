@@ -74,10 +74,17 @@ co='git checkout'
 gist='gh gist'
 ## git
 
-#gh
+# gum
+gf='gum file -a --height=20'
+gd='gum file -a --height=20 --directory'
+gcd='cd "$(gum file  -a --height=20 --directory)"'
+
+# /gum
+
+# gh
 # ls-issue='gh issue list all'
 # ghis='gh issue list -s all'
-#/gh
+# /gh
 
 ## GNU utilities
 bc='echo "---CALCULATOR---"; bc'
