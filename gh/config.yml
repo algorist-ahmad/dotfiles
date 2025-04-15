@@ -19,6 +19,7 @@ aliases:
     pin: issue pin
     web: browse
     dev: develop
+    grep: issue list --search
     next: issue list -l next
     open: issue list -s open
     export: issue list --json title
