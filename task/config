@@ -203,4 +203,4 @@ include dark-256.theme
     report.last_insert.filter=limit:1 status:pending
 
 # MISC *********************************************************************************
-news.version=3.3.0
+news.version=3.4.1

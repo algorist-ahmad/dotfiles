@@ -14,7 +14,10 @@ pager:
 aliases:
     co: pr checkout
     ls: issue list -s all
-    ed: issue edit 
+    ed: issue edit
+    ms: milestone
+    ai: issue create
+    am: milestone create
     add: issue create
     pin: issue pin
     web: browse
@@ -23,6 +26,7 @@ aliases:
     next: issue list -l next
     open: issue list -s open
     export: issue list --json title
+    ms-add: milestone create
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:
 # What web browser gh should use when opening URLs. If blank, will refer to environment.
