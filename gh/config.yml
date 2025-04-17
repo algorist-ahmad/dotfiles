@@ -18,10 +18,12 @@ aliases:
     ms: milestone
     ai: issue create
     am: milestone create
+    rm:  issue delete
     add: issue create
     pin: issue pin
     web: browse
     dev: develop
+    view: issue view
     grep: issue list --search
     next: issue list -l next
     open: issue list -s open

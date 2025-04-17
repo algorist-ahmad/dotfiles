@@ -97,7 +97,6 @@ chmod='chmod -v'
 grep='grep --color=auto'
 la='ls -A'
 l='ls -CF'
-peek="tree -L 1"
 ## GNU utilities
 
 ## gpg
