@@ -58,6 +58,10 @@ DT='date +%Y-%m-%dT%T -d'
 T='date +%T -d'
 ## date
 
+# discord
+discord=discordo
+# /discord
+
 ## docker
 start-docker='sudo systemctl start docker'
 ## docker
