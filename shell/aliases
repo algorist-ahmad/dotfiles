@@ -7,7 +7,7 @@
 # ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═════╝
 
 ## SYSTEM CONTROLS
-shutdown='sudo pacman -Syu ; shutdown now'
+shutup='sudo pacman -Syu ; shutdown +2'  # SHUTdown and UPdate
 ## SYSTEM CONTROLS
 
 ## file manipulations
