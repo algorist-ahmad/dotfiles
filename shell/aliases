@@ -32,6 +32,7 @@ arch='source arch'
 cd='cd -P'
 ..='cd ..'
 .-='cd -'
+cdi='cd "$(gum file -a --height=20 --directory)"'
 ## cd
 
 ## clear
@@ -82,7 +83,6 @@ gist='gh gist'
 # gum
 gf='gum file -a --height=20'
 gd='gum file -a --height=20 --directory'
-cdi='cd "$(dirname "$(gum file -a --height=20)")"'
 # /gum
 
 # gh
