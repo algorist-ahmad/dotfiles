@@ -34,7 +34,6 @@ today_is() {
     local emoji="🦋" # 🦋🌞
 
     # Content and spacing
-    local content=" Today is $day "
     local emoji_pad=" "
     local total_length=$((${#content} + ${#emoji} + ${#emoji_pad} * 2))
     
@@ -51,7 +50,7 @@ today_is() {
 
     # Output
     echo -e "${shadow_color} ╔${border}╗${reset}"
-    echo -e "${shadow_color} ║${reset} ${emoji_color}${emoji}${reset}${emoji_pad}${text_color}TODAY IS ${day_color}${day}${reset}${emoji_pad}${shadow_color}║${reset}"
+    echo -e "${shadow_color} ║${reset} ${emoji_color}${emoji}${reset}${emoji_pad}${text_color}Today is ${day_color}${day}${reset}${emoji_pad}${shadow_color}║${reset}"
     echo -e "${shadow_color} ╚${border}╝${reset}"
 }
 
