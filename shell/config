@@ -23,9 +23,61 @@ main() {
     run_startup_script    2>>"$LOGFILE"
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
+    today_is
     # $HOME/bin/check_email.sh &
     # print_final_message
     # print_reminders
+}
+
+today_is() {
+    local day=$(date +'%A')
+    local emoji="🌞"
+
+    # Content and spacing
+    local content=" TODAY IS $day "
+    local emoji_pad=" "
+    local total_length=$((${#content} + ${#emoji} + ${#emoji_pad} * 2))
+    
+    # Build border
+    local border=$(printf '═%.0s' $(seq 1 $total_length))
+
+    # Colors
+    local box_color='\033[1;38;5;33m'     # Bright blue
+    local shadow_color='\033[38;5;240m'   # Gray shadow
+    local text_color='\033[1;38;5;255m'   # Bright white
+    local day_color='\033[1;38;5;208m'    # Bright orange
+    local emoji_color='\033[1;38;5;82m'   # Green
+    local reset='\033[0m'
+
+    # Output
+    echo -e "${shadow_color} ╔${border}╗${reset}"
+    echo -e "${shadow_color} ║${reset} ${emoji_color}${emoji}${reset}${emoji_pad}${text_color}TODAY IS ${day_color}${day}${reset}${emoji_pad}${shadow_color}║${reset}"
+    echo -e "${shadow_color} ╚${border}╝${reset}"
+}
+
+today_is2() {
+    # Get components
+    day=$(date +'%A')
+    emoji="🎯"
+    
+    # Calculate dynamic width using direct character count
+    content="TODAY IS $day"
+    border_length=$((${#content} + 3))  # +3 for emoji and spaces
+    
+    # Build border without nested substitutions
+    border=$(printf '═%.0s' $(eval echo {1..$border_length}))
+    
+    # Style definitions
+    box_color='\033[38;5;33m'       # Blue border
+    text_color='\033[1;38;5;255m'   # Bold white
+    day_color='\033[1;38;5;202m'    # Bold orange
+    emoji_color='\033[1;38;5;40m'   # Bold green
+    reset='\033[0m'
+
+    # Output with styling
+    echo -e "${box_color}╔${border}╗${reset}"
+    echo -e "${box_color}║${reset} ${emoji_color}${emoji}${reset} ${text_color}TODAY IS ${day_color}${day} ${box_color}║${reset}"
+    echo -e "${box_color}╚${border}╝${reset}"
 }
 
 disable_linewrap() {
