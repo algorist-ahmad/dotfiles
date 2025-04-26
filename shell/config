@@ -34,6 +34,7 @@ today_is() {
     local emoji="🦋" # 🦋🌞
 
     # Content and spacing
+    local content=" Today is $day "
     local emoji_pad=" "
     local total_length=$((${#content} + ${#emoji} + ${#emoji_pad} * 2))
     
