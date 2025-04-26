@@ -27,7 +27,7 @@ aliases:
     grep: issue list --search
     next: issue list -l next
     open: issue list -s open
-    cp-label: label clone algorist-ahmad/coinmaster
+    import: label clone algorist-ahmad/coinmaster
     export: issue list --json title
     ms-add: milestone create
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
