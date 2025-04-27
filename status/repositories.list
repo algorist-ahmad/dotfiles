@@ -1,5 +1,5 @@
 dotfiles=/dotfiles
-nexus=/nexus
+collections=/collections
 bin=/bin
 archives=/archives
 coinmaster=/src/coinmaster
