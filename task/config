@@ -57,17 +57,17 @@ include dark-256.theme
 
     # UDAs
 
-	  uda.priority.values=C,H,M,L,,T
+	  uda.priority.values=C,H,E,L,,T
 
 	  urgency.uda.priority.C.coefficient=9.0   # CRITICAL
     urgency.uda.priority.H.coefficient=6.0   # HIGH
-    urgency.uda.priority.M.coefficient=3.9   # MEDIUM
+    urgency.uda.priority.E.coefficient=3.9   # ELEVATED
     urgency.uda.priority.L.coefficient=1.8   # LOW
     urgency.uda.priority.T.coefficient=-0.5  # TRIVIAL
 
     color.uda.priority.C=color255 on color173
     color.uda.priority.H=color250
-    color.uda.priority.M=color245
+    color.uda.priority.E=color245
     color.uda.priority.L=color242
     color.uda.priority.T=color240
 
@@ -105,6 +105,9 @@ include dark-256.theme
  #        uda.<name>.default=...
  #               Provides a default value for the UDA called '<name>'.
 
+    # status *************************************
+    color.completed=grey8
+
     # duration ***********************************
     uda.duration.label=duration
     uda.duration.type=numeric
@@ -130,7 +133,8 @@ include dark-256.theme
     report.next.labels=ID,active,age,deps,P,project,tags,recur,sch,due,expires,desc,urg
     # report.next.context     1
     # report.next.description Most urgent tasks
-    report.next.filter=status:pending -WAITING limit:15
+    # report.next.filter=(status:pending -WAITING limit:15) or (status:completed end.after:3days)
+    report.next.filter=(status:pending or status:completed end.after:now-1d) -WAITING limit:15
     # report.next.sort        urgency-
     # end
 
