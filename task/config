@@ -131,11 +131,9 @@ include dark-256.theme
     # default report next enhancement
     report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
     report.next.labels=ID,active,age,deps,P,project,tags,recur,sch,due,expires,desc,urg
-    # report.next.context     1
-    # report.next.description Most urgent tasks
-    # report.next.filter=(status:pending -WAITING limit:15) or (status:completed end.after:3days)
-    report.next.filter=(status:pending or status:completed end.after:now-1d) -WAITING limit:15
-    # report.next.sort        urgency-
+    report.next.description=Most urgent tasks
+    report.next.filter=(status:pending) -WAITING limit:15
+    report.next.sort=urgency-
     # end
 
     # show ids
