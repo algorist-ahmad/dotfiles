@@ -21,7 +21,7 @@ include dark-256.theme
   # empty columns shown
     print.empty.columns=yes
   # run reports in read only to avoid useless commits and merging conflicts
-    gc=0
+    gc=1
 
 # ALIASES ******************************************************************************************
 

@@ -41,6 +41,7 @@ cls='clear -x'
 
 # coin
 bal='coin balance' # to check balance
+balance='coin balance'
 bill='coin bills'  # to check due bills
 bills='bill'
 # /coin
