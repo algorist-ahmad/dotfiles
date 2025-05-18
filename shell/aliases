@@ -118,6 +118,10 @@ m='mail'
 mu='micro'
 ## micro
 
+## mlr
+jlq='mlr --l2p'
+## /mlr
+
 ## neomutt
 nutt='EMAIL_PASSWORD=$(pass "$EMAIL_PASSWORD") neomutt -F "$MUTTRC"'
 ## neomutt
