@@ -73,6 +73,10 @@ l='eza --icons'
 ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name --group-directories-first' # removed option --hyperlink,
 ## eza
 
+## gcalcli
+gcal=gcalcli
+## /gcalcli
+
 ## git
 add='git add -v'
 commit='git commit'
