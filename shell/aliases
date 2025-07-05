@@ -207,7 +207,7 @@ walk='walk --icons --preview'
 web='firefox'
 webmail='web https://outlook.live.com/mail/0/AQMkADAwATY0MDABLTJjOWQtZTNiYy0wMAItMDAKAC4AAAPjXhqMwf09TbNw6oo2ZfKfAQCTxSozP4SHRKrzlqtDD6thAAAA6hkQlQAAAA%3D%3D'
 outlook='web https://outlook.live.com/mail'
-syncthing='firefox 127.0.0.1:8384'
+# syncthing='firefox 127.0.0.1:8384'
 ## web
 
 ## zeit

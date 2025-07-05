@@ -4,6 +4,8 @@
 #    MY MODIFIED BASHRC    #
 ############################
 
+# TODO: CREATE A SIMPLIFIED INTERFACE FOR BASHRC USING A YAML FILE
+
 # default values
 #----------------------------------------------
 THIS_SCRIPT=$(readlink -f "${BASH_SOURCE[0]}")
@@ -14,7 +16,11 @@ ENV="$HOME/.env"
 
 # The entire bashrc script is summarized here in main()
 main() {
-    run_default
+    # run_default # temporarily disabled, seems useless
+    # --- background jobs ---
+    today_is &
+    run_continuous_services
+    # --- foreground jobs ---
     check_logs_dir_exists
     read_env              2>>"$LOGFILE"
     read_aliases          2>>"$LOGFILE"
@@ -23,10 +29,17 @@ main() {
     run_startup_script    2>>"$LOGFILE"
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
-    today_is
     # $HOME/bin/check_email.sh &
     # print_final_message
     # print_reminders
+}
+
+run_continuous_services() {
+  run_dropbox
+}
+
+run_dropbox() {
+  nohup dropbox &
 }
 
 today_is() {
