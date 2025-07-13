@@ -29,10 +29,14 @@ main() {
 }
 
 build_prompt() {
+    ip="\[$(get-ip)\]"
+    # who's the host?
+    host="\[[\h]\]"
     # in the future, have unique symbol for general context
     symbol="\[$LAST_EXIT\]"
     # build time in WnnThh:mm
-    time="\[\e[90m\]W\[\e[92m\]$(date +%V)\[\e[90m\]T\[\e[92m\]$(date +'%H%M')\[\e[0m\]"
+    # time="\[\e[90m\]W\[\e[92m\]$(date +%V)\[\e[90m\]T\[\e[92m\]$(date +'%H%M')\[\e[0m\]" # ORIGINAL
+    time="\[\[\e[92m\]$(date +'%H%M')\[\e[0m\]"
     # build current path
     path="\[\033[01;34m\]\w\[\033[00m\]"
     # color the '$' symbol
@@ -40,8 +44,10 @@ build_prompt() {
     # get a report of the current repo, if there is one
     git_status_report=$(git_status_report)
     # Done! PS1 is ready
-    PS1="$date$time $path $git_status_report $exit_indicator "
+    PS1="$time $ip $host $git_status_report\n$path $exit_indicator"
 }
+
+get-ip() { ip route get 1.1.1.1 | awk -F"src " 'NR == 1{ split($2, a," ");print a[1]}' ; }
 
 build_exit_indicator() {
     if [ $LAST_EXIT -eq 0 ]; then
