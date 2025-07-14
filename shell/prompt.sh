@@ -29,7 +29,7 @@ main() {
 }
 
 build_prompt() {
-    ip="\[$(get-ip)\]"
+    ip="\[$(get-ip 2>&1)\]"
     # who's the host?
     host="\[[\h]\]"
     # in the future, have unique symbol for general context
@@ -47,7 +47,10 @@ build_prompt() {
     PS1="$time $ip $host $git_status_report\n$path $exit_indicator"
 }
 
-get-ip() { ip route get 1.1.1.1 | awk -F"src " 'NR == 1{ split($2, a," ");print a[1]}' ; }
+get-ip() {
+  ip route get 1.1.1.1 | \
+  awk -F"src " 'NR == 1{ split($2, a," ");print a[1]}'
+}
 
 build_exit_indicator() {
     if [ $LAST_EXIT -eq 0 ]; then
