@@ -36,7 +36,7 @@ build_prompt() {
     symbol="\[$LAST_EXIT\]"
     # build time in WnnThh:mm
     # time="\[\e[90m\]W\[\e[92m\]$(date +%V)\[\e[90m\]T\[\e[92m\]$(date +'%H%M')\[\e[0m\]" # ORIGINAL
-    time="\[\[\e[92m\]$(date +'%H%M')\[\e[0m\]"
+    time="\[\[\e[92m\]$(date +'%H:%M')\[\e[0m\]"
     # build current path
     path="\[\033[01;34m\]\w\[\033[00m\]"
     # color the '$' symbol
