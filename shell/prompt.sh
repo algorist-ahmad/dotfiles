@@ -3,48 +3,41 @@
 # TO EXECUTE AFTER EACH COMMAND #
 #################################
 
+# TODO: put that shit in XML or YAML
+
 # Capture last exit status, MUST BE AT THE TOP
 LAST_EXIT=$?
 
 # Define colors
-GREEN='\[\033[0;32m\]'
-RED='\[\033[0;31m\]'
-BRIGHT_YELLOW='\[\033[1;33m\]'
-MAGENTA='\[\033[0;35m\]'      # Magenta color for untracked files
-CYAN='\[\033[0;36m\]'         # Cyan color for modified but unstaged
-BLUE='\[\033[0;34m\]'         # Blue color for staged but uncommitted
-RESET='\[\033[0m\]'           # Reset color to default
+BOLD='\[\e[1m\]'
+GREEN='\[\e[0;32m\]'
+RED='\[\e[0;31m\]'
+BRIGHT_YELLOW='\[\e[1;33m\]'
+MAGENTA='\[\e[0;35m\]'      # Magenta color for untracked files
+CYAN='\[\e[0;36m\]'         # Cyan color for modified but unstaged
+BLUE='\[\e[0;34m\]'         # Blue color for staged but uncommitted
+RESET='\[\e[0m\]'           # Reset color to default
 
 # Other
 PROMPT_SYMBOL='$'
 
 main() {
-	# TODO: put all the things to do between commands, for example:
-	# read env variables for changes
-	# execute database queries
-	# execute programs like TaskWarrior
-	# reminders
-	build_prompt
-	# task active limit:1 2> /dev/null
-}
-
-build_prompt() {
-    ip="\[$(get-ip 2>&1)\]"
-    # who's the host?
-    host="\[[\h]\]"
-    # in the future, have unique symbol for general context
-    symbol="\[$LAST_EXIT\]"
-    # build time in WnnThh:mm
-    # time="\[\e[90m\]W\[\e[92m\]$(date +%V)\[\e[90m\]T\[\e[92m\]$(date +'%H%M')\[\e[0m\]" # ORIGINAL
-    time="\[\[\e[92m\]$(date +'%H:%M')\[\e[0m\]"
-    # build current path
-    path="\[\033[01;34m\]\w\[\033[00m\]"
-    # color the '$' symbol
-    exit_indicator=$(build_exit_indicator)
-    # get a report of the current repo, if there is one
-    git_status_report=$(git_status_report)
-    # Done! PS1 is ready
-    PS1="$time $ip $host $git_status_report\n$path $exit_indicator"
+	ip="\[$(get-ip 2>&1)\]"
+   # who's the host?
+   host="\[[\h]\]"
+   # in the future, have unique symbol for general context
+   symbol="\[$LAST_EXIT\]"
+   # build time in WnnThh:mm
+   # time="\[\e[90m\]W\[\e[92m\]$(date +%V)\[\e[90m\]T\[\e[92m\]$(date +'%H%M')\[\e[0m\]" # ORIGINAL
+   time="\[\[\e[92m\]$(date +'%H:%M')\[\e[0m\]"
+   # build current path
+   path="\[${CYAN}${BOLD}\w${RESET}\]"
+   # color the '$' symbol
+   exit_indicator=$(build_exit_indicator)
+   # get a report of the current repo, if there is one
+   git_status_report=$(git_status_report)
+   # Done! PS1 is ready
+   PS1="\[$time $ip $host $git_status_report ---------------------\n$path $exit_indicator \]"
 }
 
 get-ip() {
