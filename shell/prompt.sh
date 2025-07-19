@@ -9,14 +9,14 @@
 LAST_EXIT=$?
 
 # Define colors
-BOLD='\[\e[1m\]'
-GREEN='\[\e[0;32m\]'
-RED='\[\e[0;31m\]'
-BRIGHT_YELLOW='\[\e[1;33m\]'
-MAGENTA='\[\e[0;35m\]'      # Magenta color for untracked files
-CYAN='\[\e[0;36m\]'         # Cyan color for modified but unstaged
-BLUE='\[\e[0;34m\]'         # Blue color for staged but uncommitted
-RESET='\[\e[0m\]'           # Reset color to default
+BOLD='\[\033[1m\]'
+GREEN='\[\033[0;32m\]'
+RED='\[\033[0;31m\]'
+BRIGHT_YELLOW='\[\033[1;33m\]'
+MAGENTA='\[\033[0;35m\]'      # Magenta color for untracked files
+CYAN='\[\033[0;36m\]'         # Cyan color for modified but unstaged
+BLUE='\[\033[0;34m\]'         # Blue color for staged but uncommitted
+RESET='\[\033[0m\]'           # Reset color to default
 
 # Other
 PROMPT_SYMBOL='$'
