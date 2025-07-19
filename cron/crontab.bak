@@ -7,3 +7,9 @@
 #*  *  *  *  * command to be executed
  *  *  *  *  * /home/ahmad/bin/startup.sh
  *  *  *  *  * /home/ahmad/bin/crontest.sh
+
+# XDG_RUNTIME_DIR=/run/user/$id for notify-send
+
+# REMEMBER to start cronie:
+# systemctl enable --now cronie.service
+# systemctl status cronie
