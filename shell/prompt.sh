@@ -22,22 +22,22 @@ RESET='\[\033[0m\]'           # Reset color to default
 PROMPT_SYMBOL='$'
 
 main() {
-	ip="\[$(get-ip 2>&1)\]"
+	ip="$(get-ip 2>&1)"
    # who's the host?
-   host="\[[\h]\]"
+   host="\h"
    # in the future, have unique symbol for general context
-   symbol="\[$LAST_EXIT\]"
+   symbol="$LAST_EXIT"
    # build time in WnnThh:mm
    # time="\[\e[90m\]W\[\e[92m\]$(date +%V)\[\e[90m\]T\[\e[92m\]$(date +'%H%M')\[\e[0m\]" # ORIGINAL
-   time="\[\[\e[92m\]$(date +'%H:%M')\[\e[0m\]"
+   time="\[\033[92m\]$(date +'%H:%M')\[\033[0m\]"
    # build current path
-   path="\[${CYAN}${BOLD}\w${RESET}\]"
+   path="${CYAN}${BOLD}\w${RESET}"
    # color the '$' symbol
    exit_indicator=$(build_exit_indicator)
    # get a report of the current repo, if there is one
    git_status_report=$(git_status_report)
    # Done! PS1 is ready
-   PS1="\[$time $ip $host $git_status_report ---------------------\n$path $exit_indicator \]"
+   PS1="$time $host [$ip] $git_status_report ---------------------\n$path $exit_indicator "
 }
 
 get-ip() {
