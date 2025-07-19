@@ -5,10 +5,11 @@
 #|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7)
 #|  |  |  |  |
 #*  *  *  *  * command to be executed
- *  *  *  *  * /home/ahmad/bin/startup.sh
+@reboot        XDG_RUNTIME_DIR=/run/user/1000 /home/ahmad/bin/startup.sh
+ *  *  *  *  * XDG_RUNTIME_DIR=/run/user/1000 /home/ahmad/bin/cronie-reminder.sh
  *  *  *  *  * /home/ahmad/bin/crontest.sh
 
-# XDG_RUNTIME_DIR=/run/user/$id for notify-send
+# XDG_RUNTIME_DIR=/run/user/$(id -u) for notify-send
 
 # REMEMBER to start cronie:
 # systemctl enable --now cronie.service
