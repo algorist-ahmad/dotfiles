@@ -19,7 +19,6 @@ main() {
     # run_default # temporarily disabled, seems useless
     # --- background jobs ---
     today_is &
-    run_continuous_services
     # --- foreground jobs ---
     check_logs_dir_exists
     read_env              2>>"$LOGFILE"
@@ -32,10 +31,6 @@ main() {
     # $HOME/bin/check_email.sh &
     # print_final_message
     # print_reminders
-}
-
-run_continuous_services() {
-  run_dropbox
 }
 
 run_dropbox() {
