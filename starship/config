@@ -2,9 +2,6 @@
 
 # DETAILS: https://starship.rs/config
 
-# TODO: add 07:56 xenon2 [192.168.2.32]
-# $time $host $publicip
-
 format = """
 ${username}${hostname} $localip\
 $custom $cmd_duration $memory_usage\
@@ -32,7 +29,7 @@ when = "true"
 
 [time]
 disabled = false
-format = '[$time]($style)'
+format = ' [$time]($style) '
 style = 'bold green'
 time_format = '%T'
 # utc_time_offset = '-4'
