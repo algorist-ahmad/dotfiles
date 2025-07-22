@@ -28,6 +28,10 @@ main() {
     run_startup_script    2>>"$LOGFILE"
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
+
+    # bashprompt
+    eval "$(starship init bash)"
+    
     # $HOME/bin/check_email.sh &
     # print_final_message
     # print_reminders
