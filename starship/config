@@ -171,20 +171,64 @@ min_time_to_notify = 5000	# Shortest duration for notification (in milliseconds)
 
 [battery]
 disabled = false
-format = 'BAT[$symbol$percentage$battery]($style)' # This format is specific to battery, not global
+format = '[$symbol$percentage$battery]($style) '
 full_symbol = '󰁹 '
-charging_symbol = '⚡️ ' # or '󰂄 '
-discharging_symbol = '💀 '
+charging_symbol = '⚡️' # or '󰂄 '
 unknown_symbol = '?'
-empty_symbol = '󰂎 '
+empty_symbol = '☠'
 
-[[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 10%
+[[battery.display]] # < 10%
 threshold = 10
+discharging_symbol = '☠'
 style = 'bold red'
 
-[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
-threshold = 100
-style = 'bold yellow'
-discharging_symbol = '💦 '
+[[battery.display]] # < 20%
+threshold = 19
+discharging_symbol = '󰁺'
+style = 'bold red'
 
-# when capacity is over 30%, the battery indicator will not be displayed
+[[battery.display]] # < 30%
+threshold = 29
+discharging_symbol = '󰁻'
+style = 'bold yellow'
+
+[[battery.display]] # < 40%
+threshold = 39
+discharging_symbol = '󰁼'
+style = 'bold yellow'
+
+[[battery.display]] # < 50%
+threshold = 49
+discharging_symbol = '󰁽'
+style = 'dimmed yellow'
+
+[[battery.display]] # < 60%
+threshold = 59
+discharging_symbol = '󰁾'
+style = 'dimmed yellow'
+
+[[battery.display]] # < 70%
+threshold = 69
+discharging_symbol = '󰁿'
+style = 'dimmed yellow'
+
+[[battery.display]] # < 80%
+threshold = 79
+discharging_symbol = '󰂀'
+style = 'dimmed green'
+
+[[battery.display]]
+threshold = 89
+discharging_symbol = '󰂁'
+style = 'dimmed green'
+
+[[battery.display]] # < 100%
+threshold = 99
+discharging_symbol = '󱈏 '
+style = 'fg:#C37093'
+
+# Bright pink: (bg:#D1005B fg:#23000F)
+# Middle pink, bright text: (bg:#68032F fg:#F7BCD6)
+# Middle pink, faded text: (bg:#68032F fg:#D7748C)
+# Dark pink, regular text: (bg:#43001D fg:#C37093)
+# Dark pink, highlighted: (bg:#43001D fg:#D1005B)
