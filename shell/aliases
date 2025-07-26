@@ -165,10 +165,6 @@ sqlite='sqlite3 -init "$SQLITERC"'
 tcat='tabcat2'
 ## tabcat
 
-##todo / taskwarrior
-td='todo'
-##/todo / taskwarrior  
-
 ## common typos
 gti='git'
 sned='send'
