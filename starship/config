@@ -173,7 +173,7 @@ min_time_to_notify = 5000	# Shortest duration for notification (in milliseconds)
 disabled = false
 format = '[$symbol$percentage$battery]($style) '
 full_symbol = '󰁹 '
-charging_symbol = '⚡️' # or '󰂄 '
+charging_symbol = '󱐋' # ⚡️  󱐋 󰂄
 unknown_symbol = '?'
 empty_symbol = '☠'
 
