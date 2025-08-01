@@ -1,8 +1,8 @@
-dotfiles=/dotfiles
-collections=/collections
+config=/config
+#collections=/collections
 bin=/bin
-archives=/archives
-notes=/wiki
+#archives=/archives
+#notes=/wiki
 
 #id Category          Core Purpose                                      Tools/Formats                        Privacy                 Storage
 #1  Code Repositories Version-controlled projects, scripts, and IaC     Git (GitHub/GitLab), Radicle         Varies (Public/Private) ~/src
