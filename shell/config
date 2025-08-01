@@ -27,7 +27,7 @@ main() {
     read_PATH             2>>"$LOGFILE"
     run_startup_script    2>>"$LOGFILE"
     update_repos          2>>"$LOGFILE" # TODO:
-    disable_linewrap
+    # disable_linewrap
 
     # bashprompt
     eval "$(starship init bash)"
