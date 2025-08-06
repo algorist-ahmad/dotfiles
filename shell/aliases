@@ -72,7 +72,8 @@ start-docker='sudo systemctl start docker'
 
 ## eza
 l='eza --icons'
-ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name --group-directories-first' # removed option --hyperlink,
+#ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name --group-directories-first' # removed option --hyperlink,
+ll='eza --header --all --long --icons --git --git-repos --smart-group  --no-filesize --time-style=relative --sort Name --group-directories-first' # removed option --hyperlink,
 ## eza
 
 ## gcalcli
