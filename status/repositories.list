@@ -1,9 +1,10 @@
-config=/config
+config=/cfg
 #collections=/collections
 bin=/bin
 #archives=/archives
 #notes=/wiki
-nginx=/nginx
+nginx(deprecated)=/nginx
+caddy=/caddy
 docker=/docker
 
 #id Category          Core Purpose                                      Tools/Formats                        Privacy                 Storage
