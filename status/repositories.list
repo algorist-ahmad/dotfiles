@@ -1,6 +1,6 @@
 app=/docker
 bin=/bin
-cfg=/dotfiles
+cfg=/cfg
 env=/env
 data=/collections
 arch=/archives
