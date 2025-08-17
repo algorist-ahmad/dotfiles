@@ -113,9 +113,8 @@ la='ls -A'
 l='ls -CF'
 ## GNU utilities
 
-## gpg
-keys='gpg'
-encrypt='gpg --symmetric'
+## gpg REPLACED WITH age
+#encrypt='gpg --symmetric'
 # decrypt='gpg --decrypt'
 ## gpg
 

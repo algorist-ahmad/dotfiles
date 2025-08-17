@@ -1,10 +1,12 @@
-dotfiles=/dotfiles
-collections=/collections
+app=/docker
 bin=/bin
-archives=/archives
-notes=/wiki
+cfg=/dotfiles
+env=/env
+data=/collections
+arch=/archives
+wiki=/wiki
 nginx-conf=/nginx
-docker=/docker
+caddy=/caddy
 
 #id Category          Core Purpose                                      Tools/Formats                        Privacy                 Storage
 #1  Code Repositories Version-controlled projects, scripts, and IaC     Git (GitHub/GitLab), Radicle         Varies (Public/Private) ~/src
