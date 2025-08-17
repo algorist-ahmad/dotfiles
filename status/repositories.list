@@ -1,3 +1,4 @@
+app=/app
 config=/cfg
 #collections=/collections
 bin=/bin
@@ -5,7 +6,6 @@ bin=/bin
 #notes=/wiki
 nginx(deprecated)=/nginx
 caddy=/caddy
-docker=/docker
 
 #id Category          Core Purpose                                      Tools/Formats                        Privacy                 Storage
 #1  Code Repositories Version-controlled projects, scripts, and IaC     Git (GitHub/GitLab), Radicle         Varies (Public/Private) ~/src
