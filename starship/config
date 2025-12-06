@@ -160,13 +160,13 @@ truncation_length = 3
 repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)'
 
 [cmd_duration]
-disabled = false # Disables the cmd_duration module.
+disabled = true # Disables the cmd_duration module.
 format = '⏳[$duration]($style)'	# The format for the module.
 style = 'yellow'
 min_time = 0
 show_milliseconds = true # Shortest duration to show time for (in milliseconds).
 show_notifications = true	# Show desktop notifications when command completes.
-min_time_to_notify = 5000	# Shortest duration for notification (in milliseconds).
+min_time_to_notify = 60000	# Shortest duration for notification (in milliseconds).
 # notification_timeout		# Duration to show notification for (in milliseconds). If unset, notification timeout will be determined by daemon. Not all notification daemons honor this option.
 
 [battery]

@@ -73,7 +73,10 @@ start-docker='sudo systemctl start docker'
 
 ## eza
 l='eza --icons'
-ll='eza --header --all --long --icons --no-permissions --no-user --git --git-repos --total-size --time-style=relative --sort Name --group-directories-first' # removed option --hyperlink,
+ls='eza --header --long --icons --smart-group --time-style=relative --sort Name --group-directories-first --no-filesize' # simplified version of ll
+ll='eza --header --long --icons --git --git-repos --smart-group --time-style=relative --sort Name --group-directories-first --total-size' # --all
+lld='eza --only-dirs --header --all --long --icons --git --git-repos --smart-group  --no-filesize --time-style=relative --sort Name' # dirs only
+llf='eza --only-files --header --all --long --icons --git --smart-group --total-size --time-style=relative --sort Name' # files only 
 ## eza
 
 ## gcalcli
@@ -111,9 +114,8 @@ la='ls -A'
 l='ls -CF'
 ## GNU utilities
 
-## gpg
-keys='gpg'
-encrypt='gpg --symmetric'
+## gpg REPLACED WITH age
+#encrypt='gpg --symmetric'
 # decrypt='gpg --decrypt'
 ## gpg
 

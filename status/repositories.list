@@ -1,4 +1,4 @@
-CADDYFILE=/caddy
-app=/app
 bin=/bin
-cfg=/cfg
+config=/cfg
+pass=/data/collections/pass
+services=/srv
