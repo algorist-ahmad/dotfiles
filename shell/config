@@ -9,8 +9,7 @@
 # default values
 #----------------------------------------------
 THIS_SCRIPT=$(readlink -f "${BASH_SOURCE[0]}")
-LOGS="${LOGS:-$HOME/logs}"
-LOGFILE="$LOGS/bashrc.log"
+LOGFILE="$HOME/log/bashrc.log"
 ENV="$HOME/.env"
 #----------------------------------------------
 
@@ -20,7 +19,7 @@ main() {
     # --- background jobs ---
     today_is &
     # --- foreground jobs ---
-    check_logs_dir_exists
+    # check_logs_dir_exists
     read_env              2>>"$LOGFILE"
     read_aliases          2>>"$LOGFILE"
     load_functions        2>>"$LOGFILE"
@@ -80,20 +79,6 @@ disable_linewrap() {
 		OFF | off | 0) tput rmam ;;
 		ON | on | 1) tput smam ;;
 	esac
-}
-
-check_logs_dir_exists() {
-    # Check if the directory exists
-    if [ ! -d "$LOGS" ]; then
-        # Directory does not exist, so create it
-        mkdir -p "$LOGS"
-        echo "Created directory: $LOGS" > "$LOGFILE"
-    else
-        # Directory exists
-        echo "LOGS ARE STORED IN: $LOGS" > "$LOGFILE"
-    fi
-    
-    return "$?"
 }
 
 print_final_message() {
