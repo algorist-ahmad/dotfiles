@@ -15,7 +15,7 @@ max_content_length = 100000000
 timeout = 30
 # Socket timeout. (seconds)
 ssl = false
-# Enable transport layer encryption.
+# Enable transport layer encryption, NEED THIS FOR HTTPS SO MOBILE CAN HAVE ACCESS
 certificate = /etc/ssl/radicale.cert.pem
 # Path of the SSL certifcate.
 key = /etc/ssl/radicale.key.pem
@@ -25,7 +25,7 @@ key = /etc/ssl/radicale.key.pem
 
 type = htpasswd
 # The method to verify usernames and passwords.
-htpasswd_filename = ~/dotfiles/radicale/users
+htpasswd_filename = ~/radicale/users
 # Path to the htpasswd file.
 htpasswd_encryption = autodetect
 # The encryption method that is used in the htpasswd file. Use the htpasswd or similar to generate this files.
@@ -33,9 +33,9 @@ cache_logins = false
 # Cache successful/failed logins until expiration time. Enable this to avoid overload of authentication backends.
 
 [storage]
-# filesystem_folder = ~/radicale/collections
-filesystem_folder = /var/lib/radicale
-# MOVED TO /var BECAUSE OF SYSTEM PERMISSION ISSUES
+filesystem_folder = ~/radicale
+# filesystem_folder = /var/lib/radicale
+# MOVED TO /var BECAUSE OF SYSTEM PERMISSION ISSUES, [SOLVED]
 
 [rights]
 # type, file, permit_delete_collection

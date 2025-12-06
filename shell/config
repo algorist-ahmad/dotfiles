@@ -44,10 +44,6 @@ add_ssh_key() {
   fi
 }
 
-run_dropbox() {
-  nohup dropbox &
-}
-
 today_is() {
     local day=$( echo $(date +'%A') | tr [a-z] [A-Z] )
     local emoji="🦋" # 🦋🌞

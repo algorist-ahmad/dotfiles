@@ -37,9 +37,9 @@ time_format = '%T'
 
 [sudo]
 disabled = false
-format = '[as $symbol]($style)'
+format = '[$symbol]($style)'
 style = 'bold green'
-symbol = '🧙 '
+symbol = '#'
 
 [status]
 disabled = false

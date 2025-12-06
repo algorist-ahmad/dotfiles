@@ -1,24 +1,4 @@
-services=/srv
 bin=/bin
 config=/cfg
-data=/data/collections
-caddy=/caddy
-
-#id Category          Core Purpose                                      Tools/Formats                        Privacy                 Storage
-#1  Code Repositories Version-controlled projects, scripts, and IaC     Git (GitHub/GitLab), Radicle         Varies (Public/Private) ~/src
-#2  Contacts          Human/entity relationship management              CardDAV, Airtable                    Private                 ~/soul
-#3  Device Info       Hardware inventory and network management         Airtable, NetBox                     Private                 ~/dev
-#4  Events            Time-based scheduling and reminders               Google Calendar, Cron                Private                 Cloud-managed
-#5  Financial         Financial tracking and asset management           Tiller, Ledger CLI, Plaid            Private (Sensitive)     ~/coin
-#6  Journal Entries   Personal reflection and experience logging        Day One, Obsidian, VJOURNAL          Private (Sensitive)     ~/jrnl
-#7  Mailbox           Communication archive with search capabilities    Proton Mail, mbsync (Maildir)        Private                 ~/archive/mailbox
-#8  Media             Rich media storage and streaming                  Immich, Plex, NAS                    Private                 ~/media
-#9  Notes             Knowledge capture and idea development            Obsidian, Markdown                   Private                 ~/notes
-#10 Pantry            Food inventory management with expiry tracking    Grocy, spreadsheet + barcode scanner Private                 ~/casa
-#11 Professional      Career artifacts and credentials                  PDF portfolio, Notion                Varies (Public/Private) ~/vita
-#12 Recipes           Cooking instructions with nutritional computation Paprika, Markdown + YAML             Private                 ~/cook
-#13 Credentials       Secrets management and encryption                 Bitwarden, 1Password, PGP            Private (Sensitive)     ~/pass (encrypted)
-#14 Services          Subscription and API key management               Spreadsheet + Tally                  Private                 ~/?
-#15 Tasks             Action item tracking and prioritization           Todoist, ClickUp                     Private                 Cloud-managed
-#16 Vehicular         Vehicle maintenance and expense tracking          Spreadsheets, logbooks               Private                 ~/auto
-#17 wiki              Institutional knowledge base with publishing      Markdown, Hugo static site           Mixed                   ~/wiki
+pass=/data/collections/pass
+services=/srv
