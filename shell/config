@@ -28,6 +28,7 @@ main() {
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
     add_ssh_key
+    rm_dir "$HOME/Documents" "$HOME/Music" "$HOME/Pictures" "$HOME/Public" "$HOME/Templates" "$HOME/Videos"
 
     # bashprompt
     eval "$(starship init bash)"
@@ -44,8 +45,12 @@ add_ssh_key() {
   fi
 }
 
-run_dropbox() {
-  nohup dropbox &
+rm_dir() {
+  for dir in "$@"; do
+    if [ -d "$dir" ]; then
+      rmdir -v "$dir"
+    fi
+  done
 }
 
 today_is() {
