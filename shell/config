@@ -27,7 +27,7 @@ main() {
     run_startup_script    2>>"$LOGFILE"
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
-    add_ssh_key
+    # add_ssh_key
 
     # bashprompt
     eval "$(starship init bash)"
