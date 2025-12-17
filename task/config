@@ -6,7 +6,13 @@
 
 # Use the command 'task show' to see all defaults and overrides
 
+# FILES ***********************
+
 include dark-256.theme
+
+# TERMINAL *************************
+
+
 
 # GENERAL ************************************************************************
 
@@ -21,11 +27,12 @@ include dark-256.theme
   # empty columns shown
     print.empty.columns=yes
   # run reports in read only to avoid useless commits and merging conflicts
-    gc=0
+    # gc=0
 
 # ALIASES ******************************************************************************************
 
   alias.set=modify
+  alias.sync=execute /home/ash/srv/taskwarrior/sync
 
 # CONTEXTS *****************************************************************************************
 
@@ -49,10 +56,7 @@ include dark-256.theme
     # special tags
 
     urgency.user.tag.auto.coefficient=1.5       # relating to my vehicles
-    urgency.user.tag.coin.coefficient=1.0       # relating to my vehicles
-    urgency.user.tag.rv.coefficient=4.0         # for appointments
-    urgency.user.tag.sidequest.coefficient=-2.0 # sidequests should be at the bottom
-    urgency.user.tag.vita.coefficient=0.5		# relating to my portfolio
+    urgency.user.tag.coin.coefficient=1.0       # relating to coinmaster
     urgency.user.tag.work.coefficient=1.5       # small boost to work related tasks
 
     # UDAs
@@ -117,14 +121,14 @@ include dark-256.theme
     uda.expires.label=expires
     uda.expires.type=date
     urgency.uda.expires.coefficient=2.0 # boost before expiration
-    color.uda.expires= rgb254
+    color.uda.expires=rgb254
 
-    # jrnl **************************************
-        
-    uda.jrnl.label=journal-entry
-    uda.jrnl.type=string
-    urgency.uda.jrnl.coefficient=1.0
-    color.uda.jrnl=color255
+    # reference / kanboard id  **********************
+    
+    uda.reference.label=Kanboard ID
+    uda.reference.type=numeric
+    urgency.uda.reference.coefficient=1.05
+    # color.uda.reference=
 
 # REPORTS ******************************************************************************************
 
