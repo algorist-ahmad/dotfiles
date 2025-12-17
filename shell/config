@@ -28,7 +28,8 @@ main() {
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
     add_ssh_key
-    rm_dir "$HOME/Documents" "$HOME/Music" "$HOME/Pictures" "$HOME/Public" "$HOME/Templates" "$HOME/Videos"
+    # rm_dir "$HOME/Documents" "$HOME/Music" "$HOME/Pictures" "$HOME/Public" "$HOME/Templates" "$HOME/Videos"
+    update_xdg_dirs
 
     # bashprompt
     eval "$(starship init bash)"
@@ -36,6 +37,17 @@ main() {
     # $HOME/bin/check_email.sh &
     # print_final_message
     # print_reminders
+}
+
+update_xdg_dirs() {
+  xdg-user-dirs-update --set DESKTOP     "/tmp"
+  xdg-user-dirs-update --set DOWNLOAD    "$HOME/dwl"
+  xdg-user-dirs-update --set TEMPLATES   "/tmp"
+  xdg-user-dirs-update --set PUBLICSHARE "/tmp"
+  xdg-user-dirs-update --set DOCUMENTS   "$HOME/dat/docs"
+  xdg-user-dirs-update --set MUSIC       "$HOME/mnt/local-storage/audio"
+  xdg-user-dirs-update --set PICTURES    "$HOME/mnt/local-storage/media"
+  xdg-user-dirs-update --set VIDEOS      "$HOME/mnt/local-storage/media" 
 }
 
 add_ssh_key() {
