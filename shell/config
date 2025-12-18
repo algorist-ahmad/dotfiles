@@ -27,14 +27,21 @@ main() {
     run_startup_script    2>>"$LOGFILE"
     update_repos          2>>"$LOGFILE" # TODO:
     disable_linewrap
-    # add_ssh_key
+    update_xdg_dirs
 
     # bashprompt
     eval "$(starship init bash)"
-    
-    # $HOME/bin/check_email.sh &
-    # print_final_message
-    # print_reminders
+}
+
+update_xdg_dirs() {
+  xdg-user-dirs-update --set DESKTOP     "/tmp"
+  xdg-user-dirs-update --set DOWNLOAD    "$HOME/dwl"
+  xdg-user-dirs-update --set TEMPLATES   "/tmp"
+  xdg-user-dirs-update --set PUBLICSHARE "/tmp"
+  xdg-user-dirs-update --set DOCUMENTS   "$HOME/dat/docs"
+  xdg-user-dirs-update --set MUSIC       "$HOME/mnt/local-storage/audio"
+  xdg-user-dirs-update --set PICTURES    "$HOME/mnt/local-storage/media"
+  xdg-user-dirs-update --set VIDEOS      "$HOME/mnt/local-storage/media" 
 }
 
 add_ssh_key() {
@@ -100,11 +107,11 @@ read_env() {
 
     # Check if the .env file exists
     if [ ! -f "$ENV" ]; then
-    	timeout=60
+    	timeout=30
         echo -e "Warning: file $ENV does not exist. Create or link one in $HOME." # | tee -a /dev/stderr
         echo -e "\nclosing in ${timeout}s..."
         sleep $timeout
-		exit 99
+		return 99
     fi
     
     # Read the .env file line by line
