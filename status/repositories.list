@@ -1,4 +1,4 @@
-bin=/bin
-config=/cfg
-pass=/data/collections/pass
+bin=/home/ash/bin
+config=/home/ash/cfg
+pass=/home/ash/data/collections/pass
 services=/srv
