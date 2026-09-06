@@ -14,7 +14,7 @@ theme = "kaolin-valley-dark"  # EVALUATING
 
 [editor]
 true-color = true
-line-number = "relative"
+# line-number = "relative"
 # mouse = false
 
 [editor.cursor-shape]
