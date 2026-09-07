@@ -1,3 +1,6 @@
 [submodule "keyboards"]
 	path = keyboards
 	url = github:axjab/keyboards
+[submodule "qmk"]
+	path = qmk
+	url = github:axjab/keyboards
