@@ -47,11 +47,11 @@ Host luminous at 100.95.238.38
 	user=axjab
 	os=PikaOS
 :
-Host repo at majula
+Host repo at 100.109.130.76
 	is='system user'
 	user=git
 :
-Host store at majula
+Host store at 100.109.130.76
 	is='system user'
 	user=store
 :
