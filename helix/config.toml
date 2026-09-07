@@ -14,8 +14,13 @@ theme = "kaolin-valley-dark"  # EVALUATING
 
 [editor]
 true-color = true
+# tab-width = 4 # Or your desired width
+# soft-tabs = true # Use spaces instead of tabs
 # line-number = "relative"
 # mouse = false
+
+# [editor.smart-tab]
+# enabled = true
 
 [editor.cursor-shape]
 insert = "bar"
