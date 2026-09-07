@@ -27,6 +27,7 @@ import 06-prompt
 import 07-yazi
 import? ~/.cargo/env
 import? ~/.nvm/nvm.sh  # This loads nvm 
+import? ~/.local/bin/env  # QMK
 
 no_ssh activate dns shell-completion bash
 activate zoxide init bash
