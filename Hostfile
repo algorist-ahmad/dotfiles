@@ -2,7 +2,24 @@
 
 # Configfile a.k.a Hostfile
 
+# ============================================= 
+# CURRENT ISSUE s
+# 1. TODO: Create a common BASH LIBRARY for all automations sourced separately
+# 2. ISSUE: Store host metadata in /etc/machine-info and query with hostnamectl -j
+# 					hostnamectl can also query REMOTELY, use as source of truth of machine/host
+# 3. ISSUE: Use SSHFS and SFTP instead of NFS
+# 4. Sync SSH config between hosts direclty
+# 5. Use /data/store and /data/git as the CANONICAL: storage location for everything
+# 6. template files must be marked with ".T", or .processor-name like .gopass for example
+# 7. ISSUE: INTRODUCE CONDITION HANDLING API, MAKE EVERY STATEMENT CONDITIONAL
+# 		DECLARE who the hosts are first by name/ip/port, such that hostnamectl can query
+# 8. Replace "hook" hardcoded to ~/etc/hooks with "run" which is global
+# 
+# =============================================
+
+
 # IDENTITY
+# FIX: MISSING METADATA: /etc/machine-info
 Create key gpg   # ERROR: cannot enroll a key with peers, if peer is NOT defined!
 Create key ssh
 
@@ -19,7 +36,7 @@ Sync /data/vault from  'github:axjab/vault' # 'repo:vault'
 Copy sudo/secure-path to /etc/sudoers.d/ READ-ONLY
 
 # HOSTS ******************************************
-
+# FIX: USE hostnamectl -j
 Host firelink at 100.121.116.55
 	is='headless server'
 	at=100.121.116.55
